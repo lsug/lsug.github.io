@@ -50,12 +50,12 @@ Start the bloop server beforehand, as this will download more dependencies.
 
 3. Create an `lsug` directory and clone my fork of `akka`.  Update `akka-stream-typed`.  This will download all of its dependencies.
 
-```console
+   ```console
    lsug$ git clone https://github.com/zainab-ali/akka.git --branch workshop-start --single-branch --depth=1
    lsug$ cd akka
    lsug$ sbt
    akka> akka-stream-typed/update
-```
+   ```
 
 #### Java 8
 
@@ -90,7 +90,7 @@ zipkin$ ls
 zipkin.jar
 ```
 
-#### Bloop
+#### Bloop repository
 
 Clone bloop and update its submodules
 
@@ -101,7 +101,8 @@ bloop$
 bloop$ git submodule update --init
 ```
 
-#### Scalac-profiling
+#### Scalac-profiling repository
+
 
 Clone scalac-profiling and update its submodules
 
@@ -132,13 +133,13 @@ Run:
 
 Run:
 ```console
-xcode-select --install
+$ xcode-select --install
 ```
 
 #### Java8
 
-```
-brew tap caskroom/versions brew cask install java8
+```console
+$ brew tap caskroom/versions brew cask install java8
 ```
 
 #### Graphviz
