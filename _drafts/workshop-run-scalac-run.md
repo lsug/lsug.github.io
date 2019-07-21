@@ -106,8 +106,15 @@ Bloop outputs build traces.  These can be viewed with [Zipkin](https://zipkin.io
 
 1. Pull and start Zipkin.
 
+   If you have docker, this can be done with:
+
    ```console
-   $ docker run -d -p 9411:9411 openzipkin/zipkin
+   lsug$ docker run -d -p 9411:9411 openzipkin/zipkin
+   ```
+   If you have the Zipkin jar in a `zipkin` directory, this can be done with
+
+   ```
+   zipkin$ java -jar zipkin.jar
    ```
 
 2. Compile the `akka-stream-typed` project
@@ -122,7 +129,7 @@ Bloop outputs build traces.  These can be viewed with [Zipkin](https://zipkin.io
 
 Let's compile `akka-stream-typed` a few more times.
 
-1. Create a file `warmup.sh` with the following contents
+1. Create a file `akka/warmup.sh` with the following contents
 
    ```sh
    #!/bin/bash
@@ -137,13 +144,13 @@ Let's compile `akka-stream-typed` a few more times.
 2. Make this executable
 
    ```console
-   akka $ chmod u+x warmup.sh
+   akka$ chmod u+x warmup.sh
    ```
 
 3. Run this with the project `akka-stream-typed`
 
    ```console
-   akka $ ./warmup.sh akka-stream-typed
+   akka$ ./warmup.sh akka-stream-typed
    ```
 
 Take a look at the Zipkin traces.  Bloop uses the same JVM instance each time it compiles the project.  Notice that the compilation times get shorter and shorter as the JVM warms up.
@@ -156,25 +163,24 @@ The order in which the spans appear depends on the build graph.
 Take a look at akka's build graph.
 
 ```console
-$ bloop projects --dot-graph > build-graph.dot
-$ dot -o build-graph.svg -Tsvg build-graph.dot
+akka$ bloop projects --dot-graph > build-graph.dot
+akka$ dot -o build-graph.svg -Tsvg build-graph.dot
 ```
 
-Open `build-graph.svg` using your browser.
+The `dot` tool is installed with [Graphviz](https://www.graphviz.org/download/).
+
+Open the `akka/build-graph.svg` file using your browser.
 
 ## Build pipelining
 
-Projects only depend on the `typer` phase of their dependency projects.  It's possible to start compilation of a project after its dependency projects have finished the typer phase, but before they've finished compiling completely.  This is termed *build pipelining*.  Bloop supports this with the `--pipeline` option.  Run `bloop compile` with the `--pipeline` option.
+Projects only depend on the typer phase of their dependency projects.  It's possible to start compilation of a project after its dependency projects have finished the typer phase, but before they've finished compiling completely.  This is termed *build pipelining*.  Bloop supports this with the `--pipeline` option.  Run `bloop compile` with the `--pipeline` option.
 
 ```console
-$ for i in {1..10}; do
-$   echo "Iteration $i"
-$   bloop clean
-$   bloop compile --pipeline akka-stream-typed
-$ done
+akka$ bloop clean
+akka$ bloop compile --pipeline akka-stream-typed
 ```
 
-Sort the Zipkin traces by newest first.  You should notice that the `scalac` spans start before the previous ones have finished.
+Sort the Zipkin traces by newest first to see the trace with pipelining.  You should notice that some `scalac` spans start before the previous ones have finished.
 
 # Benchmarking
 
@@ -199,18 +205,19 @@ It's unlikely that you'll be able to do this within the timespan of the workshop
 
 ## Setting up the benchmarking suite
 
-Even if you can't setup your environment, it's worth setting up the benchmarking suite.
+Even if you can't setup your environment, it's worth experimenting with bloop's benchmarking suite.
 Bloop contains a benchmarking suite based on JMH.
 
 1. Checkout bloop
 
    ```console
-   $ git clone https://github.com/scalacenter/bloop.git
-   $ cd bloop
-   $ git submodule update --init
+   lsug$ git clone https://github.com/scalacenter/bloop.git
+   lsug$ cd bloop
+   bloop$
+   bloop$ git submodule update --init
    ```
 
-2. Delete all lines in `bloop-community-build.buildpress`
+2. Delete all lines in `bloop/buildpress/src/main/resources/bloop-community-build.buildpress`.
 
 3. Add an entry called `start` for the `workshop-start` akka branch:
 
@@ -221,22 +228,25 @@ Bloop contains a benchmarking suite based on JMH.
 4. Enter `sbt` and run `exportCommunityBuild`
 
    ```console
-   $ sbt
-   sbt> exportCommunityBuild
+   bloop$ sbt
+   bloop> exportCommunityBuild
    ```
 
 ## Running the benchmarks
 
-6. In `sbt`, run
+6. In the sbt shell run
+
    ```console
-   sbt> benchmarks/jmh:run .*HotBloopBenchmark.* -wi 7 -i 5 -f1 -t1 -p project=start -p projectName=akka-stream-typed
+   bloop> benchmarks/jmh:run .*HotBloopBenchmark.* -wi 7 -i 5 -f1 -t1 -p project=start -p projectName=akka-stream-typed
    ```
 
-   This runs 7 warm up iterations and 5 main iterations.  Once completed, you should be given a score for each iteration
+   This runs 7 warm up iterations and 5 main iterations.  Once completed, you should be given a score for each iteration.
+   Make a note of your scores.
 
 6. Bloop contains a `HotPipelinedBloopBenchmark` class for benchmarking pipelining
+
    ```console
-   benchmarks/jmh:run .*HotPipelinedBloopBenchmark.* -wi 7 -i 5 -f1 -t1 -p project=start -p projectName=akka-stream-typed
+   bloop> benchmarks/jmh:run .*HotPipelinedBloopBenchmark.* -wi 7 -i 5 -f1 -t1 -p project=start -p projectName=akka-stream-typed
    ```
    Do you notice a decrease in score?
 
@@ -248,7 +258,7 @@ Significant improvements to `scalac` are made in each new scala version. You can
 
 The akka `workshop-scala-2.13` branch contains a Scala 2.13 upgrade.
 
-1. Add a community buildpress entry called `scala213` for the `workshop-scala-2.13` akka branch:
+1. Add another entry to `bloop/buildpress/src/main/resources/bloop-community-build.buildpress` called `scala213` for the `workshop-scala-2.13` branch.
 
    ```
    scala213,https://github.com/zainab-ali/akka.git#workshop-scala-2.13
@@ -257,12 +267,12 @@ The akka `workshop-scala-2.13` branch contains a Scala 2.13 upgrade.
 2. Export the community build once again
 
    ```console
-   sbt> exportCommunityBuild
+   bloop> exportCommunityBuild
    ```
 
 3. Run the benchmarks for the Scala 2.13
    ```console
-   benchmarks/jmh:run .*HotPipelinedBloopBenchmark.* -wi 7 -i 5 -f1 -t1 -p project=scala213 -p projectName=akka-stream-typed
+   bloop> benchmarks/jmh:run .*HotPipelinedBloopBenchmark.* -wi 7 -i 5 -f1 -t1 -p project=scala213 -p projectName=akka-stream-typed
    ```
 
    Do you see a decrease in score?
@@ -271,18 +281,31 @@ The akka `workshop-scala-2.13` branch contains a Scala 2.13 upgrade.
 
 The scala compiler runs best on the Java 8 Graal VM.
 
-1. Install Graal
-2. Exit the bloop sbt shell
+1. Download and install the [GraalVM](https://www.graalvm.org/downloads/)
+2. Exit the sbt shell for the bloop project
 
    ```console
-   sbt> exit
-   $
+   bloop> exit
+   bloop$
    ```
-3. Switch your JVM to Graal
+3. Switch your JVM to Graal.
+
+   - For MacOS, follow [this guide](https://blog.softwaremill.com/graalvm-installation-and-setup-on-macos-294dd1d23ca2).
+   - For ArchLinux, use `pacman` and switch java versions with `archlinux-java`
+
+4. Check that you're using the Graal VM
+
+   ```console
+   bloop$ java -version
+   openjdk version "1.8.0_..."
+   OpenJDK Runtime Environment (build ...)
+   OpenJDK 64-Bit GraalVM CE 19.1.0 (build ...)
+   ```
+
 4. Enter the sbt shell and run the benchmarks once again
    ```console
    $ sbt
-   sbt> benchmarks/jmh:run .*HotPipelinedBloopBenchmark.* -wi 7 -i 5 -f1 -t1 -p project=scala213 -p projectName=akka-stream-typed
+   bloop> benchmarks/jmh:run .*HotPipelinedBloopBenchmark.* -wi 7 -i 5 -f1 -t1 -p project=scala213 -p projectName=akka-stream-typed
    ```
 
    Do you see a decrease in score?
@@ -290,36 +313,73 @@ The scala compiler runs best on the Java 8 Graal VM.
 # Compile less code
 
 scalac will be faster if it has less code to compile.  You can
- - use `scalafix` to delete unused imports and methods
- - keep an eye on the `scala-clean` project
+ - use [Scalafix](https://github.com/scalacenter/scalafix) to delete unused imports and local variables
+ - keep an eye on [ScalaClean](https://github.com/rorygraves/ScalaClean), a project for detecting dead code
 
 # Profiling
 
-We will now look into profiling `scalac` itself.
+We will now look into profiling `scalac` for the `akka-stream-typed` project.
 
 ## -Ystatistics
 
-1. In `project/AkkaBuild.scala`, add the `-Ystatistics` option to the `scalacOptions`.  This will print compiler statistics.
+1. In `akka/project/AkkaBuild.scala`, add the `-Ystatistics` option to the `DefaultScalacOptions`.
+
+   ```scala
+   final val DefaultScalacOptions = Seq("-encoding", "UTF-8", "-feature", "-unchecked", "-Xlog-reflective-calls") ++
+     Seq("-Ystatistics")
+  ```
+  This will print compiler statistics.
+
+2. Reload and check that the `-Ystatistics` option has been added
+
+   ```console
+   akka> reload
+   akka> show akka-stream-typed/scalacOptions
+   [info] * -Yrangepos
+   [info] * -Xfatal-warnings
+   [info] * -Ywarn-nullary-unit
+   ...
+   [info] * -Ystatistics
+   ...
+   ```
+
 2. Export the build with `bloopInstall`
-   ```console
-   sbt> reload
-   sbt> bloopInstall
-   ```
-   The `-Ystatistics` option should now be added to the `./bloop/akka-stream-typed.json` file.
-
-3. Compile the project and pipe the results to a file.
 
    ```console
-   $ for i in {1..10}; do
-   $   echo "Iteration $i"
-   $   bloop clean
-   $   bloop compile --pipeline akka-stream-typed &> statistics-$i.log
-   $ done
+   akka> bloopInstall
+   ```
+   The `-Ystatistics` option should now be added to the `.bloop/akka-stream-typed.json` file:
+
+   ```json
+   {
+       "version" : "1.1.2",
+       "project" : {
+           "name" : "akka-stream-typed",
+           ...
+           "scala" : {
+               ...
+               "options" : [
+                   ...
+                   "-Ystatistics",
+                   ...
+               ],
+               ...
+           }
+       }
+   }
    ```
 
-Examine the statistics in `statistics-10.log`.  You should be able to see each of the different phases and the time that they take to perform.
+3. Compile the project and pipe the results to a `statistics.txt` file.
+
+   ```console
+   akka$ bloop clean
+   akka$ bloop compile --pipeline akka-stream-typed &> statistics.txt
+   ```
+
+Examine the contents of `statistics.txt`.  You should be able to see each of the different compiler phases.
 
 ```
+...
   xsbt-analyzer               : 1 spans, ()13.062ms (0.0%)
   silencerCheckUnused         : 1 spans, ()0.413ms (0.0%)
   jvm                         : 1 spans, ()1947.76ms (6.2%)
@@ -350,52 +410,88 @@ Examine the statistics in `statistics-10.log`.  You should be able to see each o
   namer                       : 1 spans, ()106.585ms (0.3%)
   parser                      : 1 spans, ()1325.116ms (4.2%)
 #total compile time           : 1 spans, ()31325.93ms
+...
 ```
 
 ## The typer
 
-Most projects that have long compile times have problems with the typer.  The typer phase of `akka-streams-typed` is fast, and unlikely to have problems.  Let's examine it in more detail anyway
+Most projects with long compile times have problems with the typer.  The typer phase of `akka-streams-typed` is relatively small at 64%, and unlikely to have problems.
+Let's examine it in more detail anyway.
 
-1. Add the `scalac-profiling` plugin to `project/plugins.sbt`
+We will use the [scalac-profiling](https://github.com/scalacenter/scalac-profiling) plugin.
+
+1. In `akka/project/AkkaBuild.scala` add the compiler plugin to the `defaultSettings` just under the addition of the `DefaultScalacOptions`
+
    ```console
-    addCompilerPlugin("ch.epfl.scala" %% "scalac-profiling" % "1.0.0")
+    scalacOptions in Compile ++= DefaultScalacOptions,
+    addCompilerPlugin("ch.epfl.scala" %% "scalac-profiling" % "1.0.0"),
    ```
 
-2. Add the following options to the `scalacOptions` in `project/AkkaBuild.scala`.  Replace `REPOSITORY_ROOT` with the root of your akka repository.
+2. Find the root of your akka repository
 
-   ```
-     -Ycache-plugin-class-loader:last-modified
-     -P:scalac-profiling:no-profiledb
-     -P:scalac-profiling:show-profiles
-     -P:scalac-profiling:sourceroot:$REPOSITORY_ROOT
+  ```console
+  akka$ pwd
+  /home/zainab/lsug/akka
+  ```
+
+3. In `akka/project/AkkaBuild.scala` add the following options to the `DefaultScalacOptions`.  Replace `/home/zainab/lsug/akka` with the root of your akka repository.
+
+   ```scala
+   final val DefaultScalacOptions = Seq("-encoding", "UTF-8", "-feature", "-unchecked", "-Xlog-reflective-calls") ++
+     Seq(
+       "-Ystatistics",
+       "-Ycache-plugin-class-loader:last-modified",
+       "-P:scalac-profiling:no-profiledb",
+       "-P:scalac-profiling:show-profiles",
+       "-P:scalac-profiling:sourceroot:/home/zainab/lsug/akka"
+     )
    ```
 
-3.  In the sbt shell, clean and compile `akka-stream-typed`
+4.  In the sbt shell, clean and compile `akka-stream-typed`
 
     ```console
-    sbt> project akka-stream-typed
-    sbt> clean
-    sbt> compile
+    akka> reload
+    akka> project akka-stream-typed
+    akka> clean
+    akka> compile
     ```
 
     This should generate a `.flamegraph` file in `akka/akka-stream-typed/target/classes/META-INF/profiledb/graphs/`.
 
-4.  We now need to process the `.flamegraph` file into a flamegraph.
+4. Navigate to `akka/akka-stream-typed/target/classes/META-INF/profiledb/graphs/` and find the name of the flamegraph
+
+   ```console
+   akka$ cd akka-stream-typed/target/classes/META-INF/profiledb/graphs
+   graphs$ ls
+   implicit-searches-1563721527947.flamegraph
+   graph$ realpath implicit-searches-1563721527947.flamegraph
+   /home/zainab/lsug/akka/akka-stream-typed/target/classes/META-INF/profiledb/graphs/implicit-searches-1563721527947.flamegraph
+   ```
+
+4.  We now need to process the `.flamegraph` file into a flamegraph.  Clone the `scalac-profiling` repository.
 
     ```console
-    git clone https://github.com/scalacenter/scalac-profiling.git
-    cd scalac-profiling
-    git submodule update --init
+    lsug$ git clone https://github.com/scalacenter/scalac-profiling.git
+    lsug$ cd scalac-profiling
+    scalac-profiling$
+    scalac-profiling$ git submodule update --init
     ```
 
     Navigate into the `Flamegraph` directory
 
     ```console
-    cd Flamegraph
-    ./flamegraph.pl \
+    scalac-profiling$ cd Flamegraph
+    ```
+
+4. Generate a flamegraph using the `flamegraph.pl` script.
+
+   Replace `/home/zainab/lsug/akka/akka-stream-typed/target/classes/META-INF/profiledb/graphs/implicit-searches-1563721527947.flamegraph` with the fill path to your flamegraph file.
+
+    ```console
+    Flamegraph$ ./flamegraph.pl \
     --hash --countname="μs" \
     --color=scala-compilation \
-    $PATH_TO_FLAMEGRAPH_FILE \
+    /home/zainab/lsug/akka/akka-stream-typed/target/classes/META-INF/profiledb/graphs/implicit-searches-1563721527947.flamegraph \
      > akka-stream-typed.svg
     ```
 
@@ -409,14 +505,64 @@ Notice that there's a large red chunk labelled `Unit => akka.actor.typed.ActorRe
 
 To figure out why these implicit searches are failing, add the `-Xlog-implicits` compiler option.
 
-Compile `akka-stream-typed` again.
+1. In `akka/project/AkkaBuild.scala` add the compiler option to the `DefaultScalacOptions`.
 
-```console
-$ bloop clean
-$ bloop compile --pipeline akka-stream-typed &> log-implicits.txt
-```
+   ```scala
+   final val DefaultScalacOptions = Seq("-encoding", "UTF-8", "-feature", "-unchecked", "-Xlog-reflective-calls") ++
+     Seq(
+       "-Ystatistics",
+       "-Xlog-implicits",
+       "-Ycache-plugin-class-loader:last-modified",
+       "-P:scalac-profiling:no-profiledb",
+       "-P:scalac-profiling:show-profiles",
+       "-P:scalac-profiling:sourceroot:/home/zainab/lsug/akka"
+     )
+   ```
 
-You'll notice the following messages
+2. Reload and check that the `-Xlog-implicits` option has been added
+
+   ```console
+   akka> reload
+   akka> show akka-stream-typed/scalacOptions
+   ...
+   [info] * -Xlog-implicits
+   ...
+   ```
+
+2. Export the build with `bloopInstall`
+
+   ```console
+   akka> bloopInstall
+   ```
+   The `-Xlog-implicits` option should now be added to the `.bloop/akka-stream-typed.json` file:
+
+   ```json
+   {
+       "version" : "1.1.2",
+       "project" : {
+           "name" : "akka-stream-typed",
+           ...
+           "scala" : {
+               ...
+               "options" : [
+                   ...
+                   "-Xlog-implicits",
+                   ...
+               ],
+               ...
+           }
+       }
+   }
+   ```
+
+3. Compile the project and pipe the results to a `implicits.txt` file.
+
+   ```console
+   akka$ bloop clean
+   akka$ bloop compile --pipeline akka-stream-typed &> implicits.txt
+   ```
+
+Open the `implicits.txt` file. You'll notice the following messages
 
 ```
  akka-actor/src/main/scala/akka/actor/dsl/Inbox.scala:126:62
@@ -425,22 +571,40 @@ You'll notice the following messages
       L126:             case Some(q) ⇒ { clientsByTimeout -= q; q.client ! msg }
 ```
 
-This means that an implicit search failed in  `akka/actor/dsl/Inbox.scala` at line 126, column 62.
-This corresponds to the line
+This is a rather cryptic message.  Let's decompose it
+
+```
+ akka-actor/src/main/scala/akka/actor/dsl/Inbox.scala:126:62
+...
+      L126:             case Some(q) ⇒ { clientsByTimeout -= q; q.client ! msg }
+```
+
+This means that an implicit search was performed at line 126, character 62 of `Inbox.scala`.
+This corresponds to the `!` method on the line
 
 ```scala
             case Some(q) ⇒ { clientsByTimeout -= q; q.client ! msg }
 ```
 
-In order to compile this code, we perform a search for a value of type `ActorRef`.  The log doesn't tell us which method requires the implicit `ActorRef`, but we can assume that it is `!`.
-This is defined in the trait `ScalaActorRef` as
+This is defined in the trait `ScalaActorRef` in `akka/akka-actor/src/main/scala/akka/actor/ActorRef.scala`
 
 ```scala
   def !(message: Any)(implicit sender: ActorRef = Actor.noSender): Unit
 ```
 
-When searching for the implicit `sender`, the compiler tests the function `senderFromInbox`.  This search fails, as there is no implicit `inbox` in scope.
-This could be avoided by choosing a different location for the implicit `senderFromInbox` function.
+`...is not a valid implicit value for akka.actor.ActorRef` implies that the compiler was searching for an implicit value of type `ActorRef`.
+
+`...senderFromInbox is not a valid implicit value...` implies that the compiler tested the method `senderFromInbox`.  This is defined in `Inbox.scala`:
+
+```scala
+  implicit def senderFromInbox(implicit inbox: Inbox): ActorRef = inbox.receiver
+```
+
+`could not find implicit value for parameter inbox: Inbox.this.Inbox` implies that this test failed because there was no implicit `inbox` in scope.
+
+This test could be avoided by defining `senderFromInbox` in a more appropriate location.
+
+## Profiling implicit induction
 
 The `akka-stream-typed` project doesn't use any implicit induction, so we won't go into details on profiling it here.  You can learn more about profiling implicit induction in the [Scala blog post on scalac profiling](https://www.scala-lang.org/blog/2018/06/04/scalac-profiling.html).
 
@@ -451,4 +615,4 @@ The `akka-stream-typed` project doesn't use any implicit induction, so we won't 
  - Delete your unused code
  - Upgrade Scala
  - Use Graal
- - Debug your typer
+ - Profile your typer
