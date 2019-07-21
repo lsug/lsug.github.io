@@ -36,7 +36,7 @@ You will make your life much, much easier if you install these tools before the 
 
 Start the bloop server beforehand, as this will download more dependencies.
 
-### ArchLinux
+### ArchLinux Setup
 
 1. Install the following tools with `pacman`:
 
@@ -112,11 +112,64 @@ scalac-profiling$
 scalac-profiling$ git submodule update --init
 ```
 
-### MacOS
+### MacOS Setup
+
+These instructions are courtesy of Rory Graves.  Thank you Rory!
+
+The easiest way to install packages on Mac is via homebrew
+
+#### Homebrew
+
+https://brew.sh/
+
+Run:
+
+```console
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+
+#### XCode
+
+Run:
+```console
+xcode-select --install
+```
+
+#### Java8
+
+```
+brew tap caskroom/versions brew cask install java8
+```
+
+#### Graphviz
+
+```
+$ brew install graphviz
+```
+
+#### SBT  1:
+
+```console
+$ brew install sbt@1
+```
+
+Other SBT options can be found on the SBT [Setup guide](https://www.scala-sbt.org/release/docs/Setup.html)
+
+#### git
+
+```console
+$ brew install git
+```
 
 #### Zipkin
 
 See the Zipkin instructions for ArchLinux.
+
+#### Graal
+
+https://www.graalvm.org/downloads/
+
+You can download the CE version from Github or the EE version from OTN - n.b. The EE one is faster, but you need a license for commercial use.
 
 #### Bloop repository
 
