@@ -8,42 +8,134 @@ categories: jekyll update
 
 # Prerequisites
 
+## Sign up!
+
+- Sign up to the [Meetup](https://www.meetup.com/london-scala/events/260846887/?gj=co2&rv=co2&_xtd=gatlbWFpbF9jbGlja9oAJDQwNzM3YjljLTdmMTQtNDRjMi04NjI2LThhNDdiODZkNmZkNw).
+- Sign up to [SkillsMatter](https://skillsmatter.com/meetups/12565-workshop-improving-compile-times) so you can enter the building
+- Join the [Gitter channel](https://gitter.im/lsug/23-07-19-workshop)
+
+## Tools
+
 This workshop involves an unwieldy amount of tools.
 
 Please come with the following tools installed, as we won't have time to set these up within the workshop.
+
+You will make your life much, much easier if you install these tools before the workshop.  Rory Graves has kindly put together some [setup instructions](https://docs.google.com/document/d/1-Tq3wpqHgH8XIIM2noolVZWs2ENSOZhccS-TkFSdNIs/edit#).  If you have any problems, please ask on the Gitter channel.  We'll be very happy to help.
 
 - [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 - [Java 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 - [sbt 1.2.8](https://www.scala-sbt.org/release/docs/Setup.html)
 - [Scala 2.12.8 and 2.13.0](https://www.scala-lang.org/download/)
 - [Zipkin](https://zipkin.io/pages/quickstart.html) - either the docker image, jar or source code
-
-If you have time, it would be far, far better to install these tools too
 - [graphviz](https://www.graphviz.org/download/)
 - [bloop](https://scalacenter.github.io/bloop/setup)
 - [GraalVM](https://www.graalvm.org/downloads/) - either the Community or Enterprise edition
+- [clone my fork of the Akka repository](https://github.com/zainab-ali/akka)
 - [clone the Bloop GitHub repository](https://github.com/scalacenter/bloop)
 - [clone the Scalac Profiling repository](https://github.com/scalacenter/scalac-profiling)
-- [clone my fork of the Akka repository](https://github.com/zainab-ali/akka)
 
 Start the bloop server beforehand, as this will download more dependencies.
+
+### ArchLinux
+
+1. Install the following tools with `pacman`:
+
+   ```console
+   lsug$ pacman -S git jdk8-openjdk sbt graphviz
+   ```
+
+2. Install the following from the [AUR](https://wiki.archlinux.org/index.php/Arch_User_Repository) with your favourite tool (I use `auracle`)
+   - bloop
+   - graal-bin
+
+3. Create an `lsug` directory and clone my fork of `akka`.  Update `akka-stream-typed`.  This will download all of its dependencies.
+
+```console
+   lsug$ git clone https://github.com/zainab-ali/akka.git --branch workshop-start --single-branch --depth=1
+   lsug$ cd akka
+   lsug$ sbt
+   akka> akka-stream-typed/update
+```
+
+#### Java 8
+
+Check that you have Java 8 and graal installed
+
+```console
+lsug$ archlinux-java status
+Available Java environments:
+  java-8-openjdk (default)
+  java-8-graal
+```
+
+You can switch between java versions with the `archlinux-java set` command.
+
+#### Zipkin
+
+If you're using docker, start the `openzipkin/zipkin` container
+
+```console
+lsug$ docker
+lsug$ docker run -d -p 9411:9411 --name zipkin openzipkin/zipkin
+lsug$ docker stop zipkin
+```
+
+Alternatively, download the zipkin jar
+
+```console
+lsug$ mkdir zipkin
+lsug$ cd zipkin
+zipkin$ curl -sSL https://zipkin.io/quickstart.sh | bash -s
+zipkin$ ls
+zipkin.jar
+```
+
+#### Bloop
+
+Clone bloop and update its submodules
+
+```console
+lsug$ git clone https://github.com/scalacenter/bloop.git --single-branch --depth=1
+lsug$ cd bloop
+bloop$
+bloop$ git submodule update --init
+```
+
+#### Scalac-profiling
+
+Clone scalac-profiling and update its submodules
+
+```console
+lsug$ git clone https://github.com/scalacenter/scalac-profiling.git --single-branch --depth=1
+lsug$ cd scalac-profiling
+scalac-profiling$
+scalac-profiling$ git submodule update --init
+```
+
+### MacOS
+
+#### Zipkin
+
+See the Zipkin instructions for ArchLinux.
+
+#### Bloop repository
+
+See the bloop repository instructions for ArchLinux.
+
+#### Scalac-Profiling repository
+
+See the scalac-profiling repository instructions for ArchLinux.
 
 # Checkout your project
 
 For this workshop, we'll be using [akka](https://github.com/akka/akka).  The akka codebase is in pretty good condition, so we'll use an older version to make improvements on.
 
-1. Clone **my fork** of akka
+1. Clone the `workshop-start` branch of **my fork** of akka
 
    ```console
-   lsug$ git clone https://github.com/zainab-ali/akka.git
+   lsug$ git clone https://github.com/zainab-ali/akka.git --branch workshop-start --single-branch --depth=1
    lsug$ cd akka
    akka$
-   ```
-
-2. Checkout the branch `workshop-start`.
-
-   ```console
-   akka$ git checkout workshop-start
    ```
 
 # Profiling
@@ -54,7 +146,7 @@ Bloop is a build server we can use to inspect the akka build.
 
 1. Follow the [Bloop Installation Guide](https://scalacenter.github.io/bloop/setup) to install bloop.
 
-2. Create the file `akka/project/bloop.sbt` with the contents
+2. The the file `akka/project/bloop.sbt` adds the bloop plugin
 
    ```scala
    addSbtPlugin("ch.epfl.scala" % "sbt-bloop" % "1.3.2")
@@ -129,25 +221,7 @@ Bloop outputs build traces.  These can be viewed with [Zipkin](https://zipkin.io
 
 Let's compile `akka-stream-typed` a few more times.
 
-1. Create a file `akka/warmup.sh` with the following contents
-
-   ```sh
-   #!/bin/bash
-
-   for i in {1..10}; do
-      echo "Iteration $i"
-      bloop clean
-      bloop compile $1
-   done
-   ```
-
-2. Make this executable
-
-   ```console
-   akka$ chmod u+x warmup.sh
-   ```
-
-3. Run this with the project `akka-stream-typed`
+3. Run the `warmup.sh` script with the project `akka-stream-typed`
 
    ```console
    akka$ ./warmup.sh akka-stream-typed
@@ -211,7 +285,7 @@ Bloop contains a benchmarking suite based on JMH.
 1. Checkout bloop
 
    ```console
-   lsug$ git clone https://github.com/scalacenter/bloop.git
+   lsug$ git clone https://github.com/scalacenter/bloop.git --single-branch --depth=1
    lsug$ cd bloop
    bloop$
    bloop$ git submodule update --init
@@ -471,7 +545,7 @@ We will use the [scalac-profiling](https://github.com/scalacenter/scalac-profili
 4.  We now need to process the `.flamegraph` file into a flamegraph.  Clone the `scalac-profiling` repository.
 
     ```console
-    lsug$ git clone https://github.com/scalacenter/scalac-profiling.git
+    lsug$ git clone https://github.com/scalacenter/scalac-profiling.git --single-branch --depth=1
     lsug$ cd scalac-profiling
     scalac-profiling$
     scalac-profiling$ git submodule update --init
