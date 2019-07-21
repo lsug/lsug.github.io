@@ -12,19 +12,21 @@ This workshop involves an unwieldy amount of tools.
 
 Please come with the following tools installed, as we won't have time to set these up within the workshop.
 
-- [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+- [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 - [Java 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 - [sbt 1.2.8](https://www.scala-sbt.org/release/docs/Setup.html)
 - [Scala 2.12.8 and 2.13.0](https://www.scala-lang.org/download/)
-- [docker](https://docs.docker.com/install/)
+- [Zipkin](https://zipkin.io/pages/quickstart.html) - either the docker image, jar or source code
 
 If you have time, it would be far, far better to install these tools too
 - [graphviz](https://www.graphviz.org/download/)
 - [bloop](https://scalacenter.github.io/bloop/setup)
-- [GraalVm](https://www.graalvm.org/downloads/)
+- [GraalVM](https://www.graalvm.org/downloads/) - either the Community or Enterprise edition
 - [clone the Bloop GitHub repository](https://github.com/scalacenter/bloop)
 - [clone the Scalac Profiling repository](https://github.com/scalacenter/scalac-profiling)
 - [clone my fork of the Akka repository](https://github.com/zainab-ali/akka)
+
+Start the bloop server beforehand, as this will download more dependencies.
 
 # Checkout your project
 
@@ -33,27 +35,26 @@ For this workshop, we'll be using [akka](https://github.com/akka/akka).  The akk
 1. Clone **my fork** of akka
 
    ```console
-   $ git clone https://github.com/zainab-ali/akka.git
+   lsug$ git clone https://github.com/zainab-ali/akka.git
+   lsug$ cd akka
+   akka$
    ```
 
 2. Checkout the branch `workshop-start`.
 
    ```console
-   $ cd akka
-   $ git checkout workshop-start
+   akka$ git checkout workshop-start
    ```
-
-This is a build from December 2018
 
 # Profiling
 
 ## Bloop
 
-Bloop is a build server which emits build traces.  We can use it to inspect the akka build.
+Bloop is a build server we can use to inspect the akka build.
 
 1. Follow the [Bloop Installation Guide](https://scalacenter.github.io/bloop/setup) to install bloop.
 
-2. Add the bloop sbt plugin to `akka/project/bloop.sbt`
+2. Create the file `akka/project/bloop.sbt` with the contents
 
    ```scala
    addSbtPlugin("ch.epfl.scala" % "sbt-bloop" % "1.3.2")
@@ -62,7 +63,8 @@ Bloop is a build server which emits build traces.  We can use it to inspect the 
 2. Open an sbt shell in the `akka` directory
 
    ```console
-   $ sbt
+   akka$ sbt
+   akka>
    ```
 
    Keep the sbt shell open for the workshop.
@@ -70,7 +72,7 @@ Bloop is a build server which emits build traces.  We can use it to inspect the 
 3. Export the build
 
    ```console
-   sbt> bloopInstall
+   akka> bloopInstall
    ```
 
 You should now be able to use `bloop` to compile your project.
@@ -78,20 +80,31 @@ You should now be able to use `bloop` to compile your project.
 Check that you can call bloop
 
 ```console
-$ bloop --help
+akka$ bloop --help
+
+bloop 1.3.2
+Usage: bloop [options] [command] [command-options]
+
+Available commands: about, autocomplete, bsp, clean, compile, configure, console, help, link, projects, run, test
 ```
 
 Try listing akka's projects:
 
 ```console
-$ bloop projects
+akka$ bloop projects
+
+akka
+akka-actor
+akka-actor-test
+akka-actor-testkit-typed
+...
 ```
 
 ### Viewing build traces
 
-Bloop outputs build traces.  These can be viewed with Zipkin.
+Bloop outputs build traces.  These can be viewed with [Zipkin](https://zipkin.io/).
 
-1. Pull and start zipkin.
+1. Pull and start Zipkin.
 
    ```console
    $ docker run -d -p 9411:9411 openzipkin/zipkin
@@ -100,24 +113,40 @@ Bloop outputs build traces.  These can be viewed with Zipkin.
 2. Compile the `akka-stream-typed` project
 
    ```console
-   bloop compile akka-stream-typed
+   akka$ bloop compile akka-stream-typed
    ```
 
-   Bloop should detect zipkin automatically and emit traces to it.
+   Bloop should detect Zipkin automatically and emit traces to it.
 
    You should be able to see Zipkin traces at [http://localhost:9411/zipkin/](http://localhost:9411/zipkin/)
 
 Let's compile `akka-stream-typed` a few more times.
 
-```console
-$ for i in {1..10}; do
-$   echo "Iteration $i"
-$   bloop clean
-$   bloop compile akka-stream-typed
-$ done
-```
+1. Create a file `warmup.sh` with the following contents
 
-Bloop uses the same JVM instance each time it compiles the project.  Notice that the compilation times get shorter and shorter as the JVM warms up.
+   ```sh
+   #!/bin/bash
+
+   for i in {1..10}; do
+      echo "Iteration $i"
+      bloop clean
+      bloop compile $1
+   done
+   ```
+
+2. Make this executable
+
+   ```console
+   akka $ chmod u+x warmup.sh
+   ```
+
+3. Run this with the project `akka-stream-typed`
+
+   ```console
+   akka $ ./warmup.sh akka-stream-typed
+   ```
+
+Take a look at the Zipkin traces.  Bloop uses the same JVM instance each time it compiles the project.  Notice that the compilation times get shorter and shorter as the JVM warms up.
 
 ### Examining a trace
 
@@ -145,7 +174,7 @@ $   bloop compile --pipeline akka-stream-typed
 $ done
 ```
 
-Take a look at the Zipkin trace.  You should notice that the `scalac` spans start before the previous ones have finished.
+Sort the Zipkin traces by newest first.  You should notice that the `scalac` spans start before the previous ones have finished.
 
 # Benchmarking
 
