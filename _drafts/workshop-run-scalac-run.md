@@ -180,7 +180,7 @@ See the bloop repository instructions for ArchLinux.
 
 See the scalac-profiling repository instructions for ArchLinux.
 
-# Checkout your project
+# Workshop contents
 
 For this workshop, we'll be using [akka](https://github.com/akka/akka).  The akka codebase is in pretty good condition, so we'll use an older version to make improvements on.
 
