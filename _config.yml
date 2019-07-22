@@ -19,14 +19,16 @@ description: >- # this means to ignore newlines until "baseurl:"
         Collection of the talks taking place at Scala User Group in London, UK
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "lsug.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: londonscala 
+twitter_username: londonscala
 github_username:  lsug
 
 # Build settings
 markdown: kramdown
-theme: minima
+theme: jekyll-theme-hydeout
+remote_theme: fongandrew/hydeout
 plugins:
   - jekyll-feed
+paginate: 5
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

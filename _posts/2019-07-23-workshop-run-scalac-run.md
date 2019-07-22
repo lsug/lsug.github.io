@@ -1,9 +1,9 @@
 ---
 layout: post
 title:  "Workshop: Run Scalac, run!"
-date:   2019-07-17 19:04:06 +0100
+date:   2019-07-21 19:04:06 +0100
 author: Zainab Ali
-categories: jekyll update
+categories: workshop scala
 ---
 
 # Prerequisites
