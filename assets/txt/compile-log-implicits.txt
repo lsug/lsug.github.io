@@ -1,0 +1,1766 @@
+[info] Loading settings for project global-plugins from plugins.sbt,metals.sbt,bloop.sbt ...
+[info] Loading global plugins from /home/zainab/.sbt/1.0/plugins
+[info] Loading settings for project akka-build from plugins.sbt,bloop.sbt ...
+[info] Loading project definition from /home/zainab/lsug/akka/project
+[success] Generated .bloop/akka-build.json
+[success] Total time: 2 s, completed 22-Jul-2019 12:49:16
+[info] Loading settings for project akka from build.sbt ...
+[info] Resolving key references (38804 settings) ...
+[info] Set current project to akka (in build file:/home/zainab/lsug/akka/)
+[info] sbt server started at local:///home/zainab/.sbt/1.0/server/0c51eeac5c163631d00a/sock
+akka > [info] Compiling 187 Scala sources and 27 Java sources to /home/zainab/lsug/akka/akka-actor/target/classes ...
+[info] Enabling statistics, measuring overhead = 27.6699ns to 109.8291ns per timer
+[info] *** Cumulative statistics at phase parser
+[info] #created tree nodes           : 153974
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala-2.12/akka/util/ByteIterator.scala:415:69: materializing requested scala.reflect.type.ClassTag[Byte] using scala.reflect.`package`.materializeClassTag[Byte]()
+[info]     if (that.isEmpty) this else ByteIterator.ByteArrayIterator(that.toArray)
+[info]                                                                     ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala-2.13-/akka/util/ByteString.scala:139:56: materializing requested scala.reflect.type.ClassTag[Byte] using scala.reflect.`package`.materializeClassTag[Byte]()
+[info]   val empty: ByteString = CompactByteString(Array.empty[Byte])
+[info]                                                        ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala-2.13-/akka/util/ByteString.scala:257:57: materializing requested scala.reflect.type.ClassTag[Byte] using scala.reflect.`package`.materializeClassTag[Byte]()
+[info]     val empty: ByteString1 = new ByteString1(Array.empty[Byte])
+[info]                                                         ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala-2.13-/akka/util/ByteString.scala:746:59: materializing requested scala.reflect.type.ClassTag[Byte] using scala.reflect.`package`.materializeClassTag[Byte]()
+[info]   protected[ByteString] def toArray: Array[Byte] = toArray[Byte]
+[info]                                                           ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala-2.13-/akka/util/ByteString.scala:850:9: refArrayOps is not a valid implicit value for bytes.type => ?{def isEmpty: ?} because:
+[info] inferred type arguments [Byte] do not conform to method refArrayOps's type parameter bounds [T <: AnyRef]
+[info]     if (bytes.isEmpty) empty else ByteString.ByteString1C(bytes.clone)
+[info]         ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala-2.13-/akka/util/ByteString.scala:869:81: materializing requested scala.reflect.type.ClassTag[Byte] using scala.reflect.`package`.materializeClassTag[Byte]()
+[info]     else ByteString.ByteString1C(bytes.map(x => num.toInt(x).toByte)(collection.breakOut))
+[info]                                                                                 ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala-2.13-/akka/util/ByteString.scala:916:69: materializing requested scala.reflect.type.ClassTag[Byte] using scala.reflect.`package`.materializeClassTag[Byte]()
+[info]   val empty: CompactByteString = ByteString.ByteString1C(Array.empty[Byte])
+[info]                                                                     ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/AkkaException.scala:22:26: materializing requested scala.reflect.type.ClassTag[StackTraceElement] using scala.reflect.`package`.materializeClassTag[StackTraceElement]()
+[info]       case null => Array.empty
+[info]                          ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/Main.scala:32:97: materializing requested scala.reflect.type.ClassTag[akka.actor.Actor] using scala.reflect.`package`.materializeClassTag[akka.actor.Actor]()
+[info]         val appClass = system.asInstanceOf[ExtendedActorSystem].dynamicAccess.getClassFor[Actor](args(0)).get
+[info]                                                                                                 ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/actor/ActorCell.scala:376:43: materializing requested scala.reflect.type.ClassTag[akka.actor.Actor] using scala.reflect.`package`.materializeClassTag[akka.actor.Actor]()
+[info]   final val terminatedProps: Props = Props((throw IllegalActorStateException("This Actor has been terminated")): Actor)
+[info]                                           ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/actor/ActorRefProvider.scala:464:57: materializing requested scala.reflect.type.ClassTag[akka.actor.SupervisorStrategyConfigurator] using scala.reflect.`package`.materializeClassTag[akka.actor.SupervisorStrategyConfigurator]()
+[info]       .createInstanceFor[SupervisorStrategyConfigurator](settings.SupervisorStrategyClass, EmptyImmutableSeq)
+[info]                                                         ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/actor/ActorSystem.scala:273:38: materializing requested scala.reflect.type.ClassTag[akka.actor.BootstrapSetup] using scala.reflect.`package`.materializeClassTag[akka.actor.BootstrapSetup]()
+[info]     val bootstrapSettings = setup.get[BootstrapSetup]
+[info]                                      ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/actor/ActorSystem.scala:357:11: materializing requested scala.reflect.type.ClassTag[akka.actor.BootstrapSetup] using scala.reflect.`package`.materializeClassTag[akka.actor.BootstrapSetup]()
+[info]       .get[BootstrapSetup]
+[info]           ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/actor/ActorSystem.scala:857:51: materializing requested scala.reflect.type.ClassTag[akka.event.LoggingFilter] using scala.reflect.`package`.materializeClassTag[akka.event.LoggingFilter]()
+[info]     dynamicAccess.createInstanceFor[LoggingFilter](LoggingFilter, arguments).get
+[info]                                                   ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/actor/ActorSystem.scala:873:54: materializing requested scala.reflect.type.ClassTag[akka.actor.ActorRefProvider] using scala.reflect.`package`.materializeClassTag[akka.actor.ActorRefProvider]()
+[info]     dynamicAccess.createInstanceFor[ActorRefProvider](ProviderClass, arguments).get
+[info]                                                      ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/actor/ActorSystem.scala:900:38: materializing requested scala.reflect.type.ClassTag[scala.concurrent.ExecutionContext] using scala.reflect.`package`.materializeClassTag[scala.concurrent.ExecutionContext]()
+[info]       .getObjectFor[ExecutionContext]("scala.concurrent.Future$InternalCallbackExecutor$")
+[info]                                      ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/actor/ActorSystem.scala:903:42: materializing requested scala.reflect.type.ClassTag[scala.concurrent.ExecutionContext] using scala.reflect.`package`.materializeClassTag[scala.concurrent.ExecutionContext]()
+[info]           .getObjectFor[ExecutionContext]("scala.concurrent.ExecutionContext$parasitic$")
+[info]                                          ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/actor/ActorSystem.scala:966:55: materializing requested scala.reflect.type.ClassTag[akka.event.DeadLetterListener] using scala.reflect.`package`.materializeClassTag[akka.event.DeadLetterListener]()
+[info]       logDeadLetterListener = Some(systemActorOf(Props[DeadLetterListener], "deadLetterListener"))
+[info]                                                       ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/actor/ActorSystem.scala:1030:36: materializing requested scala.reflect.type.ClassTag[akka.actor.Scheduler] using scala.reflect.`package`.materializeClassTag[akka.actor.Scheduler]()
+[info]       .createInstanceFor[Scheduler](
+[info]                                    ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/actor/ActorSystem.scala:1106:43: materializing requested scala.reflect.type.ClassTag[AnyRef] using scala.reflect.`package`.materializeClassTag[AnyRef]()
+[info]         dynamicAccess.getObjectFor[AnyRef](fqcn).recoverWith {
+[info]                                           ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/actor/ActorSystem.scala:1107:60: materializing requested scala.reflect.type.ClassTag[AnyRef] using scala.reflect.`package`.materializeClassTag[AnyRef]()
+[info]           case _ => dynamicAccess.createInstanceFor[AnyRef](fqcn, Nil)
+[info]                                                            ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/actor/ActorSystem.scala:1145:28: math.this.Ordering.comparatorToOrdering is not a valid implicit value for scala.math.Ordering[akka.actor.ActorRef] because:
+[info] hasMatchingSymbol reported error: could not find implicit value for parameter cmp: java.util.Comparator[akka.actor.ActorRef]
+[info]               (toDie.toSeq.sorted.mkString("\n" + indent + "   |    toDie: ", "\n" + indent + "   |           ", ""))
+[info]                            ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/actor/ActorSystem.scala:1153:61: math.this.Ordering.comparatorToOrdering is not a valid implicit value for scala.math.Ordering[akka.actor.ActorRef] because:
+[info] hasMatchingSymbol reported error: could not find implicit value for parameter cmp: java.util.Comparator[akka.actor.ActorRef]
+[info]             val children = cell.childrenRefs.children.toSeq.sorted
+[info]                                                             ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/actor/ActorSystem.scala:1169:35: dispatcher is not a valid implicit value for scala.concurrent.ExecutionContext because:
+[info] candidate implicit method dispatcher in class ActorSystem is shadowed by value dispatcher in class ActorSystemImpl
+[info]     upStreamTerminated.onComplete { t =>
+[info]                                   ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/actor/ActorSystem.scala:1183:87: dispatcher is not a valid implicit value for scala.concurrent.ExecutionContext because:
+[info] candidate implicit method dispatcher in class ActorSystem is shadowed by value dispatcher in class ActorSystemImpl
+[info]         case some if ref.compareAndSet(some, p) => some.completeWith(p.future.andThen { case _ => r.run() })
+[info]                                                                                       ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/actor/Deployer.scala:218:41: materializing requested scala.reflect.type.ClassTag[akka.routing.RouterConfig] using scala.reflect.`package`.materializeClassTag[akka.routing.RouterConfig]()
+[info]         .createInstanceFor[RouterConfig](fqn, args1)
+[info]                                         ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/actor/Deployer.scala:223:47: materializing requested scala.reflect.type.ClassTag[akka.routing.RouterConfig] using scala.reflect.`package`.materializeClassTag[akka.routing.RouterConfig]()
+[info]               .createInstanceFor[RouterConfig](fqn, args2)
+[info]                                               ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/actor/FSM.scala:955:17: materializing requested scala.reflect.type.ClassTag[(LoggingFSM.this.Event, AnyRef)] using scala.reflect.`package`.materializeClassTag[(LoggingFSM.this.Event, AnyRef)]()
+[info]       events.zip(states).filter(_._1 ne null).map(x => LogEntry(x._2.asInstanceOf[S], x._1.stateData, x._1.event))
+[info]                 ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/actor/FSM.scala:955:50: materializing requested scala.reflect.type.ClassTag[akka.actor.FSM.LogEntry[S,D]] using scala.reflect.`package`.materializeClassTag[akka.actor.FSM.LogEntry[S,D]]()
+[info]       events.zip(states).filter(_._1 ne null).map(x => LogEntry(x._2.asInstanceOf[S], x._1.stateData, x._1.event))
+[info]                                                  ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/actor/LightArrayRevolverScheduler.scala:212:38: materializing requested scala.reflect.type.ClassTag[akka.actor.LightArrayRevolverScheduler.TaskQueue] using scala.reflect.`package`.materializeClassTag[akka.actor.LightArrayRevolverScheduler.TaskQueue]()
+[info]     val wheel = Array.fill(WheelSize)(new TaskQueue)
+[info]                                      ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/actor/Props.scala:41:26: materializing requested scala.reflect.type.ClassTag[akka.actor.Props.EmptyActor] using scala.reflect.`package`.materializeClassTag[akka.actor.Props.EmptyActor]()
+[info]   final val empty = Props[EmptyActor]
+[info]                          ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/actor/ReflectiveDynamicAccess.scala:29:34: materializing requested scala.reflect.type.ClassTag[Class[_]] using scala.reflect.`package`.materializeClassTag[Class[_]]()
+[info]       val types = args.map(_._1).toArray
+[info]                                  ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/actor/ReflectiveDynamicAccess.scala:30:35: materializing requested scala.reflect.type.ClassTag[AnyRef] using scala.reflect.`package`.materializeClassTag[AnyRef]()
+[info]       val values = args.map(_._2).toArray
+[info]                                   ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/actor/TypedActor.scala:79:19: materializing requested scala.reflect.type.ClassTag[akka.actor.TypedActor.TypedActor[R,T]] using scala.reflect.`package`.materializeClassTag[akka.actor.TypedActor.TypedActor[R,T]]()
+[info]     val ap = Props(new TypedActor.TypedActor[R, T](proxyVar, c(), i)).withDeploy(props.actorProps.deploy)
+[info]                   ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/actor/TypedActor.scala:90:19: materializing requested scala.reflect.type.ClassTag[akka.actor.TypedActor.TypedActor[R,T]] using scala.reflect.`package`.materializeClassTag[akka.actor.TypedActor.TypedActor[R,T]]()
+[info]     val ap = Props(new akka.actor.TypedActor.TypedActor[R, T](proxyVar, c(), i)).withDeploy(props.actorProps.deploy)
+[info]                   ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/actor/TypedActor.scala:163:103: materializing requested scala.reflect.type.ClassTag[(Int, String, Array[Byte])] using scala.reflect.`package`.materializeClassTag[(Int, String, Array[Byte])]()
+[info]         SerializedMethodCall(method.getDeclaringClass, method.getName, method.getParameterTypes, Array())
+[info]                                                                                                       ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/actor/TypedActor.scala:202:51: materializing requested scala.reflect.type.ClassTag[AnyRef] using scala.reflect.`package`.materializeClassTag[AnyRef]()
+[info]           case a if a.length == 0 => Array[AnyRef]()
+[info]                                                   ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/actor/TypedActor.scala:728:26: materializing requested scala.reflect.type.ClassTag[Class[_]] using scala.reflect.`package`.materializeClassTag[Class[_]]()
+[info]         props.interfaces.toArray,
+[info]                          ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/dispatch/AbstractDispatcher.scala:355:58: materializing requested scala.reflect.type.ClassTag[akka.dispatch.ExecutorServiceConfigurator] using scala.reflect.`package`.materializeClassTag[akka.dispatch.ExecutorServiceConfigurator]()
+[info]           .createInstanceFor[ExecutorServiceConfigurator](fqcn, args)
+[info]                                                          ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/dispatch/Dispatchers.scala:250:60: materializing requested scala.reflect.type.ClassTag[akka.dispatch.MessageDispatcherConfigurator] using scala.reflect.`package`.materializeClassTag[akka.dispatch.MessageDispatcherConfigurator]()
+[info]           .createInstanceFor[MessageDispatcherConfigurator](fqn, args)
+[info]                                                            ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/dispatch/Mailboxes.scala:114:67: materializing requested scala.reflect.type.ClassTag[AnyRef] using scala.reflect.`package`.materializeClassTag[AnyRef]()
+[info]     case x                    => dynamicAccess.getClassFor[AnyRef](x).get
+[info]                                                                   ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/dispatch/Mailboxes.scala:68:30: materializing requested scala.reflect.type.ClassTag[Any] using scala.reflect.`package`.materializeClassTag[Any]()
+[info]             .getClassFor[Any](k)
+[info]                              ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/dispatch/Mailboxes.scala:216:50: materializing requested scala.reflect.type.ClassTag[akka.dispatch.MailboxType] using scala.reflect.`package`.materializeClassTag[akka.dispatch.MailboxType]()
+[info]                   .createInstanceFor[MailboxType](fqcn, args)
+[info]                                                  ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/dispatch/affinity/AffinityPool.scala:154:63: materializing requested scala.reflect.type.ClassTag[akka.dispatch.affinity.AffinityPool.BoundedAffinityTaskQueue] using scala.reflect.`package`.materializeClassTag[akka.dispatch.affinity.AffinityPool.BoundedAffinityTaskQueue]()
+[info]   private[this] final val workQueues = Array.fill(parallelism)(new BoundedAffinityTaskQueue(affinityGroupSize))
+[info]                                                               ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/dispatch/affinity/AffinityPool.scala:329:47: materializing requested scala.reflect.type.ClassTag[akka.dispatch.affinity.QueueSelectorFactory] using scala.reflect.`package`.materializeClassTag[akka.dispatch.affinity.QueueSelectorFactory]()
+[info]       .createInstanceFor[QueueSelectorFactory](queueSelectorFactoryFQCN, immutable.Seq(classOf[Config] -> config))
+[info]                                               ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/dispatch/affinity/AffinityPool.scala:339:48: materializing requested scala.reflect.type.ClassTag[akka.dispatch.affinity.RejectionHandlerFactory] using scala.reflect.`package`.materializeClassTag[akka.dispatch.affinity.RejectionHandlerFactory]()
+[info]     .createInstanceFor[RejectionHandlerFactory](rejectionHandlerFactoryFCQN, Nil)
+[info]                                                ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/event/EventBus.scala:294:46: math.this.Ordering.comparatorToOrdering is not a valid implicit value for Ordering[akka.actor.ActorRef] because:
+[info] hasMatchingSymbol reported error: could not find implicit value for parameter cmp: java.util.Comparator[akka.actor.ActorRef]
+[info]   private val empty = immutable.TreeSet.empty[ActorRef]
+[info]                                              ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/event/Logging.scala:124:32: materializing requested scala.reflect.type.ClassTag[akka.actor.Actor] using scala.reflect.`package`.materializeClassTag[akka.actor.Actor]()
+[info]             .getClassFor[Actor](loggerName)
+[info]                                ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/event/Logging.scala:144:39: materializing requested scala.reflect.type.ClassTag[akka.actor.Actor] using scala.reflect.`package`.materializeClassTag[akka.actor.Actor]()
+[info]             system.systemActorOf(Props(new Actor {
+[info]                                       ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/event/Logging.scala:1448:83: refArrayOps is not a valid implicit value for a.type => ?{def toSeq: ?} because:
+[info] inferred type arguments [_] do not conform to method refArrayOps's type parameter bounds [T <: AnyRef]
+[info]     case a: Array[_] if !a.getClass.getComponentType.isPrimitive => formatImpl(t, a.toSeq)
+[info]                                                                                   ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/event/Logging.scala:1448:83: wrapRefArray is not a valid implicit value for a.type => ?{def toSeq: ?} because:
+[info] inferred type arguments [_] do not conform to method wrapRefArray's type parameter bounds [T <: AnyRef]
+[info]     case a: Array[_] if !a.getClass.getComponentType.isPrimitive => formatImpl(t, a.toSeq)
+[info]                                                                                   ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/event/Logging.scala:1449:83: refArrayOps is not a valid implicit value for a.type => ?{def map: ?} because:
+[info] inferred type arguments [_] do not conform to method refArrayOps's type parameter bounds [T <: AnyRef]
+[info]     case a: Array[_]                                             => formatImpl(t, a.map(_.asInstanceOf[AnyRef]).toSeq)
+[info]                                                                                   ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/event/Logging.scala:1449:83: wrapRefArray is not a valid implicit value for a.type => ?{def map: ?} because:
+[info] inferred type arguments [_] do not conform to method wrapRefArray's type parameter bounds [T <: AnyRef]
+[info]     case a: Array[_]                                             => formatImpl(t, a.map(_.asInstanceOf[AnyRef]).toSeq)
+[info]                                                                                   ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/event/Logging.scala:1449:88: materializing requested scala.reflect.type.ClassTag[AnyRef] using scala.reflect.`package`.materializeClassTag[AnyRef]()
+[info]     case a: Array[_]                                             => formatImpl(t, a.map(_.asInstanceOf[AnyRef]).toSeq)
+[info]                                                                                        ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/event/Logging.scala:1885:79: refArrayOps is not a valid implicit value for a.type => ?{def toIndexedSeq: ?} because:
+[info] inferred type arguments [_] do not conform to method refArrayOps's type parameter bounds [T <: AnyRef]
+[info]     case a: Array[_] if !a.getClass.getComponentType.isPrimitive => format(t, a.toIndexedSeq)
+[info]                                                                               ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/event/Logging.scala:1885:79: wrapRefArray is not a valid implicit value for a.type => ?{def toIndexedSeq: ?} because:
+[info] inferred type arguments [_] do not conform to method wrapRefArray's type parameter bounds [T <: AnyRef]
+[info]     case a: Array[_] if !a.getClass.getComponentType.isPrimitive => format(t, a.toIndexedSeq)
+[info]                                                                               ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/event/Logging.scala:1886:79: refArrayOps is not a valid implicit value for a.type => ?{def map: ?} because:
+[info] inferred type arguments [_] do not conform to method refArrayOps's type parameter bounds [T <: AnyRef]
+[info]     case a: Array[_]                                             => format(t, a.map(_.asInstanceOf[AnyRef]).toIndexedSeq)
+[info]                                                                               ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/event/Logging.scala:1886:79: wrapRefArray is not a valid implicit value for a.type => ?{def map: ?} because:
+[info] inferred type arguments [_] do not conform to method wrapRefArray's type parameter bounds [T <: AnyRef]
+[info]     case a: Array[_]                                             => format(t, a.map(_.asInstanceOf[AnyRef]).toIndexedSeq)
+[info]                                                                               ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/event/Logging.scala:1886:84: materializing requested scala.reflect.type.ClassTag[AnyRef] using scala.reflect.`package`.materializeClassTag[AnyRef]()
+[info]     case a: Array[_]                                             => format(t, a.map(_.asInstanceOf[AnyRef]).toIndexedSeq)
+[info]                                                                                    ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/io/Dns.scala:119:71: materializing requested scala.reflect.type.ClassTag[akka.io.DnsProvider] using scala.reflect.`package`.materializeClassTag[akka.io.DnsProvider]()
+[info]           val provider = system.dynamicAccess.getClassFor[DnsProvider](settings.ProviderObjectName).get.newInstance()
+[info]                                                                       ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/io/Dns.scala:166:50: materializing requested scala.reflect.type.ClassTag[akka.io.DnsProvider] using scala.reflect.`package`.materializeClassTag[akka.io.DnsProvider]()
+[info]     system.dynamicAccess.getClassFor[DnsProvider](Settings.ProviderObjectName).get.newInstance()
+[info]                                                  ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/io/dns/DnsResourceRecords.scala:30:33: materializing requested scala.reflect.type.ClassTag[Byte] using scala.reflect.`package`.materializeClassTag[Byte]()
+[info]     val addr = Array.ofDim[Byte](4)
+[info]                                 ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/io/dns/DnsResourceRecords.scala:50:33: materializing requested scala.reflect.type.ClassTag[Byte] using scala.reflect.`package`.materializeClassTag[Byte]()
+[info]     val addr = Array.ofDim[Byte](16)
+[info]                                 ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/io/dns/DnsSettings.scala:167:27: materializing requested scala.reflect.type.ClassTag[java.net.InetSocketAddress] using scala.reflect.`package`.materializeClassTag[java.net.InetSocketAddress]()
+[info]           servers.flatMap { server =>
+[info]                           ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/io/dns/DnsSettings.scala:177:39: materializing requested scala.reflect.type.ClassTag[T] using scala.reflect.`package`.materializeClassTag[T]()
+[info]       system.dynamicAccess.getClassFor("sun.net.dns.ResolverConfiguration").flatMap { c =>
+[info]                                       ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/io/dns/RecordType.scala:20:58: materializing requested scala.reflect.type.ClassTag[akka.io.dns.RecordType] using scala.reflect.`package`.materializeClassTag[akka.io.dns.RecordType]()
+[info]   private final val lookupTable = Array.ofDim[RecordType](256)
+[info]                                                          ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/io/dns/internal/AsyncDnsManager.scala:70:44: materializing requested scala.reflect.type.ClassTag[akka.io.dns.internal.DnsClient] using scala.reflect.`package`.materializeClassTag[akka.io.dns.internal.DnsClient]()
+[info]         dns.map(ns => factory.actorOf(Props(new DnsClient(ns))))
+[info]                                            ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/io/dns/internal/AsyncDnsManager.scala:97:45: materializing requested scala.reflect.type.ClassTag[akka.io.dns.DnsProtocol.Resolved] using scala.reflect.`package`.materializeClassTag[akka.io.dns.DnsProtocol.Resolved]()
+[info]       val reply = (resolver ? adapted).mapTo[DnsProtocol.Resolved].map { asyncResolved =>
+[info]                                             ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/io/dns/internal/AsyncDnsResolver.scala:106:44: materializing requested scala.reflect.type.ClassTag[akka.io.dns.internal.DnsClient.Answer] using scala.reflect.`package`.materializeClassTag[akka.io.dns.internal.DnsClient.Answer]()
+[info]     val result = (resolver ? message).mapTo[Answer]
+[info]                                            ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/io/dns/internal/DnsClient.scala:53:84: materializing requested scala.reflect.type.ClassTag[Byte] using scala.reflect.`package`.materializeClassTag[Byte]()
+[info]     udp ! Udp.Bind(self, new InetSocketAddress(InetAddress.getByAddress(Array.ofDim(4)), 0))
+[info]                                                                                    ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/japi/JavaAPI.scala:247:42: refArrayOps is not a valid implicit value for arr.type => ?{def toIndexedSeq: ?} because:
+[info] inferred type arguments [T] do not conform to method refArrayOps's type parameter bounds [T <: AnyRef]
+[info]     if ((arr ne null) && arr.length > 0) arr.toIndexedSeq else Nil
+[info]                                          ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/japi/JavaAPI.scala:247:42: wrapRefArray is not a valid implicit value for arr.type => ?{def toIndexedSeq: ?} because:
+[info] inferred type arguments [T] do not conform to method wrapRefArray's type parameter bounds [T <: AnyRef]
+[info]     if ((arr ne null) && arr.length > 0) arr.toIndexedSeq else Nil
+[info]                                          ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/pattern/Backoff.scala:610:14: materializing requested scala.reflect.type.ClassTag[akka.pattern.internal.BackoffOnRestartSupervisor] using scala.reflect.`package`.materializeClassTag[akka.pattern.internal.BackoffOnRestartSupervisor]()
+[info]         Props(
+[info]              ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/pattern/Backoff.scala:622:14: materializing requested scala.reflect.type.ClassTag[akka.pattern.internal.BackoffOnStopSupervisor] using scala.reflect.`package`.materializeClassTag[akka.pattern.internal.BackoffOnStopSupervisor]()
+[info]         Props(
+[info]              ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/pattern/BackoffOptions.scala:368:10: materializing requested scala.reflect.type.ClassTag[akka.pattern.internal.BackoffOnStopSupervisor] using scala.reflect.`package`.materializeClassTag[akka.pattern.internal.BackoffOnStopSupervisor]()
+[info]     Props(
+[info]          ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/pattern/BackoffOptions.scala:413:10: materializing requested scala.reflect.type.ClassTag[akka.pattern.internal.BackoffOnRestartSupervisor] using scala.reflect.`package`.materializeClassTag[akka.pattern.internal.BackoffOnRestartSupervisor]()
+[info]     Props(
+[info]          ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/pattern/BackoffSupervisor.scala:177:10: materializing requested scala.reflect.type.ClassTag[akka.pattern.internal.BackoffOnStopSupervisor] using scala.reflect.`package`.materializeClassTag[akka.pattern.internal.BackoffOnStopSupervisor]()
+[info]     Props(
+[info]          ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/routing/ConsistentHash.scala:32:10: materializing requested scala.reflect.type.ClassTag[Int] using scala.reflect.`package`.materializeClassTag[Int]()
+[info]     (nhr.toArray, nr.toArray)
+[info]          ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/routing/ConsistentHashing.scala:201:32: materializing requested scala.reflect.type.ClassTag[akka.routing.ConsistentRoutee] using scala.reflect.`package`.materializeClassTag[akka.routing.ConsistentRoutee]()
+[info]             else ConsistentHash(routees.map(ConsistentRoutee(_, selfAddress)), vnodes) // re-hash
+[info]                                ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/routing/Listeners.scala:47:30: self is not a valid implicit value for akka.actor.ActorRef because:
+[info] hasMatchingSymbol reported error: type mismatch;
+[info]  found   : akka.routing.Listeners with akka.actor.Actor
+[info]  required: akka.actor.ActorRef
+[info]     while (i.hasNext) i.next ! msg
+[info]                              ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/routing/MurmurHash.scala:55:57: materializing requested scala.reflect.type.ClassTag[Int] using scala.reflect.`package`.materializeClassTag[Int]()
+[info]     Iterator.iterate(hiddenMagicA)(nextMagicA).take(23).toArray
+[info]                                                         ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/routing/MurmurHash.scala:59:57: materializing requested scala.reflect.type.ClassTag[Int] using scala.reflect.`package`.materializeClassTag[Int]()
+[info]     Iterator.iterate(hiddenMagicB)(nextMagicB).take(23).toArray
+[info]                                                         ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/serialization/Serialization.scala:243:57: materializing requested scala.reflect.type.ClassTag[AnyRef] using scala.reflect.`package`.materializeClassTag[AnyRef]()
+[info]                 system.dynamicAccess.getClassFor[AnyRef](manifest) match {
+[info]                                                         ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/serialization/Serialization.scala:406:55: materializing requested scala.reflect.type.ClassTag[akka.serialization.Serializer] using scala.reflect.`package`.materializeClassTag[akka.serialization.Serializer]()
+[info]     system.dynamicAccess.createInstanceFor[Serializer](fqn, List(classOf[ExtendedActorSystem] -> system)).recoverWith {
+[info]                                                       ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/serialization/Serialization.scala:408:59: materializing requested scala.reflect.type.ClassTag[akka.serialization.Serializer] using scala.reflect.`package`.materializeClassTag[akka.serialization.Serializer]()
+[info]         system.dynamicAccess.createInstanceFor[Serializer](fqn, Nil).recoverWith {
+[info]                                                           ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/serialization/Serialization.scala:412:65: materializing requested scala.reflect.type.ClassTag[akka.serialization.Serializer] using scala.reflect.`package`.materializeClassTag[akka.serialization.Serializer]()
+[info]               system.dynamicAccess.createInstanceFor[Serializer](
+[info]                                                                 ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/serialization/Serialization.scala:423:31: materializing requested scala.reflect.type.ClassTag[akka.serialization.SerializationSetup] using scala.reflect.`package`.materializeClassTag[akka.serialization.SerializationSetup]()
+[info]     (system.settings.setup.get[SerializationSetup] match {
+[info]                               ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/serialization/Serialization.scala:454:51: materializing requested scala.reflect.type.ClassTag[Any] using scala.reflect.`package`.materializeClassTag[Any]()
+[info]     } yield (system.dynamicAccess.getClassFor[Any](className).get, serializers(alias))
+[info]                                                   ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/serialization/Serialization.scala:452:42: immutable.this.Map.canBuildFrom is not a valid implicit value for scala.collection.generic.CanBuildFrom[scala.collection.immutable.Map[String,String],(Class[_$3], akka.serialization.Serializer) forSome { type _$3 },That] because:
+[info] hasMatchingSymbol reported error: polymorphic expression cannot be instantiated to expected type;
+[info]  found   : [K, V]scala.collection.generic.CanBuildFrom[scala.collection.immutable.Map.Coll,(K, V),scala.collection.immutable.Map[K,V]]
+[info]     (which expands to)  [K, V]scala.collection.generic.CanBuildFrom[scala.collection.immutable.Map[_, _],(K, V),scala.collection.immutable.Map[K,V]]
+[info]  required: scala.collection.generic.CanBuildFrom[scala.collection.immutable.Map[String,String],(Class[_$3], akka.serialization.Serializer) forSome { type _$3 },?]
+[info]       (className: String, alias: String) <- settings.SerializationBindings
+[info]                                          ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/serialization/Serialization.scala:452:42: collection.this.Map.canBuildFrom is not a valid implicit value for scala.collection.generic.CanBuildFrom[scala.collection.immutable.Map[String,String],(Class[_$3], akka.serialization.Serializer) forSome { type _$3 },That] because:
+[info] hasMatchingSymbol reported error: polymorphic expression cannot be instantiated to expected type;
+[info]  found   : [K, V]scala.collection.generic.CanBuildFrom[scala.collection.Map.Coll,(K, V),scala.collection.Map[K,V]]
+[info]     (which expands to)  [K, V]scala.collection.generic.CanBuildFrom[scala.collection.Map[_, _],(K, V),scala.collection.Map[K,V]]
+[info]  required: scala.collection.generic.CanBuildFrom[scala.collection.immutable.Map[String,String],(Class[_$3], akka.serialization.Serializer) forSome { type _$3 },?]
+[info]       (className: String, alias: String) <- settings.SerializationBindings
+[info]                                          ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/serialization/Serialization.scala:452:42: collection.this.GenMap.canBuildFrom is not a valid implicit value for scala.collection.generic.CanBuildFrom[scala.collection.immutable.Map[String,String],(Class[_$3], akka.serialization.Serializer) forSome { type _$3 },That] because:
+[info] hasMatchingSymbol reported error: polymorphic expression cannot be instantiated to expected type;
+[info]  found   : [K, V]scala.collection.generic.CanBuildFrom[scala.collection.GenMap.Coll,(K, V),scala.collection.GenMap[K,V]]
+[info]     (which expands to)  [K, V]scala.collection.generic.CanBuildFrom[scala.collection.GenMap[_, _],(K, V),scala.collection.GenMap[K,V]]
+[info]  required: scala.collection.generic.CanBuildFrom[scala.collection.immutable.Map[String,String],(Class[_$3], akka.serialization.Serializer) forSome { type _$3 },?]
+[info]       (className: String, alias: String) <- settings.SerializationBindings
+[info]                                          ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/serialization/Serialization.scala:489:91: materializing requested scala.reflect.type.ClassTag[Any] using scala.reflect.`package`.materializeClassTag[Any]()
+[info]     (!className.startsWith("com.google.protobuf") || system.dynamicAccess.getClassFor[Any](className).isSuccess)
+[info]                                                                                           ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/serialization/Serializer.scala:356:40: materializing requested scala.reflect.type.ClassTag[Byte] using scala.reflect.`package`.materializeClassTag[Byte]()
+[info]   private[this] val empty = Array.empty[Byte]
+[info]                                        ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/serialization/Serializer.scala:407:32: materializing requested scala.reflect.type.ClassTag[Byte] using scala.reflect.`package`.materializeClassTag[Byte]()
+[info]   val nullAsBytes = Array[Byte]()
+[info]                                ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/util/ManifestInfo.scala:173:37: math.this.Ordering.comparatorToOrdering is not a valid implicit value for Ordering[akka.util.ManifestInfo.Version] because:
+[info] hasMatchingSymbol reported error: could not find implicit value for parameter cmp: java.util.Comparator[akka.util.ManifestInfo.Version]
+[info]         val highestVersion = values.max
+[info]                                     ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/util/Reflect.scala:33:50: materializing requested scala.reflect.type.ClassTag[Class[Int]] using scala.reflect.`package`.materializeClassTag[Class[Int]]()
+[info]       val m = c.getMethod("getCallerClass", Array(classOf[Int]): _*)
+[info]                                                  ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/util/Reflect.scala:34:52: materializing requested scala.reflect.type.ClassTag[AnyRef] using scala.reflect.`package`.materializeClassTag[AnyRef]()
+[info]       Some((i: Int) => m.invoke(null, Array[AnyRef](i.asInstanceOf[java.lang.Integer]): _*).asInstanceOf[Class[_]])
+[info]                                                    ^
+[info] *** Cumulative statistics at phase typer
+[info] time spent typechecking       : 1 spans, ()13042.564ms
+[info] time spent in lubs            : 734 spans, ()269.821ms (2.1%) aggregate, 78.394ms (0.6%) specific
+[info] time spent in <:<             : 357023 spans, ()669.137ms (5.1%) aggregate, 573.08ms (4.4%) specific
+[info] time spent in findmember      : 415898 spans, ()987.375ms (7.6%) aggregate, 648.663ms (5.0%) specific
+[info] time spent in findmembers     : 0 spans, ()0.0ms (0.0%) aggregate, 0.0ms (0.0%) specific
+[info] time spent in asSeenFrom      : 314190 spans, ()782.362ms (6.0%) aggregate, 627.436ms (4.8%) specific
+[info] time spent in baseTypeSeq     : 19102 spans, ()1002.59ms (7.7%) aggregate, 413.878ms (3.2%) specific
+[info] time spent in baseClasses     : 3260 spans, ()154.295ms (1.2%) aggregate, 88.409ms (0.7%) specific
+[info] time classfilereading         : 675 spans, ()464.496ms (3.6%)
+[info] time spent in failed          : 330 spans, ()172.483ms (1.3%)
+[info]   failed apply                : 7 spans, ()6.087ms (0.0%)
+[info]   failed op=                  : 118 spans, ()151.446ms (1.2%)
+[info] time spent ref scanning       : 11 spans, ()0.729ms (0.0%)
+[info] time spent in implicits       : 5762 spans, ()2487.29ms (19.1%)
+[info]   successful in scope         : 926 spans, ()511.523ms (3.9%)
+[info]   failed in scope             : 4836 spans, ()441.305ms (3.4%)
+[info]   successful of type          : 304 spans, ()622.91ms (4.8%)
+[info]   failed of type              : 4532 spans, ()171.675ms (1.3%)
+[info]   assembling parts            : 864 spans, ()190.5ms (1.5%)
+[info]   matchesPT                   : 5705 spans, ()90.954ms (0.7%)
+[info] time spent in macroExpand     : 81 spans, ()135.305ms (1.0%)
+[info] time spent in scope population: 71028 spans, ()24.298ms
+[info] #type symbols                 : 54992
+[info] #typechecked selections       : 33042
+[info] #symbols                      : 178475
+[info] #sametype ops                 : 140031
+[info] implicits instantiated for pruning: 547
+[info]   instantiated mismatches     : 12 (2.2%)
+[info] #toplevel lubs/glbs           : 734
+[info] #raw type creations           : 813994
+[info]   of which in failed          : 29872 (3.7%)
+[info]   of which in implicits       : 488869 (60.1%)
+[info] #class symbols                : 13795
+[info] #base type seqs               : 19266
+[info] avg base type seq length      : 6.9
+[info]   of which for compound types : 3695 (19.2%)
+[info]   of which for typerefs       : 15407 (80.0%)
+[info] #typechecked applications     : 23508
+[info] #unique types                 : 100061
+[info] #subtype ops                  : 357023
+[info]   of which in failed          : 2567 (0.7%)
+[info]   of which in implicit        : 32807 (9.2%)
+[info] #findMember ops               : 415898
+[info]   of which not found          : 255197 (61.4%)
+[info]   of which multiple overloaded: 6146 (1.5%)
+[info]   of which in failed          : 840 (0.2%)
+[info]   of which in implicit        : 17408 (4.2%)
+[info] time spent in scope lookup    : 1604775 spans, ()172.39ms
+[info] implicit cache accesses       : 4760
+[info] implicit cache hits           : 3896 (81.8%)
+[info] #macro expansions             : 81
+[info]   of which delayed macros     : 2 (2.5%)
+[info]   of which skipped macros     : 1 (1.2%)
+[info] #all lubs/glbs                : 7754
+[info] #created tree nodes           : 876070
+[info] #created scopes               : 87811
+[info] #typechecked identifiers      : 78672
+[info] #implicit searches            : 5762
+[info]   #plausibly compatible       : 1285 (22.3%)
+[info]   #matching                   : 1285 (22.3%)
+[info]   #typed                      : 1274 (22.1%)
+[info]   #found                      : 1264 (21.9%)
+[info]   #implicit improves tests    : 1269 (22.0%)
+[info]   #implicit improves cached   : 755 (13.1%)
+[info]   #implicit inscope hits      : 926 (16.1%)
+[info]   #implicit oftype hits       : 304 (5.3%)
+[info] *** Cumulative statistics at phase patmat
+[info] time spent in scope population: 77417 spans, ()26.4ms
+[info] #type symbols                 : 56358
+[info] #typechecked selections       : 36905
+[info] #symbols                      : 193205
+[info] #sametype ops                 : 172465
+[info] implicits instantiated for pruning: 547
+[info]   instantiated mismatches     : 12 (2.2%)
+[info] #toplevel lubs/glbs           : 743
+[info] #raw type creations           : 842258
+[info]   of which in failed          : 29872 (3.5%)
+[info]   of which in implicits       : 488869 (58.0%)
+[info] #class symbols                : 14929
+[info] #base type seqs               : 19430
+[info] avg base type seq length      : 7.1
+[info]   of which for compound types : 3742 (19.3%)
+[info]   of which for typerefs       : 15524 (79.9%)
+[info] #typechecked applications     : 29099
+[info] #unique types                 : 69593
+[info] #subtype ops                  : 429290
+[info]   of which in failed          : 2567 (0.6%)
+[info]   of which in implicit        : 32807 (7.6%)
+[info] #findMember ops               : 420208
+[info]   of which not found          : 257325 (61.2%)
+[info]   of which multiple overloaded: 7000 (1.7%)
+[info]   of which in failed          : 840 (0.2%)
+[info]   of which in implicit        : 17408 (4.1%)
+[info] time spent in scope lookup    : 1630016 spans, ()175.04ms
+[info] #all lubs/glbs                : 7763
+[info] #created tree nodes           : 994250
+[info] #created scopes               : 94269
+[info] #typechecked identifiers      : 83921
+[info] time spent in patmat          : 1363 spans, ()1446.764ms
+[info]   of which DPLL               : 1353 spans, ()60.747ms (4.2%)
+[info]   of which in CNF conversion  : 0 spans, ()0.0ms (0.0%)
+[info]   of which variable equality  : 2526 spans, ()191.4ms (13.2%)
+[info]   of which in exhaustivity    : 182 spans, ()108.34ms (7.5%)
+[info]   of which in unreachability  : 1172 spans, ()647.992ms (44.8%)
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/dispatch/CachingConfig.scala:77:34: materializing requested scala.reflect.type.ClassTag[String] using scala.reflect.`package`.materializeClassTag[String]()
+[info]     config.checkValid(reference, restrictToPaths: _*)
+[info]                                  ^
+[info] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/util/Reflect.scala:68:50: materializing requested scala.reflect.type.ClassTag[AnyRef] using scala.reflect.`package`.materializeClassTag[AnyRef]()
+[info]     try constructor.newInstance(args.asInstanceOf[Seq[AnyRef]]: _*)
+[info]                                                  ^
+[info] *** Cumulative statistics at phase erasure
+[info] time spent in scope population: 142559 spans, ()39.16ms
+[info] #type symbols                 : 79392
+[info] #typechecked selections       : 93977
+[info] #symbols                      : 333312
+[info] #sametype ops                 : 340034
+[info] implicits instantiated for pruning: 547
+[info]   instantiated mismatches     : 12 (2.2%)
+[info] #toplevel lubs/glbs           : 1074
+[info] #raw type creations           : 1142352
+[info]   of which in failed          : 29892 (2.6%)
+[info]   of which in implicits       : 488951 (42.8%)
+[info] #class symbols                : 22172
+[info] #base type seqs               : 42577
+[info] avg base type seq length      : 6.3
+[info]   of which for compound types : 14476 (34.0%)
+[info]   of which for typerefs       : 27937 (65.6%)
+[info] #typechecked applications     : 80186
+[info] #unique types                 : 87082
+[info] #subtype ops                  : 821635
+[info]   of which in failed          : 2567 (0.3%)
+[info]   of which in implicit        : 32833 (4.0%)
+[info] #findMember ops               : 443138
+[info]   of which not found          : 261871 (59.1%)
+[info]   of which multiple overloaded: 7244 (1.6%)
+[info]   of which in failed          : 1074 (0.2%)
+[info]   of which in implicit        : 17423 (3.9%)
+[info] time spent in scope lookup    : 1978369 spans, ()204.556ms
+[info] #all lubs/glbs                : 8128
+[info] #created tree nodes           : 1253402
+[info] #created scopes               : 190188
+[info] #typechecked identifiers      : 122130
+[info] *** Cumulative statistics at phase cleanup
+[info] time spent in scope population: 147912 spans, ()39.343ms
+[info] #type symbols                 : 81384
+[info] #typechecked selections       : 98990
+[info] #symbols                      : 363877
+[info] #sametype ops                 : 345262
+[info] implicits instantiated for pruning: 547
+[info]   instantiated mismatches     : 12 (2.2%)
+[info] #toplevel lubs/glbs           : 1202
+[info] #raw type creations           : 1199179
+[info]   of which in failed          : 29892 (2.5%)
+[info]   of which in implicits       : 488951 (40.8%)
+[info] #class symbols                : 22215
+[info] #base type seqs               : 47035
+[info] avg base type seq length      : 6.2
+[info]   of which for compound types : 17399 (37.0%)
+[info]   of which for typerefs       : 29472 (62.7%)
+[info] #typechecked applications     : 83122
+[info] #unique types                 : 81613
+[info] #subtype ops                  : 858332
+[info]   of which in failed          : 2567 (0.3%)
+[info]   of which in implicit        : 32833 (3.8%)
+[info] #findMember ops               : 448632
+[info]   of which not found          : 263426 (58.7%)
+[info]   of which multiple overloaded: 7748 (1.7%)
+[info]   of which in failed          : 1074 (0.2%)
+[info]   of which in implicit        : 17423 (3.9%)
+[info] time spent in scope lookup    : 2084364 spans, ()218.628ms
+[info] #all lubs/glbs                : 8256
+[info] #created tree nodes           : 1359965
+[info] #created scopes               : 200340
+[info] #typechecked identifiers      : 126346
+[info] *** Cumulative statistics at phase jvm
+[info] time spent in scope population: 148270 spans, ()39.484ms
+[info] #type symbols                 : 81620
+[info] #typechecked selections       : 99304
+[info] #symbols                      : 374395
+[info] #sametype ops                 : 349476
+[info] implicits instantiated for pruning: 547
+[info]   instantiated mismatches     : 12 (2.2%)
+[info] #toplevel lubs/glbs           : 1202
+[info] #raw type creations           : 1222688
+[info]   of which in failed          : 29892 (2.4%)
+[info]   of which in implicits       : 488951 (40.0%)
+[info] #class symbols                : 22389
+[info] #base type seqs               : 50918
+[info] avg base type seq length      : 6.1
+[info]   of which for compound types : 19361 (38.0%)
+[info]   of which for typerefs       : 31393 (61.7%)
+[info] #typechecked applications     : 84198
+[info] #unique types                 : 79252
+[info] #subtype ops                  : 863882
+[info]   of which in failed          : 2567 (0.3%)
+[info]   of which in implicit        : 32833 (3.8%)
+[info] #findMember ops               : 454646
+[info]   of which not found          : 264448 (58.2%)
+[info]   of which multiple overloaded: 7856 (1.7%)
+[info]   of which in failed          : 1074 (0.2%)
+[info]   of which in implicit        : 17423 (3.8%)
+[info] time spent in scope lookup    : 2133659 spans, ()225.805ms
+[info] time in backend               : 1 spans, ()3237.649ms
+[info] bcode initialization          : 1 spans, ()12.503ms (0.4%)
+[info] code generation               : 187 spans, ()2252.08ms (69.6%)
+[info] intra-method optimizations    : 1570 spans, ()279.985ms (8.6%)
+[info] classfile writing             : 1647 spans, ()93.3ms (2.9%)
+[info] #all lubs/glbs                : 8256
+[info] #created tree nodes           : 1388298
+[info] #created scopes               : 202025
+[info] #typechecked identifiers      : 127347
+[info] Writing graph to /home/zainab/lsug/akka/akka-actor/target/classes/META-INF/profiledb/graphs/implicit-searches-1563796199916.flamegraph
+[info] Creating global statistics information at /home/zainab/lsug/akka/akka-actor/target/classes/META-INF/profiledb/global.profiledb.
+[info] *** Cumulative timers for phases
+[info] #total compile time           : 1 spans, ()31030.379ms
+[info]   parser                      : 1 spans, ()958.125ms (3.1%)
+[info]   namer                       : 1 spans, ()253.109ms (0.8%)
+[info]   packageobjects              : 1 spans, ()42.657ms (0.1%)
+[info]   typer                       : 1 spans, ()13042.61ms (42.0%)
+[info]   silencer                    : 1 spans, ()360.986ms (1.2%)
+[info]   patmat                      : 1 spans, ()1926.121ms (6.2%)
+[info]   superaccessors              : 1 spans, ()252.103ms (0.8%)
+[info]   extmethods                  : 1 spans, ()83.995ms (0.3%)
+[info]   pickler                     : 1 spans, ()258.355ms (0.8%)
+[info]   xsbt-api                    : 1 spans, ()1512.715ms (4.9%)
+[info]   xsbt-dependency             : 1 spans, ()532.198ms (1.7%)
+[info]   refchecks                   : 1 spans, ()1119.823ms (3.6%)
+[info]   uncurry                     : 1 spans, ()916.191ms (3.0%)
+[info]   fields                      : 1 spans, ()384.942ms (1.2%)
+[info]   tailcalls                   : 1 spans, ()276.555ms (0.9%)
+[info]   specialize                  : 1 spans, ()865.931ms (2.8%)
+[info]   explicitouter               : 1 spans, ()304.309ms (1.0%)
+[info]   erasure                     : 1 spans, ()2733.996ms (8.8%)
+[info]   posterasure                 : 1 spans, ()173.878ms (0.6%)
+[info]   lambdalift                  : 1 spans, ()289.285ms (0.9%)
+[info]   constructors                : 1 spans, ()308.369ms (1.0%)
+[info]   flatten                     : 1 spans, ()134.729ms (0.4%)
+[info]   mixin                       : 1 spans, ()417.108ms (1.3%)
+[info]   cleanup                     : 1 spans, ()107.48ms (0.3%)
+[info]   delambdafy                  : 1 spans, ()209.934ms (0.7%)
+[info]   jvm                         : 1 spans, ()3237.679ms (10.4%)
+[info]   scalacenter-profiling       : 1 spans, ()226.786ms (0.7%)
+[info]   xsbt-analyzer               : 1 spans, ()24.785ms (0.1%)
+[warn] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/util/Unsafe.java:14:1: sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[warn]     public static final sun.misc.Unsafe instance;
+[warn] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/util/Unsafe.java:21:1: sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[warn]             sun.misc.Unsafe found = null;
+[warn] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/util/Unsafe.java:22:1: sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[warn]             for (Field field : sun.misc.Unsafe.class.getDeclaredFields()) {
+[warn] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/util/Unsafe.java:23:1: sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[warn]                 if (field.getType() == sun.misc.Unsafe.class) {
+[warn] /home/zainab/lsug/akka/akka-actor/src/main/scala/akka/util/Unsafe.java:25:1: sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[warn]                     found = (sun.misc.Unsafe) field.get(null);
+[info] /home/zainab/lsug/akka/akka-actor/src/main/java/akka/actor/AbstractScheduler.java: /home/zainab/lsug/akka/akka-actor/src/main/java/akka/actor/AbstractScheduler.java uses or overrides a deprecated API.
+[info] /home/zainab/lsug/akka/akka-actor/src/main/java/akka/actor/AbstractScheduler.java: Recompile with -Xlint:deprecation for details.
+[info] Done compiling.
+[info] Compiling 45 Java sources to /home/zainab/lsug/akka/akka-protobuf/target/classes ...
+[info] Done compiling.
+[info] Compiling 70 Scala sources to /home/zainab/lsug/akka/akka-actor-typed/target/classes ...
+[info] Enabling statistics, measuring overhead = 23.6683ns to 100.2482ns per timer
+[info] *** Cumulative statistics at phase parser
+[info] #created tree nodes           : 34428
+[info] /home/zainab/lsug/akka/akka-actor-typed/src/main/scala/akka/actor/typed/ActorSystem.scala:243:38: materializing requested scala.reflect.type.ClassTag[akka.actor.BootstrapSetup] using scala.reflect.`package`.materializeClassTag[akka.actor.BootstrapSetup]()
+[info]     val bootstrapSettings = setup.get[BootstrapSetup]
+[info]                                      ^
+[info] /home/zainab/lsug/akka/akka-actor-typed/src/main/scala/akka/actor/typed/internal/ExtensionsImpl.scala:41:55: materializing requested scala.reflect.type.ClassTag[AnyRef] using scala.reflect.`package`.materializeClassTag[AnyRef]()
+[info]         val idTry = dynamicAccess.getObjectFor[AnyRef](extensionIdFQCN).recoverWith {
+[info]                                                       ^
+[info] /home/zainab/lsug/akka/akka-actor-typed/src/main/scala/akka/actor/typed/internal/ExtensionsImpl.scala:59:56: materializing requested scala.reflect.type.ClassTag[akka.actor.typed.ExtensionId[akka.actor.typed.Extension]] using scala.reflect.`package`.materializeClassTag[akka.actor.typed.ExtensionId[akka.actor.typed.Extension]]()
+[info]       dynamicAccess.getClassFor[ExtensionId[Extension]](extensionIdFQCN).flatMap[ExtensionId[Extension]] {
+[info]                                                        ^
+[info] /home/zainab/lsug/akka/akka-actor-typed/src/main/scala/akka/actor/typed/internal/adapter/ActorContextAdapter.scala:114:49: executionContext is not a valid implicit value for scala.concurrent.ExecutionContext because:
+[info] candidate implicit method executionContext in trait ActorContext is shadowed by method executionContext in class ActorContextAdapter
+[info]     untypedContext.system.scheduler.scheduleOnce(delay, toUntyped(target), msg)
+[info]                                                 ^
+[info] /home/zainab/lsug/akka/akka-actor-typed/src/main/scala/akka/actor/typed/internal/adapter/LoggerAdapterImpl.scala:350:88: refArrayOps is not a valid implicit value for a.type => ?{def toSeq: ?} because:
+[info] inferred type arguments [_] do not conform to method refArrayOps's type parameter bounds [T <: AnyRef]
+[info]     case a: Array[_] if !a.getClass.getComponentType.isPrimitive => formatArrayImpl(t, a.toSeq)
+[info]                                                                                        ^
+[info] /home/zainab/lsug/akka/akka-actor-typed/src/main/scala/akka/actor/typed/internal/adapter/LoggerAdapterImpl.scala:350:88: wrapRefArray is not a valid implicit value for a.type => ?{def toSeq: ?} because:
+[info] inferred type arguments [_] do not conform to method wrapRefArray's type parameter bounds [T <: AnyRef]
+[info]     case a: Array[_] if !a.getClass.getComponentType.isPrimitive => formatArrayImpl(t, a.toSeq)
+[info]                                                                                        ^
+[info] /home/zainab/lsug/akka/akka-actor-typed/src/main/scala/akka/actor/typed/internal/adapter/LoggerAdapterImpl.scala:351:88: refArrayOps is not a valid implicit value for a.type => ?{def map: ?} because:
+[info] inferred type arguments [_] do not conform to method refArrayOps's type parameter bounds [T <: AnyRef]
+[info]     case a: Array[_]                                             => formatArrayImpl(t, a.map(_.asInstanceOf[AnyRef]).toSeq)
+[info]                                                                                        ^
+[info] /home/zainab/lsug/akka/akka-actor-typed/src/main/scala/akka/actor/typed/internal/adapter/LoggerAdapterImpl.scala:351:88: wrapRefArray is not a valid implicit value for a.type => ?{def map: ?} because:
+[info] inferred type arguments [_] do not conform to method wrapRefArray's type parameter bounds [T <: AnyRef]
+[info]     case a: Array[_]                                             => formatArrayImpl(t, a.map(_.asInstanceOf[AnyRef]).toSeq)
+[info]                                                                                        ^
+[info] /home/zainab/lsug/akka/akka-actor-typed/src/main/scala/akka/actor/typed/internal/adapter/LoggerAdapterImpl.scala:351:93: materializing requested scala.reflect.type.ClassTag[AnyRef] using scala.reflect.`package`.materializeClassTag[AnyRef]()
+[info]     case a: Array[_]                                             => formatArrayImpl(t, a.map(_.asInstanceOf[AnyRef]).toSeq)
+[info]                                                                                             ^
+[info] /home/zainab/lsug/akka/akka-actor-typed/src/main/scala/akka/actor/typed/internal/adapter/PropsAdapter.scala:20:33: materializing requested scala.reflect.type.ClassTag[akka.actor.typed.internal.adapter.ActorAdapter[T]] using scala.reflect.`package`.materializeClassTag[akka.actor.typed.internal.adapter.ActorAdapter[T]]()
+[info]     val props = akka.actor.Props(new ActorAdapter(behavior(), rethrowTypedFailure))
+[info]                                 ^
+[info] /home/zainab/lsug/akka/akka-actor-typed/src/main/scala/akka/actor/typed/internal/adapter/PropsAdapter.scala:22:44: materializing requested scala.reflect.type.ClassTag[akka.actor.typed.DispatcherSelector] using scala.reflect.`package`.materializeClassTag[akka.actor.typed.DispatcherSelector]()
+[info]     (deploy.firstOrElse[DispatcherSelector](DispatcherDefault()) match {
+[info]                                            ^
+[info] /home/zainab/lsug/akka/akka-actor-typed/src/main/scala/akka/actor/typed/internal/routing/RoutingLogic.scala:57:41: materializing requested scala.reflect.type.ClassTag[akka.actor.typed.ActorRef[T]] using scala.reflect.`package`.materializeClassTag[akka.actor.typed.ActorRef[T]]()
+[info]       val sortedNewRoutees = newRoutees.toArray.sortBy(ref => (ref.path.toStringWithoutAddress, ref.path.address))
+[info]                                         ^
+[info] /home/zainab/lsug/akka/akka-actor-typed/src/main/scala/akka/actor/typed/internal/routing/RoutingLogic.scala:57:55: math.this.Ordering.ordered is not a valid implicit value for scala.math.Ordering[akka.actor.Address] because:
+[info] hasMatchingSymbol reported error: No implicit view available from akka.actor.Address => Comparable[akka.actor.Address].
+[info]       val sortedNewRoutees = newRoutees.toArray.sortBy(ref => (ref.path.toStringWithoutAddress, ref.path.address))
+[info]                                                       ^
+[info] /home/zainab/lsug/akka/akka-actor-typed/src/main/scala/akka/actor/typed/internal/routing/RoutingLogic.scala:84:35: materializing requested scala.reflect.type.ClassTag[akka.actor.typed.ActorRef[T]] using scala.reflect.`package`.materializeClassTag[akka.actor.typed.ActorRef[T]]()
+[info]       currentRoutees = newRoutees.toArray
+[info]                                   ^
+[info] /home/zainab/lsug/akka/akka-actor-typed/src/main/scala/akka/actor/typed/receptionist/Receptionist.scala:34:54: materializing requested scala.reflect.type.ClassTag[akka.actor.typed.internal.receptionist.ReceptionistBehaviorProvider] using scala.reflect.`package`.materializeClassTag[akka.actor.typed.internal.receptionist.ReceptionistBehaviorProvider]()
+[info]           .getObjectFor[ReceptionistBehaviorProvider]("akka.cluster.typed.internal.receptionist.ClusterReceptionist")
+[info]                                                      ^
+[info] /home/zainab/lsug/akka/akka-actor-typed/src/main/scala/akka/actor/typed/scaladsl/adapter/package.scala:50:48: materializing requested scala.reflect.type.ClassTag[Thr] using scala.reflect.`package`.materializeClassTag[Thr]()
+[info]         Behaviors.supervise(behavior).onFailure(SupervisorStrategy.stop),
+[info]                                                ^
+[info] /home/zainab/lsug/akka/akka-actor-typed/src/main/scala/akka/actor/typed/scaladsl/adapter/package.scala:64:48: materializing requested scala.reflect.type.ClassTag[Thr] using scala.reflect.`package`.materializeClassTag[Thr]()
+[info]         Behaviors.supervise(behavior).onFailure(SupervisorStrategy.stop),
+[info]                                                ^
+[info] /home/zainab/lsug/akka/akka-actor-typed/src/main/scala/akka/actor/typed/scaladsl/adapter/package.scala:104:48: materializing requested scala.reflect.type.ClassTag[Thr] using scala.reflect.`package`.materializeClassTag[Thr]()
+[info]         Behaviors.supervise(behavior).onFailure(SupervisorStrategy.stop),
+[info]                                                ^
+[info] /home/zainab/lsug/akka/akka-actor-typed/src/main/scala/akka/actor/typed/scaladsl/adapter/package.scala:117:48: materializing requested scala.reflect.type.ClassTag[Thr] using scala.reflect.`package`.materializeClassTag[Thr]()
+[info]         Behaviors.supervise(behavior).onFailure(SupervisorStrategy.stop),
+[info]                                                ^
+[info] *** Cumulative statistics at phase typer
+[info] time spent typechecking       : 1 spans, ()2581.314ms
+[info] time spent in lubs            : 137 spans, ()6.773ms (0.3%) aggregate, 5.619ms (0.2%) specific
+[info] time spent in <:<             : 55830 spans, ()88.829ms (3.4%) aggregate, 75.3ms (2.9%) specific
+[info] time spent in findmember      : 89271 spans, ()103.131ms (4.0%) aggregate, 83.46ms (3.2%) specific
+[info] time spent in findmembers     : 0 spans, ()0.0ms (0.0%) aggregate, 0.0ms (0.0%) specific
+[info] time spent in asSeenFrom      : 66095 spans, ()110.936ms (4.3%) aggregate, 86.834ms (3.4%) specific
+[info] time spent in baseTypeSeq     : 5660 spans, ()233.217ms (9.0%) aggregate, 88.985ms (3.4%) specific
+[info] time spent in baseClasses     : 1033 spans, ()48.37ms (1.9%) aggregate, 28.63ms (1.1%) specific
+[info] time classfilereading         : 467 spans, ()151.546ms (5.9%)
+[info] time spent in failed          : 38 spans, ()27.419ms (1.1%)
+[info]   failed apply                : 3 spans, ()2.0ms (0.1%)
+[info]   failed op=                  : 12 spans, ()24.672ms (1.0%)
+[info] time spent ref scanning       : 0 spans, ()0.0ms (0.0%)
+[info] time spent in implicits       : 386 spans, ()931.581ms (36.1%)
+[info]   successful in scope         : 79 spans, ()84.649ms (3.3%)
+[info]   failed in scope             : 307 spans, ()27.156ms (1.1%)
+[info]   successful of type          : 47 spans, ()724.49ms (28.1%)
+[info]   failed of type              : 260 spans, ()29.395ms (1.1%)
+[info]   assembling parts            : 124 spans, ()31.782ms (1.2%)
+[info]   matchesPT                   : 488 spans, ()8.535ms (0.3%)
+[info] time spent in macroExpand     : 25 spans, ()670.653ms (26.0%)
+[info] time spent in scope population: 13739 spans, ()1.74ms
+[info] #type symbols                 : 17898
+[info] #typechecked selections       : 6035
+[info] #symbols                      : 62911
+[info] #sametype ops                 : 32684
+[info] implicits instantiated for pruning: 36
+[info]   instantiated mismatches     : 1 (2.8%)
+[info] #toplevel lubs/glbs           : 137
+[info] #raw type creations           : 120392
+[info]   of which in failed          : 8023 (6.7%)
+[info]   of which in implicits       : 46441 (38.6%)
+[info] #class symbols                : 10203
+[info] #base type seqs               : 5687
+[info] avg base type seq length      : 6.0
+[info]   of which for compound types : 1063 (18.7%)
+[info]   of which for typerefs       : 4597 (80.8%)
+[info] #typechecked applications     : 3483
+[info] #unique types                 : 33905
+[info] #subtype ops                  : 55830
+[info]   of which in failed          : 1158 (2.1%)
+[info]   of which in implicit        : 5032 (9.0%)
+[info] #findMember ops               : 89271
+[info]   of which not found          : 50936 (57.1%)
+[info]   of which multiple overloaded: 656 (0.7%)
+[info]   of which in failed          : 208 (0.2%)
+[info]   of which in implicit        : 4093 (4.6%)
+[info] time spent in scope lookup    : 314154 spans, ()34.22ms
+[info] implicit cache accesses       : 294
+[info] implicit cache hits           : 170 (57.8%)
+[info] #macro expansions             : 25
+[info]   of which delayed macros     : 8 (32.0%)
+[info]   of which skipped macros     : 4 (16.0%)
+[info] #all lubs/glbs                : 1205
+[info] #created tree nodes           : 173474
+[info] #created scopes               : 19664
+[info] #typechecked identifiers      : 17561
+[info] #implicit searches            : 386
+[info]   #plausibly compatible       : 128 (33.2%)
+[info]   #matching                   : 128 (33.2%)
+[info]   #typed                      : 124 (32.1%)
+[info]   #found                      : 122 (31.6%)
+[info]   #implicit improves tests    : 64 (16.6%)
+[info]   #implicit improves cached   : 26 (6.7%)
+[info]   #implicit inscope hits      : 79 (20.5%)
+[info]   #implicit oftype hits       : 47 (12.2%)
+[info] *** Cumulative statistics at phase patmat
+[info] time spent in scope population: 14958 spans, ()2.15ms
+[info] #type symbols                 : 18200
+[info] #typechecked selections       : 6712
+[info] #symbols                      : 65640
+[info] #sametype ops                 : 38110
+[info] implicits instantiated for pruning: 36
+[info]   instantiated mismatches     : 1 (2.8%)
+[info] #toplevel lubs/glbs           : 149
+[info] #raw type creations           : 127823
+[info]   of which in failed          : 8023 (6.3%)
+[info]   of which in implicits       : 46441 (36.3%)
+[info] #class symbols                : 10385
+[info] #base type seqs               : 5847
+[info] avg base type seq length      : 6.3
+[info]   of which for compound types : 1105 (18.9%)
+[info]   of which for typerefs       : 4715 (80.6%)
+[info] #typechecked applications     : 4477
+[info] #unique types                 : 35189
+[info] #subtype ops                  : 68864
+[info]   of which in failed          : 1158 (1.7%)
+[info]   of which in implicit        : 5032 (7.3%)
+[info] #findMember ops               : 89990
+[info]   of which not found          : 51032 (56.7%)
+[info]   of which multiple overloaded: 753 (0.8%)
+[info]   of which in failed          : 208 (0.2%)
+[info]   of which in implicit        : 4093 (4.5%)
+[info] time spent in scope lookup    : 322895 spans, ()35.216ms
+[info] #all lubs/glbs                : 1217
+[info] #created tree nodes           : 192991
+[info] #created scopes               : 21012
+[info] #typechecked identifiers      : 18556
+[info] time spent in patmat          : 254 spans, ()193.452ms
+[info]   of which DPLL               : 240 spans, ()5.19ms (2.7%)
+[info]   of which in CNF conversion  : 0 spans, ()0.0ms (0.0%)
+[info]   of which variable equality  : 466 spans, ()23.842ms (12.3%)
+[info]   of which in exhaustivity    : 32 spans, ()15.2ms (7.9%)
+[info]   of which in unreachability  : 217 spans, ()80.914ms (41.8%)
+[info] *** Cumulative statistics at phase erasure
+[info] time spent in scope population: 27051 spans, ()4.369ms
+[info] #type symbols                 : 22264
+[info] #typechecked selections       : 17248
+[info] #symbols                      : 97807
+[info] #sametype ops                 : 83549
+[info] implicits instantiated for pruning: 36
+[info]   instantiated mismatches     : 1 (2.8%)
+[info] #toplevel lubs/glbs           : 193
+[info] #raw type creations           : 187647
+[info]   of which in failed          : 8023 (4.3%)
+[info]   of which in implicits       : 46441 (24.7%)
+[info] #class symbols                : 11906
+[info] #base type seqs               : 10970
+[info] avg base type seq length      : 5.7
+[info]   of which for compound types : 3499 (31.9%)
+[info]   of which for typerefs       : 7441 (67.8%)
+[info] #typechecked applications     : 13489
+[info] #unique types                 : 44196
+[info] #subtype ops                  : 145812
+[info]   of which in failed          : 1158 (0.8%)
+[info]   of which in implicit        : 5032 (3.5%)
+[info] #findMember ops               : 96912
+[info]   of which not found          : 51914 (53.6%)
+[info]   of which multiple overloaded: 860 (0.9%)
+[info]   of which in failed          : 208 (0.2%)
+[info]   of which in implicit        : 4093 (4.2%)
+[info] time spent in scope lookup    : 393249 spans, ()41.793ms
+[info] #all lubs/glbs                : 1266
+[info] #created tree nodes           : 244462
+[info] #created scopes               : 39286
+[info] #typechecked identifiers      : 25266
+[info] *** Cumulative statistics at phase cleanup
+[info] time spent in scope population: 27394 spans, ()4.423ms
+[info] #type symbols                 : 22569
+[info] #typechecked selections       : 17749
+[info] #symbols                      : 102844
+[info] #sametype ops                 : 84000
+[info] implicits instantiated for pruning: 36
+[info]   instantiated mismatches     : 1 (2.8%)
+[info] #toplevel lubs/glbs           : 211
+[info] #raw type creations           : 196169
+[info]   of which in failed          : 8023 (4.1%)
+[info]   of which in implicits       : 46441 (23.7%)
+[info] #class symbols                : 11915
+[info] #base type seqs               : 11983
+[info] avg base type seq length      : 5.7
+[info]   of which for compound types : 4153 (34.7%)
+[info]   of which for typerefs       : 7800 (65.1%)
+[info] #typechecked applications     : 13722
+[info] #unique types                 : 45123
+[info] #subtype ops                  : 150499
+[info]   of which in failed          : 1158 (0.8%)
+[info]   of which in implicit        : 5032 (3.3%)
+[info] #findMember ops               : 97911
+[info]   of which not found          : 52540 (53.7%)
+[info]   of which multiple overloaded: 910 (0.9%)
+[info]   of which in failed          : 208 (0.2%)
+[info]   of which in implicit        : 4093 (4.2%)
+[info] time spent in scope lookup    : 404192 spans, ()42.924ms
+[info] #all lubs/glbs                : 1284
+[info] #created tree nodes           : 265880
+[info] #created scopes               : 40425
+[info] #typechecked identifiers      : 25641
+[info] *** Cumulative statistics at phase jvm
+[info] time spent in scope population: 27412 spans, ()4.446ms
+[info] #type symbols                 : 23010
+[info] #typechecked selections       : 17770
+[info] #symbols                      : 106042
+[info] #sametype ops                 : 84673
+[info] implicits instantiated for pruning: 36
+[info]   instantiated mismatches     : 1 (2.8%)
+[info] #toplevel lubs/glbs           : 211
+[info] #raw type creations           : 202764
+[info]   of which in failed          : 8023 (4.0%)
+[info]   of which in implicits       : 46441 (22.9%)
+[info] #class symbols                : 12131
+[info] #base type seqs               : 13216
+[info] avg base type seq length      : 5.7
+[info]   of which for compound types : 4799 (36.3%)
+[info]   of which for typerefs       : 8386 (63.5%)
+[info] #typechecked applications     : 13842
+[info] #unique types                 : 23852
+[info] #subtype ops                  : 151340
+[info]   of which in failed          : 1158 (0.8%)
+[info]   of which in implicit        : 5032 (3.3%)
+[info] #findMember ops               : 102923
+[info]   of which not found          : 52791 (51.3%)
+[info]   of which multiple overloaded: 1017 (1.0%)
+[info]   of which in failed          : 208 (0.2%)
+[info]   of which in implicit        : 4093 (4.0%)
+[info] time spent in scope lookup    : 417909 spans, ()44.693ms
+[info] time in backend               : 1 spans, ()428.151ms
+[info] bcode initialization          : 1 spans, ()1.366ms (0.3%)
+[info] code generation               : 70 spans, ()303.976ms (71.0%)
+[info] intra-method optimizations    : 348 spans, ()26.496ms (6.2%)
+[info] classfile writing             : 369 spans, ()19.116ms (4.5%)
+[info] #all lubs/glbs                : 1284
+[info] #created tree nodes           : 269492
+[info] #created scopes               : 41025
+[info] #typechecked identifiers      : 25740
+[info] Writing graph to /home/zainab/lsug/akka/akka-actor-typed/target/classes/META-INF/profiledb/graphs/implicit-searches-1563796209770.flamegraph
+[info] Creating global statistics information at /home/zainab/lsug/akka/akka-actor-typed/target/classes/META-INF/profiledb/global.profiledb.
+[info] *** Cumulative timers for phases
+[info] #total compile time           : 1 spans, ()5218.153ms
+[info]   parser                      : 1 spans, ()91.545ms (1.8%)
+[info]   namer                       : 1 spans, ()27.322ms (0.5%)
+[info]   packageobjects              : 1 spans, ()2.462ms (0.0%)
+[info]   typer                       : 1 spans, ()2581.319ms (49.5%)
+[info]   silencer                    : 1 spans, ()69.285ms (1.3%)
+[info]   patmat                      : 1 spans, ()269.451ms (5.2%)
+[info]   superaccessors              : 1 spans, ()47.925ms (0.9%)
+[info]   extmethods                  : 1 spans, ()19.762ms (0.4%)
+[info]   pickler                     : 1 spans, ()25.225ms (0.5%)
+[info]   xsbt-api                    : 1 spans, ()207.146ms (4.0%)
+[info]   xsbt-dependency             : 1 spans, ()92.387ms (1.8%)
+[info]   refchecks                   : 1 spans, ()172.885ms (3.3%)
+[info]   uncurry                     : 1 spans, ()105.025ms (2.0%)
+[info]   fields                      : 1 spans, ()33.135ms (0.6%)
+[info]   tailcalls                   : 1 spans, ()43.954ms (0.8%)
+[info]   specialize                  : 1 spans, ()187.458ms (3.6%)
+[info]   explicitouter               : 1 spans, ()35.95ms (0.7%)
+[info]   erasure                     : 1 spans, ()417.97ms (8.0%)
+[info]   posterasure                 : 1 spans, ()40.059ms (0.8%)
+[info]   lambdalift                  : 1 spans, ()35.162ms (0.7%)
+[info]   constructors                : 1 spans, ()42.934ms (0.8%)
+[info]   flatten                     : 1 spans, ()14.372ms (0.3%)
+[info]   mixin                       : 1 spans, ()38.318ms (0.7%)
+[info]   cleanup                     : 1 spans, ()10.913ms (0.2%)
+[info]   delambdafy                  : 1 spans, ()32.596ms (0.6%)
+[info]   jvm                         : 1 spans, ()428.157ms (8.2%)
+[info]   scalacenter-profiling       : 1 spans, ()81.656ms (1.6%)
+[info]   xsbt-analyzer               : 1 spans, ()3.489ms (0.1%)
+[info] Done compiling.
+[info] Compiling 170 Scala sources and 3 Java sources to /home/zainab/lsug/akka/akka-stream/target/classes ...
+[info] Enabling statistics, measuring overhead = 23.4251ns to 92.4024ns per timer
+[info] *** Cumulative statistics at phase parser
+[info] #created tree nodes           : 303383
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/UniformFanOutShape.scala:35:77: materializing requested scala.reflect.type.ClassTag[akka.stream.Outlet[O]] using scala.reflect.`package`.materializeClassTag[akka.stream.Outlet[O]]()
+[info]   private lazy val _outArray: Array[Outlet[O @uncheckedVariance]] = outlets.toArray
+[info]                                                                             ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/ActorMaterializerImpl.scala:49:76: materializing requested scala.reflect.type.ClassTag[akka.stream.ActorAttributes.Dispatcher] using scala.reflect.`package`.materializeClassTag[akka.stream.ActorAttributes.Dispatcher]()
+[info]         props.withDispatcher(context.effectiveAttributes.mandatoryAttribute[ActorAttributes.Dispatcher].dispatcher)
+[info]                                                                            ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/ActorMaterializerImpl.scala:71:81: materializing requested scala.reflect.type.ClassTag[akka.actor.ActorRef] using scala.reflect.`package`.materializeClassTag[akka.actor.ActorRef]()
+[info]           val f = (supervisor ? StreamSupervisor.Materialize(props, name)).mapTo[ActorRef]
+[info]                                                                                 ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/ActorMaterializerImpl.scala:177:10: materializing requested scala.reflect.type.ClassTag[akka.stream.impl.StreamSupervisor] using scala.reflect.`package`.materializeClassTag[akka.stream.impl.StreamSupervisor]()
+[info]     Props(new StreamSupervisor(haveShutDown)).withDeploy(Deploy.local).withDispatcher(settings.dispatcher)
+[info]          ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/ActorMaterializerImpl.scala:246:92: materializing requested scala.reflect.type.ClassTag[akka.stream.snapshot.StreamSnapshot] using scala.reflect.`package`.materializeClassTag[akka.stream.snapshot.StreamSnapshot]()
+[info]         context.children.toList.map(child => (child ? ActorGraphInterpreter.Snapshot).mapTo[StreamSnapshot])
+[info]                                                                                            ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/ActorProcessor.scala:264:63: materializing requested scala.reflect.type.ClassTag[akka.stream.Attributes.InputBuffer] using scala.reflect.`package`.materializeClassTag[akka.stream.Attributes.InputBuffer]()
+[info]     val initialInputBufferSize = attributes.mandatoryAttribute[Attributes.InputBuffer].initial
+[info]                                                               ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/ActorRefBackpressureSinkStage.scala:35:59: materializing requested scala.reflect.type.ClassTag[akka.stream.Attributes.InputBuffer] using scala.reflect.`package`.materializeClassTag[akka.stream.Attributes.InputBuffer]()
+[info]       val maxBuffer = inheritedAttributes.get[InputBuffer](InputBuffer(16, 16)).max
+[info]                                                           ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/ActorRefBackpressureSource.scala:48:32: materializing requested scala.reflect.type.ClassTag[akka.stream.Attributes.Name] using scala.reflect.`package`.materializeClassTag[akka.stream.Attributes.Name]()
+[info]         inheritedAttributes.get[Attributes.Name].map(_.n).getOrElse(super.stageActorName)
+[info]                                ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/ActorRefSinkActor.scala:21:10: materializing requested scala.reflect.type.ClassTag[akka.stream.impl.ActorRefSinkActor] using scala.reflect.`package`.materializeClassTag[akka.stream.impl.ActorRefSinkActor]()
+[info]     Props(new ActorRefSinkActor(ref, highWatermark, onCompleteMessage, onFailureMessage))
+[info]          ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/ActorRefSource.scala:52:32: materializing requested scala.reflect.type.ClassTag[akka.stream.Attributes.Name] using scala.reflect.`package`.materializeClassTag[akka.stream.Attributes.Name]()
+[info]         inheritedAttributes.get[Attributes.Name].map(_.n).getOrElse(super.stageActorName)
+[info]                                ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/FanIn.scala:54:81: materializing requested scala.reflect.type.ClassTag[akka.stream.impl.BatchingInputBuffer] using scala.reflect.`package`.materializeClassTag[akka.stream.impl.BatchingInputBuffer]()
+[info]     private val inputs: Array[BatchingInputBuffer] = Array.tabulate(inputCount) { i =>
+[info]                                                                                 ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/FanIn.scala:93:27: refArrayOps is not a valid implicit value for InputBunch.this.states.type => ?{def iterator: ?} because:
+[info] inferred type arguments [akka.stream.impl.FanIn.State] do not conform to method refArrayOps's type parameter bounds [T <: AnyRef]
+[info]           |  marked:    ${states.iterator.map(marked(_)).mkString(", ")}
+[info]                           ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/FanIn.scala:94:27: refArrayOps is not a valid implicit value for InputBunch.this.states.type => ?{def iterator: ?} because:
+[info] inferred type arguments [akka.stream.impl.FanIn.State] do not conform to method refArrayOps's type parameter bounds [T <: AnyRef]
+[info]           |  pending:   ${states.iterator.map(pending(_)).mkString(", ")}
+[info]                           ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/FanIn.scala:95:27: refArrayOps is not a valid implicit value for InputBunch.this.states.type => ?{def iterator: ?} because:
+[info] inferred type arguments [akka.stream.impl.FanIn.State] do not conform to method refArrayOps's type parameter bounds [T <: AnyRef]
+[info]           |  depleted:  ${states.iterator.map(depleted(_)).mkString(", ")}
+[info]                           ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/FanIn.scala:96:27: refArrayOps is not a valid implicit value for InputBunch.this.states.type => ?{def iterator: ?} because:
+[info] inferred type arguments [akka.stream.impl.FanIn.State] do not conform to method refArrayOps's type parameter bounds [T <: AnyRef]
+[info]           |  completed: ${states.iterator.map(completed(_)).mkString(", ")}
+[info]                           ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/FanIn.scala:97:27: refArrayOps is not a valid implicit value for InputBunch.this.states.type => ?{def iterator: ?} because:
+[info] inferred type arguments [akka.stream.impl.FanIn.State] do not conform to method refArrayOps's type parameter bounds [T <: AnyRef]
+[info]           |  cancelled: ${states.iterator.map(cancelled(_)).mkString(", ")}
+[info]                           ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/FanOut.scala:45:54: materializing requested scala.reflect.type.ClassTag[akka.stream.impl.FanOut.FanoutOutputs] using scala.reflect.`package`.materializeClassTag[akka.stream.impl.FanOut.FanoutOutputs]()
+[info]     private val outputs = Array.tabulate(outputCount)(new FanoutOutputs(_, impl, pump))
+[info]                                                      ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/FanOut.scala:58:27: refArrayOps is not a valid implicit value for OutputBunch.this.marked.type => ?{def mkString: ?} because:
+[info] inferred type arguments [Boolean] do not conform to method refArrayOps's type parameter bounds [T <: AnyRef]
+[info]           |  marked:    ${marked.mkString(", ")}
+[info]                           ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/FanOut.scala:59:27: refArrayOps is not a valid implicit value for OutputBunch.this.pending.type => ?{def mkString: ?} because:
+[info] inferred type arguments [Boolean] do not conform to method refArrayOps's type parameter bounds [T <: AnyRef]
+[info]           |  pending:   ${pending.mkString(", ")}
+[info]                           ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/FanOut.scala:60:27: refArrayOps is not a valid implicit value for OutputBunch.this.errored.type => ?{def mkString: ?} because:
+[info] inferred type arguments [Boolean] do not conform to method refArrayOps's type parameter bounds [T <: AnyRef]
+[info]           |  errored:   ${errored.mkString(", ")}
+[info]                           ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/FanOut.scala:61:27: refArrayOps is not a valid implicit value for OutputBunch.this.completed.type => ?{def mkString: ?} because:
+[info] inferred type arguments [Boolean] do not conform to method refArrayOps's type parameter bounds [T <: AnyRef]
+[info]           |  completed: ${completed.mkString(", ")}
+[info]                           ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/FanOut.scala:62:27: refArrayOps is not a valid implicit value for OutputBunch.this.cancelled.type => ?{def mkString: ?} because:
+[info] inferred type arguments [Boolean] do not conform to method refArrayOps's type parameter bounds [T <: AnyRef]
+[info]           |  cancelled: ${cancelled.mkString(", ")}
+[info]                           ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/FanOut.scala:305:10: materializing requested scala.reflect.type.ClassTag[akka.stream.impl.Unzip] using scala.reflect.`package`.materializeClassTag[akka.stream.impl.Unzip]()
+[info]     Props(new Unzip(settings)).withDeploy(Deploy.local)
+[info]          ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/FanoutProcessor.scala:105:10: materializing requested scala.reflect.type.ClassTag[akka.stream.impl.FanoutProcessorImpl] using scala.reflect.`package`.materializeClassTag[akka.stream.impl.FanoutProcessorImpl]()
+[info]     Props(new FanoutProcessorImpl(attributes, actorMaterializerSettings)).withDeploy(Deploy.local)
+[info]          ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/FanoutProcessor.scala:115:52: materializing requested scala.reflect.type.ClassTag[akka.stream.Attributes.InputBuffer] using scala.reflect.`package`.materializeClassTag[akka.stream.Attributes.InputBuffer]()
+[info]     val inputBuffer = attributes.mandatoryAttribute[Attributes.InputBuffer]
+[info]                                                    ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/PhasedFusingActorMaterializer.scala:586:49: refArrayOps is not a valid implicit value for outToSlot.type => ?{def mkString: ?} because:
+[info] inferred type arguments [Int] do not conform to method refArrayOps's type parameter bounds [T <: AnyRef]
+[info]         if (Debug) println(s"  wiring offset: ${outToSlot.mkString("[", ",", "]")}")
+[info]                                                 ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/PhasedFusingActorMaterializer.scala:593:51: refArrayOps is not a valid implicit value for outToSlot.type => ?{def mkString: ?} because:
+[info] inferred type arguments [Int] do not conform to method refArrayOps's type parameter bounds [T <: AnyRef]
+[info]           if (Debug) println(s"  wiring offset: ${outToSlot.mkString("[", ",", "]")}")
+[info]                                                   ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/PhasedFusingActorMaterializer.scala:663:43: materializing requested scala.reflect.type.ClassTag[akka.stream.stage.GraphStageLogic] using scala.reflect.`package`.materializeClassTag[akka.stream.stage.GraphStageLogic]()
+[info]   private val logicArrayType = Array.empty[GraphStageLogic]
+[info]                                           ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/PhasedFusingActorMaterializer.scala:752:70: materializing requested scala.reflect.type.ClassTag[akka.stream.Attributes.InputBuffer] using scala.reflect.`package`.materializeClassTag[akka.stream.Attributes.InputBuffer]()
+[info]     val bufferSize = connection.inOwner.attributes.mandatoryAttribute[InputBuffer].max
+[info]                                                                      ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/PhasedFusingActorMaterializer.scala:790:65: materializing requested scala.reflect.type.ClassTag[akka.stream.ActorAttributes.Dispatcher] using scala.reflect.`package`.materializeClassTag[akka.stream.ActorAttributes.Dispatcher]()
+[info]           .withDispatcher(effectiveAttributes.mandatoryAttribute[ActorAttributes.Dispatcher].dispatcher)
+[info]                                                                 ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/PhasedFusingActorMaterializer.scala:805:35: refArrayOps is not a valid implicit value for logic.handlers.type => ?{def indexWhere: ?} because:
+[info] inferred type arguments [Any] do not conform to method refArrayOps's type parameter bounds [T <: AnyRef]
+[info]     val missingHandlerIdx = logic.handlers.indexWhere(_.asInstanceOf[AnyRef] eq null)
+[info]                                   ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/PhasedFusingActorMaterializer.scala:805:35: wrapRefArray is not a valid implicit value for logic.handlers.type => ?{def indexWhere: ?} because:
+[info] inferred type arguments [Any] do not conform to method wrapRefArray's type parameter bounds [T <: AnyRef]
+[info]     val missingHandlerIdx = logic.handlers.indexWhere(_.asInstanceOf[AnyRef] eq null)
+[info]                                   ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/PhasedFusingActorMaterializer.scala:941:51: materializing requested scala.reflect.type.ClassTag[akka.stream.ActorAttributes.Dispatcher] using scala.reflect.`package`.materializeClassTag[akka.stream.ActorAttributes.Dispatcher]()
+[info]     val dispatcher = attributes.mandatoryAttribute[ActorAttributes.Dispatcher].dispatcher
+[info]                                                   ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/PhasedFusingActorMaterializer.scala:942:55: materializing requested scala.reflect.type.ClassTag[akka.stream.Attributes.InputBuffer] using scala.reflect.`package`.materializeClassTag[akka.stream.Attributes.InputBuffer]()
+[info]     val maxInputBuffer = attributes.mandatoryAttribute[Attributes.InputBuffer].max
+[info]                                                       ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/Sinks.scala:191:76: materializing requested scala.reflect.type.ClassTag[akka.stream.Attributes.InputBuffer] using scala.reflect.`package`.materializeClassTag[akka.stream.Attributes.InputBuffer]()
+[info]     val maxInputBufferSize = context.effectiveAttributes.mandatoryAttribute[Attributes.InputBuffer].max
+[info]                                                                            ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/Sinks.scala:366:59: materializing requested scala.reflect.type.ClassTag[akka.stream.Attributes.InputBuffer] using scala.reflect.`package`.materializeClassTag[akka.stream.Attributes.InputBuffer]()
+[info]       val maxBuffer = inheritedAttributes.get[InputBuffer](InputBuffer(16, 16)).max
+[info]                                                           ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/TraversalBuilder.scala:126:66: refArrayOps is not a valid implicit value for MaterializeAtomic.this.outToSlots.type => ?{def mkString: ?} because:
+[info] inferred type arguments [Int] do not conform to method refArrayOps's type parameter bounds [T <: AnyRef]
+[info]   override def toString: String = s"MaterializeAtomic($module, ${outToSlots.mkString("[", ", ", "]")})"
+[info]                                                                  ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/TraversalBuilder.scala:300:49: refArrayOps is not a valid implicit value for outToSlots.type => ?{def mkString: ?} because:
+[info] inferred type arguments [Int] do not conform to method refArrayOps's type parameter bounds [T <: AnyRef]
+[info]           prindent("materialize " + mod + " " + outToSlots.mkString("[", ", ", "]"))
+[info]                                                 ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/TraversalBuilder.scala:625:53: materializing requested scala.reflect.type.ClassTag[Int] using scala.reflect.`package`.materializeClassTag[Int]()
+[info]   private[this] final val noWire: Array[Int] = Array()
+[info]                                                     ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/UnfoldResourceSource.scala:29:62: materializing requested scala.reflect.type.ClassTag[akka.stream.ActorAttributes.SupervisionStrategy] using scala.reflect.`package`.materializeClassTag[akka.stream.ActorAttributes.SupervisionStrategy]()
+[info]     lazy val decider = inheritedAttributes.mandatoryAttribute[SupervisionStrategy].decider
+[info]                                                              ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/UnfoldResourceSourceAsync.scala:32:62: materializing requested scala.reflect.type.ClassTag[akka.stream.ActorAttributes.SupervisionStrategy] using scala.reflect.`package`.materializeClassTag[akka.stream.ActorAttributes.SupervisionStrategy]()
+[info]     lazy val decider = inheritedAttributes.mandatoryAttribute[SupervisionStrategy].decider
+[info]                                                              ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/fusing/ActorGraphInterpreter.scala:56:10: materializing requested scala.reflect.type.ClassTag[akka.stream.impl.fusing.ActorGraphInterpreter] using scala.reflect.`package`.materializeClassTag[akka.stream.impl.fusing.ActorGraphInterpreter]()
+[info]     Props(new ActorGraphInterpreter(shell)).withDeploy(Deploy.local)
+[info]          ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/fusing/ActorGraphInterpreter.scala:549:54: materializing requested scala.reflect.type.ClassTag[akka.stream.Attributes.InputBuffer] using scala.reflect.`package`.materializeClassTag[akka.stream.Attributes.InputBuffer]()
+[info]   val shellEventLimit = attributes.mandatoryAttribute[Attributes.InputBuffer].max * 16
+[info]                                                      ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/fusing/ActorGraphInterpreter.scala:664:43: materializing requested scala.reflect.type.ClassTag[(akka.stream.stage.GraphStageLogic, Int)] using scala.reflect.`package`.materializeClassTag[(akka.stream.stage.GraphStageLogic, Int)]()
+[info]       UninitializedInterpreterImpl(logics.zipWithIndex.map {
+[info]                                           ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/fusing/ActorGraphInterpreter.scala:664:60: materializing requested scala.reflect.type.ClassTag[akka.stream.snapshot.LogicSnapshotImpl] using scala.reflect.`package`.materializeClassTag[akka.stream.snapshot.LogicSnapshotImpl]()
+[info]       UninitializedInterpreterImpl(logics.zipWithIndex.map {
+[info]                                                            ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/fusing/GraphInterpreter.scala:67:51: materializing requested scala.reflect.type.ClassTag[akka.stream.Attributes] using scala.reflect.`package`.materializeClassTag[akka.stream.Attributes]()
+[info]   val singleNoAttribute: Array[Attributes] = Array(Attributes.none)
+[info]                                                   ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/fusing/GraphInterpreter.scala:215:69: materializing requested scala.reflect.type.ClassTag[Int] using scala.reflect.`package`.materializeClassTag[Int]()
+[info]   private[this] val shutdownCounter = Array.tabulate(logics.length) { i =>
+[info]                                                                     ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/fusing/GraphInterpreter.scala:329:5: refArrayOps is not a valid implicit value for GraphInterpreter.this.shutdownCounter.type => ?{def map: ?} because:
+[info] inferred type arguments [Int] do not conform to method refArrayOps's type parameter bounds [T <: AnyRef]
+[info]     shutdownCounter.map(x => if (x >= KeepGoingFlag) s"${x & KeepGoingMask}(KeepGoing)" else x.toString).mkString(",")
+[info]     ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/fusing/GraphInterpreter.scala:329:24: materializing requested scala.reflect.type.ClassTag[String] using scala.reflect.`package`.materializeClassTag[String]()
+[info]     shutdownCounter.map(x => if (x >= KeepGoingFlag) s"${x & KeepGoingMask}(KeepGoing)" else x.toString).mkString(",")
+[info]                        ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/fusing/GraphInterpreter.scala:351:60: materializing requested scala.reflect.type.ClassTag[akka.stream.Attributes.LogLevels] using scala.reflect.`package`.materializeClassTag[akka.stream.Attributes.LogLevels]()
+[info]             val loggingEnabled = activeStage.attributes.get[LogLevels] match {
+[info]                                                            ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/fusing/GraphInterpreter.scala:666:33: materializing requested scala.reflect.type.ClassTag[(akka.stream.stage.GraphStageLogic, Int)] using scala.reflect.`package`.materializeClassTag[(akka.stream.stage.GraphStageLogic, Int)]()
+[info]     val logicSnapshots = logics.zipWithIndex.map {
+[info]                                 ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/fusing/GraphInterpreter.scala:666:50: materializing requested scala.reflect.type.ClassTag[akka.stream.snapshot.LogicSnapshotImpl] using scala.reflect.`package`.materializeClassTag[akka.stream.snapshot.LogicSnapshotImpl]()
+[info]     val logicSnapshots = logics.zipWithIndex.map {
+[info]                                                  ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/fusing/GraphInterpreter.scala:671:31: materializing requested scala.reflect.type.ClassTag[(akka.stream.stage.GraphStageLogic, Int)] using scala.reflect.`package`.materializeClassTag[(akka.stream.stage.GraphStageLogic, Int)]()
+[info]     val logicIndexes = logics.zipWithIndex.map { case (stage, idx) => stage -> idx }.toMap
+[info]                               ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/fusing/GraphInterpreter.scala:671:48: materializing requested scala.reflect.type.ClassTag[(akka.stream.stage.GraphStageLogic, Int)] using scala.reflect.`package`.materializeClassTag[(akka.stream.stage.GraphStageLogic, Int)]()
+[info]     val logicIndexes = logics.zipWithIndex.map { case (stage, idx) => stage -> idx }.toMap
+[info]                                                ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/fusing/GraphInterpreter.scala:672:65: materializing requested scala.reflect.type.ClassTag[akka.stream.snapshot.ConnectionSnapshotImpl] using scala.reflect.`package`.materializeClassTag[akka.stream.snapshot.ConnectionSnapshotImpl]()
+[info]     val connectionSnapshots = connections.filter(_ != null).map { connection =>
+[info]                                                                 ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/fusing/GraphInterpreter.scala:690:46: refArrayOps is not a valid implicit value for GraphInterpreter.this.shutdownCounter.type => ?{def zipWithIndex: ?} because:
+[info] inferred type arguments [Int] do not conform to method refArrayOps's type parameter bounds [T <: AnyRef]
+[info]     val stoppedStages: List[LogicSnapshot] = shutdownCounter.zipWithIndex.collect {
+[info]                                              ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/fusing/GraphInterpreter.scala:690:62: materializing requested scala.reflect.type.ClassTag[(Int, Int)] using scala.reflect.`package`.materializeClassTag[(Int, Int)]()
+[info]     val stoppedStages: List[LogicSnapshot] = shutdownCounter.zipWithIndex.collect {
+[info]                                                              ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/fusing/GraphInterpreter.scala:690:83: materializing requested scala.reflect.type.ClassTag[akka.stream.snapshot.LogicSnapshotImpl] using scala.reflect.`package`.materializeClassTag[akka.stream.snapshot.LogicSnapshotImpl]()
+[info]     val stoppedStages: List[LogicSnapshot] = shutdownCounter.zipWithIndex.collect {
+[info]                                                                                   ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/fusing/Ops.scala:50:47: materializing requested scala.reflect.type.ClassTag[akka.stream.ActorAttributes.SupervisionStrategy] using scala.reflect.`package`.materializeClassTag[akka.stream.ActorAttributes.SupervisionStrategy]()
+[info]         inheritedAttributes.mandatoryAttribute[SupervisionStrategy].decider
+[info]                                               ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/fusing/Ops.scala:80:59: materializing requested scala.reflect.type.ClassTag[akka.stream.ActorAttributes.SupervisionStrategy] using scala.reflect.`package`.materializeClassTag[akka.stream.ActorAttributes.SupervisionStrategy]()
+[info]       def decider = inheritedAttributes.mandatoryAttribute[SupervisionStrategy].decider
+[info]                                                           ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/fusing/Ops.scala:118:59: materializing requested scala.reflect.type.ClassTag[akka.stream.ActorAttributes.SupervisionStrategy] using scala.reflect.`package`.materializeClassTag[akka.stream.ActorAttributes.SupervisionStrategy]()
+[info]       def decider = inheritedAttributes.mandatoryAttribute[SupervisionStrategy].decider
+[info]                                                           ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/fusing/Ops.scala:182:68: materializing requested scala.reflect.type.ClassTag[akka.stream.ActorAttributes.SupervisionStrategy] using scala.reflect.`package`.materializeClassTag[akka.stream.ActorAttributes.SupervisionStrategy]()
+[info]   private lazy val decider = inheritedAttributes.mandatoryAttribute[SupervisionStrategy].decider
+[info]                                                                    ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/fusing/Ops.scala:386:72: materializing requested scala.reflect.type.ClassTag[akka.stream.ActorAttributes.SupervisionStrategy] using scala.reflect.`package`.materializeClassTag[akka.stream.ActorAttributes.SupervisionStrategy]()
+[info]       private lazy val decider = inheritedAttributes.mandatoryAttribute[SupervisionStrategy].decider
+[info]                                                                        ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/fusing/Ops.scala:457:72: materializing requested scala.reflect.type.ClassTag[akka.stream.ActorAttributes.SupervisionStrategy] using scala.reflect.`package`.materializeClassTag[akka.stream.ActorAttributes.SupervisionStrategy]()
+[info]       private lazy val decider = inheritedAttributes.mandatoryAttribute[SupervisionStrategy].decider
+[info]                                                                        ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/fusing/Ops.scala:573:47: materializing requested scala.reflect.type.ClassTag[akka.stream.ActorAttributes.SupervisionStrategy] using scala.reflect.`package`.materializeClassTag[akka.stream.ActorAttributes.SupervisionStrategy]()
+[info]         inheritedAttributes.mandatoryAttribute[SupervisionStrategy].decider
+[info]                                               ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/fusing/Ops.scala:629:59: materializing requested scala.reflect.type.ClassTag[akka.stream.ActorAttributes.SupervisionStrategy] using scala.reflect.`package`.materializeClassTag[akka.stream.ActorAttributes.SupervisionStrategy]()
+[info]       val decider = inheritedAttributes.mandatoryAttribute[SupervisionStrategy].decider
+[info]                                                           ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/fusing/Ops.scala:1021:64: materializing requested scala.reflect.type.ClassTag[akka.stream.ActorAttributes.SupervisionStrategy] using scala.reflect.`package`.materializeClassTag[akka.stream.ActorAttributes.SupervisionStrategy]()
+[info]       lazy val decider = inheritedAttributes.mandatoryAttribute[SupervisionStrategy].decider
+[info]                                                                ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/fusing/Ops.scala:1241:64: materializing requested scala.reflect.type.ClassTag[akka.stream.ActorAttributes.SupervisionStrategy] using scala.reflect.`package`.materializeClassTag[akka.stream.ActorAttributes.SupervisionStrategy]()
+[info]       lazy val decider = inheritedAttributes.mandatoryAttribute[SupervisionStrategy].decider
+[info]                                                                ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/fusing/Ops.scala:1343:47: materializing requested scala.reflect.type.ClassTag[akka.stream.ActorAttributes.SupervisionStrategy] using scala.reflect.`package`.materializeClassTag[akka.stream.ActorAttributes.SupervisionStrategy]()
+[info]         inheritedAttributes.mandatoryAttribute[SupervisionStrategy].decider
+[info]                                               ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/fusing/Ops.scala:1447:59: materializing requested scala.reflect.type.ClassTag[akka.stream.ActorAttributes.SupervisionStrategy] using scala.reflect.`package`.materializeClassTag[akka.stream.ActorAttributes.SupervisionStrategy]()
+[info]       def decider = inheritedAttributes.mandatoryAttribute[SupervisionStrategy].decider
+[info]                                                           ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/fusing/Ops.scala:1450:55: materializing requested scala.reflect.type.ClassTag[akka.stream.Attributes.LogLevels] using scala.reflect.`package`.materializeClassTag[akka.stream.Attributes.LogLevels]()
+[info]         logLevels = inheritedAttributes.get[LogLevels](DefaultLogLevels)
+[info]                                                       ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/fusing/Ops.scala:1718:56: materializing requested scala.reflect.type.ClassTag[akka.stream.Attributes.InputBuffer] using scala.reflect.`package`.materializeClassTag[akka.stream.Attributes.InputBuffer]()
+[info]       val size = inheritedAttributes.mandatoryAttribute[InputBuffer].max
+[info]                                                        ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/fusing/Ops.scala:1895:47: materializing requested scala.reflect.type.ClassTag[akka.stream.ActorAttributes.SupervisionStrategy] using scala.reflect.`package`.materializeClassTag[akka.stream.ActorAttributes.SupervisionStrategy]()
+[info]         inheritedAttributes.mandatoryAttribute[SupervisionStrategy].decider
+[info]                                               ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/fusing/Ops.scala:2015:62: materializing requested scala.reflect.type.ClassTag[akka.stream.ActorAttributes.SupervisionStrategy] using scala.reflect.`package`.materializeClassTag[akka.stream.ActorAttributes.SupervisionStrategy]()
+[info]     lazy val decider = inheritedAttributes.mandatoryAttribute[SupervisionStrategy].decider
+[info]                                                              ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/fusing/StreamOfStreams.scala:269:64: materializing requested scala.reflect.type.ClassTag[akka.stream.ActorAttributes.SupervisionStrategy] using scala.reflect.`package`.materializeClassTag[akka.stream.ActorAttributes.SupervisionStrategy]()
+[info]       lazy val decider = inheritedAttributes.mandatoryAttribute[SupervisionStrategy].decider
+[info]                                                                ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/io/IOSinks.scala:37:76: materializing requested scala.reflect.type.ClassTag[akka.stream.Attributes.InputBuffer] using scala.reflect.`package`.materializeClassTag[akka.stream.Attributes.InputBuffer]()
+[info]     val maxInputBufferSize = context.effectiveAttributes.mandatoryAttribute[Attributes.InputBuffer].max
+[info]                                                                            ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/io/IOSinks.scala:43:74: materializing requested scala.reflect.type.ClassTag[akka.stream.ActorAttributes.Dispatcher] using scala.reflect.`package`.materializeClassTag[akka.stream.ActorAttributes.Dispatcher]()
+[info]       props.withDispatcher(context.effectiveAttributes.mandatoryAttribute[Dispatcher].dispatcher))
+[info]                                                                          ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/io/IOSinks.scala:72:76: materializing requested scala.reflect.type.ClassTag[akka.stream.Attributes.InputBuffer] using scala.reflect.`package`.materializeClassTag[akka.stream.Attributes.InputBuffer]()
+[info]     val maxInputBufferSize = context.effectiveAttributes.mandatoryAttribute[Attributes.InputBuffer].max
+[info]                                                                            ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/io/IOSinks.scala:76:69: materializing requested scala.reflect.type.ClassTag[akka.stream.ActorAttributes.Dispatcher] using scala.reflect.`package`.materializeClassTag[akka.stream.ActorAttributes.Dispatcher]()
+[info]       .withDispatcher(context.effectiveAttributes.mandatoryAttribute[Dispatcher].dispatcher)
+[info]                                                                     ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/io/IOSources.scala:62:62: materializing requested scala.reflect.type.ClassTag[akka.stream.Attributes.InputBuffer] using scala.reflect.`package`.materializeClassTag[akka.stream.Attributes.InputBuffer]()
+[info]       val maxReadAhead = inheritedAttributes.get[InputBuffer](InputBuffer(16, 16)).max
+[info]                                                              ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/io/IOSources.scala:164:71: materializing requested scala.reflect.type.ClassTag[akka.stream.ActorAttributes.Dispatcher] using scala.reflect.`package`.materializeClassTag[akka.stream.ActorAttributes.Dispatcher]()
+[info]         .withDispatcher(context.effectiveAttributes.mandatoryAttribute[Dispatcher].dispatcher)
+[info]                                                                       ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/io/InputStreamSinkStage.scala:50:57: materializing requested scala.reflect.type.ClassTag[akka.stream.Attributes.InputBuffer] using scala.reflect.`package`.materializeClassTag[akka.stream.Attributes.InputBuffer]()
+[info]     val maxBuffer = inheritedAttributes.get[InputBuffer](InputBuffer(16, 16)).max
+[info]                                                         ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/io/OutputStreamSourceStage.scala:34:57: materializing requested scala.reflect.type.ClassTag[akka.stream.Attributes.InputBuffer] using scala.reflect.`package`.materializeClassTag[akka.stream.Attributes.InputBuffer]()
+[info]     val maxBuffer = inheritedAttributes.get[InputBuffer](InputBuffer(16, 16)).max
+[info]                                                         ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/io/OutputStreamSubscriber.scala:47:24: materializing requested scala.reflect.type.ClassTag[Byte] using scala.reflect.`package`.materializeClassTag[Byte]()
+[info]         os.write(bytes.toArray)
+[info]                        ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/io/TLSActor.scala:38:10: materializing requested scala.reflect.type.ClassTag[akka.stream.impl.io.TLSActor] using scala.reflect.`package`.materializeClassTag[akka.stream.impl.io.TLSActor]()
+[info]     Props(new TLSActor(maxInputBufferSize, createSSLEngine, verifySession, closing, tracing)).withDeploy(Deploy.local)
+[info]          ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/io/TLSActor.scala:481:90: materializing requested scala.reflect.type.ClassTag[String] using scala.reflect.`package`.materializeClassTag[String]()
+[info]     sessionParameters.enabledCipherSuites.foreach(cs => engine.setEnabledCipherSuites(cs.toArray))
+[info]                                                                                          ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/io/TLSActor.scala:482:82: materializing requested scala.reflect.type.ClassTag[String] using scala.reflect.`package`.materializeClassTag[String]()
+[info]     sessionParameters.enabledProtocols.foreach(p => engine.setEnabledProtocols(p.toArray))
+[info]                                                                                  ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/io/compression/DeflateCompressor.scala:37:29: materializing requested scala.reflect.type.ClassTag[Byte] using scala.reflect.`package`.materializeClassTag[Byte]()
+[info]     deflater.setInput(input.toArray)
+[info]                             ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/io/compression/DeflateDecompressorBase.scala:27:48: materializing requested scala.reflect.type.ClassTag[Byte] using scala.reflect.`package`.materializeClassTag[Byte]()
+[info]         inflater.setInput(reader.remainingData.toArray)
+[info]                                                ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/io/compression/GzipCompressor.scala:29:27: materializing requested scala.reflect.type.ClassTag[Byte] using scala.reflect.`package`.materializeClassTag[Byte]()
+[info]     checkSum.update(input.toArray)
+[info]                           ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/io/compression/GzipDecompressor.scala:67:21: materializing requested scala.reflect.type.ClassTag[Byte] using scala.reflect.`package`.materializeClassTag[Byte]()
+[info]     crc.update(data.toArray)
+[info]                     ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/streamref/SinkRefImpl.scala:68:111: materializing requested scala.reflect.type.ClassTag[akka.stream.StreamRefAttributes.SubscriptionTimeout] using scala.reflect.`package`.materializeClassTag[akka.stream.StreamRefAttributes.SubscriptionTimeout]()
+[info]       private[this] val subscriptionTimeout = inheritedAttributes.get[StreamRefAttributes.SubscriptionTimeout](
+[info]                                                                                                               ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/impl/streamref/SourceRefImpl.scala:66:111: materializing requested scala.reflect.type.ClassTag[akka.stream.StreamRefAttributes.SubscriptionTimeout] using scala.reflect.`package`.materializeClassTag[akka.stream.StreamRefAttributes.SubscriptionTimeout]()
+[info]       private[this] val subscriptionTimeout = inheritedAttributes.get[StreamRefAttributes.SubscriptionTimeout](
+[info]                                                                                                               ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/javadsl/Graph.scala:143:31: refArrayOps is not a valid implicit value for priorities.type => ?{def toIndexedSeq: ?} because:
+[info] inferred type arguments [Int] do not conform to method refArrayOps's type parameter bounds [T <: AnyRef]
+[info]     scaladsl.MergePrioritized(priorities.toIndexedSeq)
+[info]                               ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/javadsl/Graph.scala:158:31: refArrayOps is not a valid implicit value for priorities.type => ?{def toIndexedSeq: ?} because:
+[info] inferred type arguments [Int] do not conform to method refArrayOps's type parameter bounds [T <: AnyRef]
+[info]     scaladsl.MergePrioritized(priorities.toIndexedSeq, eagerComplete = eagerComplete)
+[info]                               ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/javadsl/MergeLatest.scala:34:84: refArrayOps is not a valid implicit value for x.type => ?{def toList: ?} because:
+[info] inferred type arguments [T] do not conform to method refArrayOps's type parameter bounds [T <: AnyRef]
+[info]     new scaladsl.MergeLatest[T, java.util.List[T]](inputPorts, eagerComplete)(x => x.toList.asJava)
+[info]                                                                                    ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/javadsl/MergeLatest.scala:34:84: wrapRefArray is not a valid implicit value for x.type => ?{def toList: ?} because:
+[info] inferred type arguments [T] do not conform to method wrapRefArray's type parameter bounds [T <: AnyRef]
+[info]     new scaladsl.MergeLatest[T, java.util.List[T]](inputPorts, eagerComplete)(x => x.toList.asJava)
+[info]                                                                                    ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/scaladsl/Framing.scala:223:31: materializing requested scala.reflect.type.ClassTag[(Int, Int)] using scala.reflect.`package`.materializeClassTag[(Int, Int)]()
+[info]         private val indices = new LightArray[(Int, Int)](256)
+[info]                               ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/scaladsl/Framing.scala:418:64: materializing requested scala.reflect.type.ClassTag[Byte] using scala.reflect.`package`.materializeClassTag[Byte]()
+[info]               case Some(f) => f(buffer.take(lengthFieldOffset).toArray, parsedLength)
+[info]                                                                ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/scaladsl/Graph.scala:235:48: materializing requested scala.reflect.type.ClassTag[() => Unit] using scala.reflect.`package`.materializeClassTag[() => Unit]()
+[info]     val pullMe = Array.tabulate(secondaryPorts)(i => {
+[info]                                                ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/scaladsl/Graph.scala:608:61: materializing requested scala.reflect.type.ClassTag[Boolean] using scala.reflect.`package`.materializeClassTag[Boolean]()
+[info]       private val pending = Array.fill[Boolean](outputPorts)(true)
+[info]                                                             ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/scaladsl/Graph.scala:799:64: materializing requested scala.reflect.type.ClassTag[akka.stream.ActorAttributes.SupervisionStrategy] using scala.reflect.`package`.materializeClassTag[akka.stream.ActorAttributes.SupervisionStrategy]()
+[info]       lazy val decider = inheritedAttributes.mandatoryAttribute[SupervisionStrategy].decider
+[info]                                                                ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/scaladsl/Hub.scala:293:53: materializing requested scala.reflect.type.ClassTag[akka.stream.Attributes.LogLevels] using scala.reflect.`package`.materializeClassTag[akka.stream.Attributes.LogLevels]()
+[info]     val sinkWithAttributes = inheritedAttributes.get[LogLevels] match {
+[info]                                                     ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/scaladsl/Hub.scala:414:81: materializing requested scala.reflect.type.ClassTag[List[BroadcastHub.this.Consumer]] using scala.reflect.`package`.materializeClassTag[List[BroadcastHub.this.Consumer]]()
+[info]     private[this] val consumerWheel = Array.fill[List[Consumer]](bufferSize * 2)(Nil)
+[info]                                                                                 ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/scaladsl/MergeLatest.scala:34:60: refArrayOps is not a valid implicit value for x$1.type => ?{def toList: ?} because:
+[info] inferred type arguments [T] do not conform to method refArrayOps's type parameter bounds [T <: AnyRef]
+[info]     new MergeLatest[T, List[T]](inputPorts, eagerComplete)(_.toList)
+[info]                                                            ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/scaladsl/MergeLatest.scala:34:60: wrapRefArray is not a valid implicit value for x$1.type => ?{def toList: ?} because:
+[info] inferred type arguments [T] do not conform to method wrapRefArray's type parameter bounds [T <: AnyRef]
+[info]     new MergeLatest[T, List[T]](inputPorts, eagerComplete)(_.toList)
+[info]                                                            ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/scaladsl/RestartFlow.scala:155:49: materializing requested scala.reflect.type.ClassTag[akka.stream.scaladsl.RestartWithBackoffFlow.Delay] using scala.reflect.`package`.materializeClassTag[akka.stream.scaladsl.RestartWithBackoffFlow.Delay]()
+[info]       val delay = inheritedAttributes.get[Delay](Delay(50.millis)).duration
+[info]                                                 ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/snapshot/MaterializerState.scala:46:63: materializing requested scala.reflect.type.ClassTag[akka.stream.impl.StreamSupervisor.ChildrenSnapshots] using scala.reflect.`package`.materializeClassTag[akka.stream.impl.StreamSupervisor.ChildrenSnapshots]()
+[info]     (supervisor ? StreamSupervisor.GetChildrenSnapshots).mapTo[StreamSupervisor.ChildrenSnapshots].map(_.seq)
+[info]                                                               ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/snapshot/MaterializerState.scala:54:51: materializing requested scala.reflect.type.ClassTag[akka.stream.snapshot.StreamSnapshot] using scala.reflect.`package`.materializeClassTag[akka.stream.snapshot.StreamSnapshot]()
+[info]     (child ? ActorGraphInterpreter.Snapshot).mapTo[StreamSnapshot]
+[info]                                                   ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/stage/GraphStage.scala:244:99: materializing requested scala.reflect.type.ClassTag[akka.actor.FunctionRef] using scala.reflect.`package`.materializeClassTag[akka.actor.FunctionRef]()
+[info]             val reply = (materializer.supervisor ? StreamSupervisor.AddFunctionRef(f, name)).mapTo[FunctionRef]
+[info]                                                                                                   ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/stage/GraphStage.scala:728:33: refArrayOps is not a valid implicit value for result.type => ?{def toSeq: ?} because:
+[info] inferred type arguments [T] do not conform to method refArrayOps's type parameter bounds [T <: AnyRef]
+[info]           if (pos == n) andThen(result.toSeq)
+[info]                                 ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/stage/GraphStage.scala:728:33: wrapRefArray is not a valid implicit value for result.type => ?{def toSeq: ?} because:
+[info] inferred type arguments [T] do not conform to method wrapRefArray's type parameter bounds [T <: AnyRef]
+[info]           if (pos == n) andThen(result.toSeq)
+[info]                                 ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/stage/GraphStage.scala:729:26: refArrayOps is not a valid implicit value for result.type => ?{def take: ?} because:
+[info] inferred type arguments [T] do not conform to method refArrayOps's type parameter bounds [T <: AnyRef]
+[info]         }, () => onClose(result.take(pos).toSeq)))
+[info]                          ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/stage/GraphStage.scala:729:26: wrapRefArray is not a valid implicit value for result.type => ?{def take: ?} because:
+[info] inferred type arguments [T] do not conform to method wrapRefArray's type parameter bounds [T <: AnyRef]
+[info]         }, () => onClose(result.take(pos).toSeq)))
+[info]                          ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/stage/GraphStage.scala:729:37: refArrayOps is not a valid implicit value for Array[T] => ?{def toSeq: ?} because:
+[info] inferred type arguments [T] do not conform to method refArrayOps's type parameter bounds [T <: AnyRef]
+[info]         }, () => onClose(result.take(pos).toSeq)))
+[info]                                     ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/stage/GraphStage.scala:729:37: wrapRefArray is not a valid implicit value for Array[T] => ?{def toSeq: ?} because:
+[info] inferred type arguments [T] do not conform to method wrapRefArray's type parameter bounds [T <: AnyRef]
+[info]         }, () => onClose(result.take(pos).toSeq)))
+[info]                                     ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/stage/GraphStage.scala:730:22: refArrayOps is not a valid implicit value for result.type => ?{def toSeq: ?} because:
+[info] inferred type arguments [T] do not conform to method refArrayOps's type parameter bounds [T <: AnyRef]
+[info]       } else andThen(result.toSeq)
+[info]                      ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/akka/stream/stage/GraphStage.scala:730:22: wrapRefArray is not a valid implicit value for result.type => ?{def toSeq: ?} because:
+[info] inferred type arguments [T] do not conform to method wrapRefArray's type parameter bounds [T <: AnyRef]
+[info]       } else andThen(result.toSeq)
+[info]                      ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/com/typesafe/sslconfig/akka/AkkaSSLConfig.scala:119:43: materializing requested scala.reflect.type.ClassTag[javax.net.ssl.HostnameVerifier] using scala.reflect.`package`.materializeClassTag[javax.net.ssl.HostnameVerifier]()
+[info]       .createInstanceFor[HostnameVerifier](clazz, Nil)
+[info]                                           ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/com/typesafe/sslconfig/akka/AkkaSSLConfig.scala:120:71: materializing requested scala.reflect.type.ClassTag[javax.net.ssl.HostnameVerifier] using scala.reflect.`package`.materializeClassTag[javax.net.ssl.HostnameVerifier]()
+[info]       .orElse(system.dynamicAccess.createInstanceFor[HostnameVerifier](clazz, List(classOf[LoggerFactory] -> mkLogger)))
+[info]                                                                       ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/com/typesafe/sslconfig/akka/AkkaSSLConfig.scala:166:64: materializing requested scala.reflect.type.ClassTag[String] using scala.reflect.`package`.materializeClassTag[String]()
+[info]         configuredProtocols.filter(existingProtocols.contains).toArray
+[info]                                                                ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/com/typesafe/sslconfig/akka/AkkaSSLConfig.scala:189:63: materializing requested scala.reflect.type.ClassTag[String] using scala.reflect.`package`.materializeClassTag[String]()
+[info]         configuredCiphers.filter(existingCiphers.contains(_)).toArray
+[info]                                                               ^
+[info] /home/zainab/lsug/akka/akka-stream/src/main/scala/com/typesafe/sslconfig/akka/AkkaSSLConfig.scala:192:72: materializing requested scala.reflect.type.ClassTag[String] using scala.reflect.`package`.materializeClassTag[String]()
+[info]         Ciphers.recommendedCiphers.filter(existingCiphers.contains(_)).toArray
+[info]                                                                        ^
+[info] *** Cumulative statistics at phase typer
+[info] time spent typechecking       : 1 spans, ()10771.555ms
+[info] time spent in lubs            : 2288 spans, ()412.051ms (3.8%) aggregate, 403.883ms (3.7%) specific
+[info] time spent in <:<             : 630679 spans, ()2357.79ms (21.9%) aggregate, 1148.578ms (10.7%) specific
+[info] time spent in findmember      : 714249 spans, ()725.568ms (6.7%) aggregate, 621.272ms (5.8%) specific
+[info] time spent in findmembers     : 0 spans, ()0.0ms (0.0%) aggregate, 0.0ms (0.0%) specific
+[info] time spent in asSeenFrom      : 480077 spans, ()415.839ms (3.9%) aggregate, 313.741ms (2.9%) specific
+[info] time spent in baseTypeSeq     : 42455 spans, ()411.442ms (3.8%) aggregate, 228.959ms (2.1%) specific
+[info] time spent in baseClasses     : 5546 spans, ()66.232ms (0.6%) aggregate, 40.309ms (0.4%) specific
+[info] time classfilereading         : 762 spans, ()184.055ms (1.7%)
+[info] time spent in failed          : 1359 spans, ()354.759ms (3.3%)
+[info]   failed apply                : 0 spans, ()0.0ms (0.0%)
+[info]   failed op=                  : 1243 spans, ()387.33ms (3.6%)
+[info] time spent ref scanning       : 18 spans, ()0.436ms (0.0%)
+[info] time spent in implicits       : 15619 spans, ()1958.782ms (18.2%)
+[info]   successful in scope         : 702 spans, ()291.961ms (2.7%)
+[info]   failed in scope             : 14917 spans, ()414.686ms (3.8%)
+[info]   successful of type          : 232 spans, ()343.947ms (3.2%)
+[info]   failed of type              : 14685 spans, ()123.568ms (1.1%)
+[info]   assembling parts            : 3345 spans, ()85.296ms (0.8%)
+[info]   matchesPT                   : 3680 spans, ()27.446ms (0.3%)
+[info] time spent in macroExpand     : 97 spans, ()85.395ms (0.8%)
+[info] time spent in scope population: 90176 spans, ()9.823ms
+[info] #type symbols                 : 119575
+[info] #typechecked selections       : 48332
+[info] #symbols                      : 288422
+[info] #sametype ops                 : 328695
+[info] implicits instantiated for pruning: 201
+[info]   immediate mismatches        : 2 (1.0%)
+[info]   instantiated mismatches     : 2 (1.0%)
+[info] #toplevel lubs/glbs           : 2288
+[info] #raw type creations           : 1888930
+[info]   of which in failed          : 205873 (10.9%)
+[info]   of which in implicits       : 1238051 (65.5%)
+[info] #class symbols                : 26128
+[info] #base type seqs               : 43015
+[info] avg base type seq length      : 5.4
+[info]   of which for compound types : 6098 (14.2%)
+[info]   of which for typerefs       : 36357 (84.5%)
+[info] #typechecked applications     : 36522
+[info] #unique types                 : 159222
+[info] #subtype ops                  : 630679
+[info]   of which in failed          : 4372 (0.7%)
+[info]   of which in implicit        : 24853 (3.9%)
+[info] #findMember ops               : 714249
+[info]   of which not found          : 510177 (71.4%)
+[info]   of which multiple overloaded: 8207 (1.1%)
+[info]   of which in failed          : 6171 (0.9%)
+[info]   of which in implicit        : 18045 (2.5%)
+[info] time spent in scope lookup    : 2515163 spans, ()292.947ms
+[info] implicit cache accesses       : 14826
+[info] implicit cache hits           : 11481 (77.4%)
+[info] #macro expansions             : 97
+[info] #all lubs/glbs                : 23427
+[info] #created tree nodes           : 1132880
+[info] #created scopes               : 120268
+[info] #typechecked identifiers      : 136657
+[info] #implicit searches            : 15619
+[info]   #plausibly compatible       : 916 (5.9%)
+[info]   #matching                   : 916 (5.9%)
+[info]   #typed                      : 884 (5.7%)
+[info]   #found                      : 884 (5.7%)
+[info]   #implicit improves tests    : 592 (3.8%)
+[info]   #implicit improves cached   : 270 (1.7%)
+[info]   #implicit inscope hits      : 702 (4.5%)
+[info]   #implicit oftype hits       : 232 (1.5%)
+[info] *** Cumulative statistics at phase patmat
+[info] time spent in scope population: 94675 spans, ()11.036ms
+[info] #type symbols                 : 120188
+[info] #typechecked selections       : 51485
+[info] #symbols                      : 298037
+[info] #sametype ops                 : 357669
+[info] implicits instantiated for pruning: 201
+[info]   immediate mismatches        : 2 (1.0%)
+[info]   instantiated mismatches     : 2 (1.0%)
+[info] #toplevel lubs/glbs           : 2293
+[info] #raw type creations           : 1911838
+[info]   of which in failed          : 205873 (10.8%)
+[info]   of which in implicits       : 1238051 (64.8%)
+[info] #class symbols                : 26594
+[info] #base type seqs               : 43131
+[info] avg base type seq length      : 5.4
+[info]   of which for compound types : 6115 (14.2%)
+[info]   of which for typerefs       : 36456 (84.5%)
+[info] #typechecked applications     : 40566
+[info] #unique types                 : 115155
+[info] #subtype ops                  : 682719
+[info]   of which in failed          : 4372 (0.6%)
+[info]   of which in implicit        : 24853 (3.6%)
+[info] #findMember ops               : 717349
+[info]   of which not found          : 511513 (71.3%)
+[info]   of which multiple overloaded: 8564 (1.2%)
+[info]   of which in failed          : 6171 (0.9%)
+[info]   of which in implicit        : 18045 (2.5%)
+[info] time spent in scope lookup    : 2533661 spans, ()294.977ms
+[info] #all lubs/glbs                : 23432
+[info] #created tree nodes           : 1215398
+[info] #created scopes               : 124837
+[info] #typechecked identifiers      : 140467
+[info] time spent in patmat          : 907 spans, ()517.422ms
+[info]   of which DPLL               : 981 spans, ()17.771ms (3.4%)
+[info]   of which in CNF conversion  : 0 spans, ()0.0ms (0.0%)
+[info]   of which variable equality  : 1792 spans, ()92.883ms (18.0%)
+[info]   of which in exhaustivity    : 196 spans, ()60.842ms (11.8%)
+[info]   of which in unreachability  : 798 spans, ()232.21ms (44.9%)
+[info] *** Cumulative statistics at phase erasure
+[info] time spent in scope population: 187135 spans, ()26.32ms
+[info] #type symbols                 : 146559
+[info] #typechecked selections       : 160893
+[info] #symbols                      : 420695
+[info] #sametype ops                 : 415584
+[info] implicits instantiated for pruning: 201
+[info]   immediate mismatches        : 2 (1.0%)
+[info]   instantiated mismatches     : 2 (1.0%)
+[info] #toplevel lubs/glbs           : 4174
+[info] #raw type creations           : 2194760
+[info]   of which in failed          : 205873 (9.4%)
+[info]   of which in implicits       : 1238051 (56.4%)
+[info] #class symbols                : 36687
+[info] #base type seqs               : 67514
+[info] avg base type seq length      : 5.2
+[info]   of which for compound types : 18516 (27.4%)
+[info]   of which for typerefs       : 48437 (71.7%)
+[info] #typechecked applications     : 115377
+[info] #unique types                 : 116013
+[info] #subtype ops                  : 1335419
+[info]   of which in failed          : 4372 (0.3%)
+[info]   of which in implicit        : 24853 (1.9%)
+[info] #findMember ops               : 758163
+[info]   of which not found          : 518891 (68.4%)
+[info]   of which multiple overloaded: 8820 (1.2%)
+[info]   of which in failed          : 6171 (0.8%)
+[info]   of which in implicit        : 18045 (2.4%)
+[info] time spent in scope lookup    : 2983237 spans, ()325.468ms
+[info] #all lubs/glbs                : 25372
+[info] #created tree nodes           : 1616140
+[info] #created scopes               : 250780
+[info] #typechecked identifiers      : 178202
+[info] *** Cumulative statistics at phase cleanup
+[info] time spent in scope population: 193186 spans, ()26.66ms
+[info] #type symbols                 : 158268
+[info] #typechecked selections       : 169040
+[info] #symbols                      : 467101
+[info] #sametype ops                 : 434523
+[info] implicits instantiated for pruning: 201
+[info]   immediate mismatches        : 2 (1.0%)
+[info]   instantiated mismatches     : 2 (1.0%)
+[info] #toplevel lubs/glbs           : 5118
+[info] #raw type creations           : 2365555
+[info]   of which in failed          : 205873 (8.7%)
+[info]   of which in implicits       : 1238051 (52.3%)
+[info] #class symbols                : 38594
+[info] #base type seqs               : 71846
+[info] avg base type seq length      : 5.2
+[info]   of which for compound types : 21952 (30.6%)
+[info]   of which for typerefs       : 49333 (68.7%)
+[info] #typechecked applications     : 118787
+[info] #unique types                 : 136859
+[info] #subtype ops                  : 1387818
+[info]   of which in failed          : 4372 (0.3%)
+[info]   of which in implicit        : 24853 (1.8%)
+[info] #findMember ops               : 766956
+[info]   of which not found          : 520983 (67.9%)
+[info]   of which multiple overloaded: 9216 (1.2%)
+[info]   of which in failed          : 6171 (0.8%)
+[info]   of which in implicit        : 18045 (2.4%)
+[info] time spent in scope lookup    : 3092865 spans, ()334.971ms
+[info] #all lubs/glbs                : 26316
+[info] #created tree nodes           : 1769767
+[info] #created scopes               : 263833
+[info] #typechecked identifiers      : 184006
+[info] *** Cumulative statistics at phase jvm
+[info] time spent in scope population: 194387 spans, ()26.856ms
+[info] #type symbols                 : 163100
+[info] #typechecked selections       : 169816
+[info] #symbols                      : 484782
+[info] #sametype ops                 : 441338
+[info] implicits instantiated for pruning: 201
+[info]   immediate mismatches        : 2 (1.0%)
+[info]   instantiated mismatches     : 2 (1.0%)
+[info] #toplevel lubs/glbs           : 5118
+[info] #raw type creations           : 2407995
+[info]   of which in failed          : 205873 (8.5%)
+[info]   of which in implicits       : 1238051 (51.4%)
+[info] #class symbols                : 39681
+[info] #base type seqs               : 75073
+[info] avg base type seq length      : 5.2
+[info]   of which for compound types : 23714 (31.6%)
+[info]   of which for typerefs       : 50798 (67.7%)
+[info] #typechecked applications     : 120390
+[info] #unique types                 : 95827
+[info] #subtype ops                  : 1395778
+[info]   of which in failed          : 4372 (0.3%)
+[info]   of which in implicit        : 24853 (1.8%)
+[info] #findMember ops               : 783052
+[info]   of which not found          : 524512 (67.0%)
+[info]   of which multiple overloaded: 9324 (1.2%)
+[info]   of which in failed          : 6171 (0.8%)
+[info]   of which in implicit        : 18045 (2.3%)
+[info] time spent in scope lookup    : 3173327 spans, ()344.411ms
+[info] time in backend               : 1 spans, ()1717.65ms
+[info] bcode initialization          : 1 spans, ()0.76ms (0.0%)
+[info] code generation               : 170 spans, ()991.848ms (57.7%)
+[info] intra-method optimizations    : 2251 spans, ()150.589ms (8.8%)
+[info] classfile writing             : 2350 spans, ()98.699ms (5.7%)
+[info] #all lubs/glbs                : 26316
+[info] #created tree nodes           : 1802031
+[info] #created scopes               : 267240
+[info] #typechecked identifiers      : 185786
+[info] Writing graph to /home/zainab/lsug/akka/akka-stream/target/classes/META-INF/profiledb/graphs/implicit-searches-1563796230703.flamegraph
+[info] Creating global statistics information at /home/zainab/lsug/akka/akka-stream/target/classes/META-INF/profiledb/global.profiledb.
+[info] *** Cumulative timers for phases
+[info] #total compile time           : 1 spans, ()20846.295ms
+[info]   parser                      : 1 spans, ()482.571ms (2.3%)
+[info]   namer                       : 1 spans, ()31.559ms (0.2%)
+[info]   packageobjects              : 1 spans, ()2.509ms (0.0%)
+[info]   typer                       : 1 spans, ()10771.561ms (51.7%)
+[info]   silencer                    : 1 spans, ()539.442ms (2.6%)
+[info]   patmat                      : 1 spans, ()685.305ms (3.3%)
+[info]   superaccessors              : 1 spans, ()188.888ms (0.9%)
+[info]   extmethods                  : 1 spans, ()37.126ms (0.2%)
+[info]   pickler                     : 1 spans, ()96.6ms (0.5%)
+[info]   xsbt-api                    : 1 spans, ()868.486ms (4.2%)
+[info]   xsbt-dependency             : 1 spans, ()293.61ms (1.4%)
+[info]   refchecks                   : 1 spans, ()1182.807ms (5.7%)
+[info]   uncurry                     : 1 spans, ()384.988ms (1.8%)
+[info]   fields                      : 1 spans, ()106.428ms (0.5%)
+[info]   tailcalls                   : 1 spans, ()89.327ms (0.4%)
+[info]   specialize                  : 1 spans, ()389.579ms (1.9%)
+[info]   explicitouter               : 1 spans, ()468.433ms (2.2%)
+[info]   erasure                     : 1 spans, ()1055.169ms (5.1%)
+[info]   posterasure                 : 1 spans, ()130.468ms (0.6%)
+[info]   lambdalift                  : 1 spans, ()197.584ms (0.9%)
+[info]   constructors                : 1 spans, ()203.227ms (1.0%)
+[info]   flatten                     : 1 spans, ()77.246ms (0.4%)
+[info]   mixin                       : 1 spans, ()233.486ms (1.1%)
+[info]   cleanup                     : 1 spans, ()94.285ms (0.5%)
+[info]   delambdafy                  : 1 spans, ()127.254ms (0.6%)
+[info]   jvm                         : 1 spans, ()1717.655ms (8.2%)
+[info]   scalacenter-profiling       : 1 spans, ()338.148ms (1.6%)
+[info]   xsbt-analyzer               : 1 spans, ()16.566ms (0.1%)
+[info] Done compiling.
+[info] Compiling 9 Scala sources to /home/zainab/lsug/akka/akka-stream-typed/target/classes ...
+[info] Enabling statistics, measuring overhead = 23.2482ns to 93.4153ns per timer
+[info] *** Cumulative statistics at phase parser
+[info] #created tree nodes           : 1548
+[info] *** Cumulative statistics at phase typer
+[info] time spent typechecking       : 1 spans, ()146.133ms
+[info] time spent in lubs            : 0 spans, ()0.0ms (0.0%) aggregate, 0.0ms (0.0%) specific
+[info] time spent in <:<             : 2123 spans, ()4.249ms (2.9%) aggregate, 2.496ms (1.7%) specific
+[info] time spent in findmember      : 6133 spans, ()3.559ms (2.4%) aggregate, 3.4ms (2.3%) specific
+[info] time spent in findmembers     : 0 spans, ()0.0ms (0.0%) aggregate, 0.0ms (0.0%) specific
+[info] time spent in asSeenFrom      : 2136 spans, ()11.22ms (7.7%) aggregate, 10.3ms (7.0%) specific
+[info] time spent in baseTypeSeq     : 397 spans, ()14.433ms (9.9%) aggregate, 5.763ms (3.9%) specific
+[info] time spent in baseClasses     : 179 spans, ()4.143ms (2.8%) aggregate, 2.71ms (1.9%) specific
+[info] time classfilereading         : 152 spans, ()27.398ms (18.7%)
+[info] time spent in failed          : 0 spans, ()0.0ms (0.0%)
+[info]   failed apply                : 0 spans, ()0.0ms (0.0%)
+[info]   failed op=                  : 0 spans, ()0.0ms (0.0%)
+[info] time spent ref scanning       : 0 spans, ()0.0ms (0.0%)
+[info] time spent in implicits       : 38 spans, ()71.822ms (49.1%)
+[info]   successful in scope         : 12 spans, ()44.483ms (30.4%)
+[info]   failed in scope             : 26 spans, ()13.749ms (9.4%)
+[info]   successful of type          : 2 spans, ()2.963ms (2.0%)
+[info]   failed of type              : 24 spans, ()1.103ms (0.8%)
+[info]   assembling parts            : 15 spans, ()1.088ms (0.7%)
+[info]   matchesPT                   : 36 spans, ()0.387ms (0.3%)
+[info] time spent in macroExpand     : 0 spans, ()0.0ms (0.0%)
+[info] time spent in scope population: 428 spans, ()0.043ms
+[info] #type symbols                 : 10566
+[info] #typechecked selections       : 347
+[info] #symbols                      : 31101
+[info] #sametype ops                 : 76
+[info] implicits instantiated for pruning: 1
+[info] #raw type creations           : 9044
+[info]   of which in implicits       : 5127 (56.7%)
+[info] #class symbols                : 8603
+[info] #base type seqs               : 398
+[info] avg base type seq length      : 4.0
+[info]   of which for compound types : 170 (42.7%)
+[info]   of which for typerefs       : 227 (57.0%)
+[info] #typechecked applications     : 132
+[info] #unique types                 : 2112
+[info] #subtype ops                  : 2123
+[info]   of which in implicit        : 349 (16.4%)
+[info] #findMember ops               : 6133
+[info]   of which not found          : 2326 (37.9%)
+[info]   of which multiple overloaded: 41 (0.7%)
+[info]   of which in implicit        : 1781 (29.0%)
+[info] time spent in scope lookup    : 28056 spans, ()42.509ms
+[info] implicit cache accesses       : 26
+[info] implicit cache hits           : 11 (42.3%)
+[info] #all lubs/glbs                : 28
+[info] #created tree nodes           : 5418
+[info] #created scopes               : 1284
+[info] #typechecked identifiers      : 629
+[info] #implicit searches            : 38
+[info]   #plausibly compatible       : 17 (44.7%)
+[info]   #matching                   : 17 (44.7%)
+[info]   #typed                      : 17 (44.7%)
+[info]   #found                      : 17 (44.7%)
+[info]   #implicit improves tests    : 8 (21.1%)
+[info]   #implicit improves cached   : 4 (10.5%)
+[info]   #implicit inscope hits      : 12 (31.6%)
+[info]   #implicit oftype hits       : 2 (5.3%)
+[info] *** Cumulative statistics at phase patmat
+[info] time spent in scope population: 440 spans, ()0.049ms
+[info] #type symbols                 : 10646
+[info] #typechecked selections       : 347
+[info] #symbols                      : 31284
+[info] #sametype ops                 : 112
+[info] implicits instantiated for pruning: 1
+[info] #raw type creations           : 9130
+[info]   of which in implicits       : 5127 (56.2%)
+[info] #class symbols                : 8683
+[info] #base type seqs               : 400
+[info] avg base type seq length      : 4.0
+[info]   of which for compound types : 172 (43.0%)
+[info]   of which for typerefs       : 227 (56.8%)
+[info] #typechecked applications     : 148
+[info] #unique types                 : 2137
+[info] #subtype ops                  : 2301
+[info]   of which in implicit        : 349 (15.2%)
+[info] #findMember ops               : 6166
+[info]   of which not found          : 2335 (37.9%)
+[info]   of which multiple overloaded: 41 (0.7%)
+[info]   of which in implicit        : 1781 (28.9%)
+[info] time spent in scope lookup    : 28287 spans, ()42.528ms
+[info] #all lubs/glbs                : 28
+[info] #created tree nodes           : 5750
+[info] #created scopes               : 1304
+[info] #typechecked identifiers      : 645
+[info] time spent in patmat          : 4 spans, ()1.95ms
+[info]   of which DPLL               : 2 spans, ()0.037ms (1.9%)
+[info]   of which in CNF conversion  : 0 spans, ()0.0ms (0.0%)
+[info]   of which variable equality  : 8 spans, ()0.166ms (8.5%)
+[info]   of which in exhaustivity    : 0 spans, ()0.0ms (0.0%)
+[info]   of which in unreachability  : 4 spans, ()0.739ms (37.9%)
+[info] *** Cumulative statistics at phase erasure
+[info] time spent in scope population: 923 spans, ()0.183ms
+[info] #type symbols                 : 12479
+[info] #typechecked selections       : 711
+[info] #symbols                      : 37459
+[info] #sametype ops                 : 210
+[info] implicits instantiated for pruning: 1
+[info] #raw type creations           : 14668
+[info]   of which in implicits       : 5127 (35.0%)
+[info] #class symbols                : 9892
+[info] #base type seqs               : 1114
+[info] avg base type seq length      : 4.4
+[info]   of which for compound types : 518 (46.5%)
+[info]   of which for typerefs       : 595 (53.4%)
+[info] #typechecked applications     : 336
+[info] #unique types                 : 3791
+[info] #subtype ops                  : 5971
+[info]   of which in implicit        : 349 (5.8%)
+[info] #findMember ops               : 8854
+[info]   of which not found          : 2485 (28.1%)
+[info]   of which multiple overloaded: 44 (0.5%)
+[info]   of which in implicit        : 1781 (20.1%)
+[info] time spent in scope lookup    : 36660 spans, ()43.426ms
+[info] #all lubs/glbs                : 28
+[info] #created tree nodes           : 7575
+[info] #created scopes               : 2568
+[info] #typechecked identifiers      : 898
+[info] *** Cumulative statistics at phase cleanup
+[info] time spent in scope population: 923 spans, ()0.183ms
+[info] #type symbols                 : 12498
+[info] #typechecked selections       : 715
+[info] #symbols                      : 37761
+[info] #sametype ops                 : 224
+[info] implicits instantiated for pruning: 1
+[info] #raw type creations           : 15034
+[info]   of which in implicits       : 5127 (34.1%)
+[info] #class symbols                : 9899
+[info] #base type seqs               : 1152
+[info] avg base type seq length      : 4.4
+[info]   of which for compound types : 545 (47.3%)
+[info]   of which for typerefs       : 606 (52.6%)
+[info] #typechecked applications     : 336
+[info] #unique types                 : 3850
+[info] #subtype ops                  : 6004
+[info]   of which in implicit        : 349 (5.8%)
+[info] #findMember ops               : 8884
+[info]   of which not found          : 2501 (28.2%)
+[info]   of which multiple overloaded: 46 (0.5%)
+[info]   of which in implicit        : 1781 (20.0%)
+[info] time spent in scope lookup    : 37148 spans, ()43.477ms
+[info] #all lubs/glbs                : 28
+[info] #created tree nodes           : 8543
+[info] #created scopes               : 2619
+[info] #typechecked identifiers      : 902
+[info] *** Cumulative statistics at phase jvm
+[info] time spent in scope population: 929 spans, ()0.187ms
+[info] #type symbols                 : 12786
+[info] #typechecked selections       : 715
+[info] #symbols                      : 39622
+[info] #sametype ops                 : 328
+[info] implicits instantiated for pruning: 1
+[info] #raw type creations           : 16638
+[info]   of which in implicits       : 5127 (30.8%)
+[info] #class symbols                : 9955
+[info] #base type seqs               : 1248
+[info] avg base type seq length      : 4.3
+[info]   of which for compound types : 605 (48.5%)
+[info]   of which for typerefs       : 642 (51.4%)
+[info] #typechecked applications     : 349
+[info] #unique types                 : 4440
+[info] #subtype ops                  : 6044
+[info]   of which in implicit        : 349 (5.8%)
+[info] #findMember ops               : 12700
+[info]   of which not found          : 2607 (20.5%)
+[info]   of which multiple overloaded: 153 (1.2%)
+[info]   of which in implicit        : 1781 (14.0%)
+[info] time spent in scope lookup    : 41874 spans, ()43.954ms
+[info] time in backend               : 1 spans, ()23.985ms
+[info] bcode initialization          : 1 spans, ()1.281ms (5.3%)
+[info] code generation               : 9 spans, ()14.788ms (61.7%)
+[info] intra-method optimizations    : 14 spans, ()0.555ms (2.3%)
+[info] classfile writing             : 23 spans, ()1.424ms (5.9%)
+[info] #all lubs/glbs                : 28
+[info] #created tree nodes           : 8820
+[info] #created scopes               : 2831
+[info] #typechecked identifiers      : 915
+[info] Writing graph to /home/zainab/lsug/akka/akka-stream-typed/target/classes/META-INF/profiledb/graphs/implicit-searches-1563796232175.flamegraph
+[info] Creating global statistics information at /home/zainab/lsug/akka/akka-stream-typed/target/classes/META-INF/profiledb/global.profiledb.
+[info] *** Cumulative timers for phases
+[info] #total compile time           : 1 spans, ()366.41ms
+[info]   parser                      : 1 spans, ()2.786ms (0.8%)
+[info]   namer                       : 1 spans, ()4.786ms (1.3%)
+[info]   packageobjects              : 1 spans, ()0.666ms (0.2%)
+[info]   typer                       : 1 spans, ()146.137ms (39.9%)
+[info]   silencer                    : 1 spans, ()11.991ms (3.3%)
+[info]   patmat                      : 1 spans, ()2.901ms (0.8%)
+[info]   superaccessors              : 1 spans, ()0.744ms (0.2%)
+[info]   extmethods                  : 1 spans, ()0.371ms (0.1%)
+[info]   pickler                     : 1 spans, ()1.229ms (0.3%)
+[info]   xsbt-api                    : 1 spans, ()6.406ms (1.7%)
+[info]   xsbt-dependency             : 1 spans, ()2.604ms (0.7%)
+[info]   refchecks                   : 1 spans, ()4.757ms (1.3%)
+[info]   uncurry                     : 1 spans, ()3.279ms (0.9%)
+[info]   fields                      : 1 spans, ()0.395ms (0.1%)
+[info]   tailcalls                   : 1 spans, ()0.913ms (0.2%)
+[info]   specialize                  : 1 spans, ()55.819ms (15.2%)
+[info]   explicitouter               : 1 spans, ()0.926ms (0.3%)
+[info]   erasure                     : 1 spans, ()9.267ms (2.5%)
+[info]   posterasure                 : 1 spans, ()0.582ms (0.2%)
+[info]   lambdalift                  : 1 spans, ()1.437ms (0.4%)
+[info]   constructors                : 1 spans, ()0.698ms (0.2%)
+[info]   flatten                     : 1 spans, ()0.573ms (0.2%)
+[info]   mixin                       : 1 spans, ()1.642ms (0.4%)
+[info]   cleanup                     : 1 spans, ()0.337ms (0.1%)
+[info]   delambdafy                  : 1 spans, ()1.375ms (0.4%)
+[info]   jvm                         : 1 spans, ()23.99ms (6.5%)
+[info]   scalacenter-profiling       : 1 spans, ()53.746ms (14.7%)
+[info]   xsbt-analyzer               : 1 spans, ()0.243ms (0.1%)
+[info] Done compiling.
+[success] Total time: 68 s, completed 22-Jul-2019 12:50:33
+akka >

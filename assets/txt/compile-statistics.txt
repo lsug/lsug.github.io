@@ -1,0 +1,1646 @@
+Compiling akka-protobuf (45 Java sources)
+Compiling akka-actor (187 Scala sources and 27 Java sources)
+Compiled akka-protobuf (998ms)
+[0m[34m [E-1] [0m  xsbt-analyzer               : 1 spans, ()7.342ms (0.1%)
+[0m[34m [E-1] [0m  jvm                         : 1 spans, ()759.367ms (9.6%)
+[0m[34m [E-1] [0m  delambdafy                  : 1 spans, ()68.943ms (0.9%)
+[0m[34m [E-1] [0m  cleanup                     : 1 spans, ()35.462ms (0.4%)
+[0m[34m [E-1] [0m  mixin                       : 1 spans, ()128.543ms (1.6%)
+[0m[34m [E-1] [0m  flatten                     : 1 spans, ()51.609ms (0.7%)
+[0m[34m [E-1] [0m  constructors                : 1 spans, ()57.714ms (0.7%)
+[0m[34m [E-1] [0m  lambdalift                  : 1 spans, ()114.041ms (1.4%)
+[0m[34m [E-1] [0m  posterasure                 : 1 spans, ()64.494ms (0.8%)
+[0m[34m [E-1] [0m  erasure                     : 1 spans, ()637.367ms (8.0%)
+[0m[34m [E-1] [0m  explicitouter               : 1 spans, ()88.481ms (1.1%)
+[0m[34m [E-1] [0m  specialize                  : 1 spans, ()210.111ms (2.6%)
+[0m[34m [E-1] [0m  tailcalls                   : 1 spans, ()57.127ms (0.7%)
+[0m[34m [E-1] [0m  fields                      : 1 spans, ()95.241ms (1.2%)
+[0m[34m [E-1] [0m  uncurry                     : 1 spans, ()189.389ms (2.4%)
+[0m[34m [E-1] [0m  refchecks                   : 1 spans, ()312.884ms (3.9%)
+[0m[34m [E-1] [0m  xsbt-dependency             : 1 spans, ()230.763ms (2.9%)
+[0m[34m [E-1] [0m  xsbt-api                    : 1 spans, ()500.09ms (6.3%)
+[0m[34m [E-1] [0m  picklergen                  : 1 spans, ()0.005ms (0.0%)
+[0m[34m [E-1] [0m  pickler                     : 1 spans, ()54.861ms (0.7%)
+[0m[34m [E-1] [0m  extmethods                  : 1 spans, ()14.972ms (0.2%)
+[0m[34m [E-1] [0m  superaccessors              : 1 spans, ()59.934ms (0.8%)
+[0m[34m [E-1] [0m  patmat                      : 1 spans, ()369.733ms (4.7%)
+[0m[34m [E-1] [0m  silencer                    : 1 spans, ()222.54ms (2.8%)
+[0m[34m [E-1] [0m  typer                       : 1 spans, ()3458.338ms (43.6%)
+[0m[34m [E-1] [0m  packageobjects              : 1 spans, ()5.396ms (0.1%)
+[0m[34m [E-1] [0m  namer                       : 1 spans, ()24.197ms (0.3%)
+[0m[34m [E-1] [0m  parser                      : 1 spans, ()100.03ms (1.3%)
+[0m[34m [E-1] [0m#total compile time           : 1 spans, ()7938.571ms
+[0m[34m [E-1] [0m*** Cumulative timers for phases
+[0m[34m [E-1] [0m#typechecked identifiers      : 127347
+[0m[34m [E-1] [0m#created scopes               : 202015
+[0m[34m [E-1] [0m#created tree nodes           : 1388298
+[0m[34m [E-1] [0m#all lubs/glbs                : 8256
+[0m[34m [E-1] [0mclassfile writing             : 1647 spans, ()49.161ms (6.5%)
+[0m[34m [E-1] [0mintra-method optimizations    : 1570 spans, ()98.716ms (13.0%)
+[0m[34m [E-1] [0mcode generation               : 187 spans, ()429.515ms (56.6%)
+[0m[34m [E-1] [0mbcode initialization          : 1 spans, ()0.808ms (0.1%)
+[0m[34m [E-1] [0mtime in backend               : 1 spans, ()759.348ms
+[0m[34m [E-1] [0mtime spent in scope lookup    : 2137809 spans, ()159.055ms
+[0m[34m [E-1] [0m  of which in implicit        : 17420 (3.8%)
+[0m[34m [E-1] [0m  of which in failed          : 1077 (0.2%)
+[0m[34m [E-1] [0m  of which multiple overloaded: 7856 (1.7%)
+[0m[34m [E-1] [0m  of which not found          : 264535 (58.2%)
+[0m[34m [E-1] [0m#findMember ops               : 454820
+[0m[34m [E-1] [0m  of which in implicit        : 32833 (3.8%)
+[0m[34m [E-1] [0m  of which in failed          : 2567 (0.3%)
+[0m[34m [E-1] [0m#subtype ops                  : 863634
+[0m[34m [E-1] [0m#unique types                 : 122193
+[0m[34m [E-1] [0m#typechecked applications     : 84198
+[0m[34m [E-1] [0m  of which for typerefs       : 31384 (61.6%)
+[0m[34m [E-1] [0m  of which for compound types : 19360 (38.0%)
+[0m[34m [E-1] [0mavg base type seq length      : 6.1
+[0m[34m [E-1] [0m#base type seqs               : 50908
+[0m[34m [E-1] [0m#class symbols                : 22389
+[0m[34m [E-1] [0m  of which in implicits       : 487505 (39.9%)
+[0m[34m [E-1] [0m  of which in failed          : 29870 (2.4%)
+[0m[34m [E-1] [0m#raw type creations           : 1221550
+[0m[34m [E-1] [0m#toplevel lubs/glbs           : 1202
+[0m[34m [E-1] [0m  instantiated mismatches     : 12 (2.2%)
+[0m[34m [E-1] [0mimplicits instantiated for pruning: 547
+[0m[34m [E-1] [0m#sametype ops                 : 347202
+[0m[34m [E-1] [0m#symbols                      : 374629
+[0m[34m [E-1] [0m#typechecked selections       : 99304
+[0m[34m [E-1] [0m#type symbols                 : 81620
+[0m[34m [E-1] [0mtime spent in scope population: 148270 spans, ()18.119ms
+[0m[34m [E-1] [0m*** Cumulative statistics at phase jvm
+[0m[34m [E-1] [0m#typechecked identifiers      : 126346
+[0m[34m [E-1] [0m#created scopes               : 200330
+[0m[34m [E-1] [0m#created tree nodes           : 1359965
+[0m[34m [E-1] [0m#all lubs/glbs                : 8256
+[0m[34m [E-1] [0mtime spent in scope lookup    : 2088512 spans, ()154.223ms
+[0m[34m [E-1] [0m  of which in implicit        : 17420 (3.9%)
+[0m[34m [E-1] [0m  of which in failed          : 1077 (0.2%)
+[0m[34m [E-1] [0m  of which multiple overloaded: 7748 (1.7%)
+[0m[34m [E-1] [0m  of which not found          : 263513 (58.7%)
+[0m[34m [E-1] [0m#findMember ops               : 448806
+[0m[34m [E-1] [0m  of which in implicit        : 32833 (3.8%)
+[0m[34m [E-1] [0m  of which in failed          : 2567 (0.3%)
+[0m[34m [E-1] [0m#subtype ops                  : 858084
+[0m[34m [E-1] [0m#unique types                 : 121490
+[0m[34m [E-1] [0m#typechecked applications     : 83122
+[0m[34m [E-1] [0m  of which for typerefs       : 29463 (62.7%)
+[0m[34m [E-1] [0m  of which for compound types : 17398 (37.0%)
+[0m[34m [E-1] [0mavg base type seq length      : 6.2
+[0m[34m [E-1] [0m#base type seqs               : 47025
+[0m[34m [E-1] [0m#class symbols                : 22215
+[0m[34m [E-1] [0m  of which in implicits       : 487505 (40.7%)
+[0m[34m [E-1] [0m  of which in failed          : 29870 (2.5%)
+[0m[34m [E-1] [0m#raw type creations           : 1198049
+[0m[34m [E-1] [0m#toplevel lubs/glbs           : 1202
+[0m[34m [E-1] [0m  instantiated mismatches     : 12 (2.2%)
+[0m[34m [E-1] [0mimplicits instantiated for pruning: 547
+[0m[34m [E-1] [0m#sametype ops                 : 342988
+[0m[34m [E-1] [0m#symbols                      : 364111
+[0m[34m [E-1] [0m#typechecked selections       : 98990
+[0m[34m [E-1] [0m#type symbols                 : 81384
+[0m[34m [E-1] [0mtime spent in scope population: 147912 spans, ()18.043ms
+[0m[34m [E-1] [0m*** Cumulative statistics at phase cleanup
+[0m[34m [E-1] [0m#typechecked identifiers      : 122130
+[0m[34m [E-1] [0m#created scopes               : 190178
+[0m[34m [E-1] [0m#created tree nodes           : 1253402
+[0m[34m [E-1] [0m#all lubs/glbs                : 8128
+[0m[34m [E-1] [0mtime spent in scope lookup    : 1982517 spans, ()147.183ms
+[0m[34m [E-1] [0m  of which in implicit        : 17420 (3.9%)
+[0m[34m [E-1] [0m  of which in failed          : 1077 (0.2%)
+[0m[34m [E-1] [0m  of which multiple overloaded: 7244 (1.6%)
+[0m[34m [E-1] [0m  of which not found          : 261958 (59.1%)
+[0m[34m [E-1] [0m#findMember ops               : 443312
+[0m[34m [E-1] [0m  of which in implicit        : 32833 (4.0%)
+[0m[34m [E-1] [0m  of which in failed          : 2567 (0.3%)
+[0m[34m [E-1] [0m#subtype ops                  : 821387
+[0m[34m [E-1] [0m#unique types                 : 116319
+[0m[34m [E-1] [0m#typechecked applications     : 80186
+[0m[34m [E-1] [0m  of which for typerefs       : 27928 (65.6%)
+[0m[34m [E-1] [0m  of which for compound types : 14475 (34.0%)
+[0m[34m [E-1] [0mavg base type seq length      : 6.3
+[0m[34m [E-1] [0m#base type seqs               : 42567
+[0m[34m [E-1] [0m#class symbols                : 22172
+[0m[34m [E-1] [0m  of which in implicits       : 487505 (42.7%)
+[0m[34m [E-1] [0m  of which in failed          : 29870 (2.6%)
+[0m[34m [E-1] [0m#raw type creations           : 1141222
+[0m[34m [E-1] [0m#toplevel lubs/glbs           : 1074
+[0m[34m [E-1] [0m  instantiated mismatches     : 12 (2.2%)
+[0m[34m [E-1] [0mimplicits instantiated for pruning: 547
+[0m[34m [E-1] [0m#sametype ops                 : 337760
+[0m[34m [E-1] [0m#symbols                      : 333546
+[0m[34m [E-1] [0m#typechecked selections       : 93977
+[0m[34m [E-1] [0m#type symbols                 : 79392
+[0m[34m [E-1] [0mtime spent in scope population: 142559 spans, ()17.883ms
+[0m[34m [E-1] [0m*** Cumulative statistics at phase erasure
+[0m[34m [E-1] [0m  of which in unreachability  : 1172 spans, ()117.671ms (46.1%)
+[0m[34m [E-1] [0m  of which in exhaustivity    : 182 spans, ()22.504ms (8.8%)
+[0m[34m [E-1] [0m  of which variable equality  : 2526 spans, ()43.111ms (16.9%)
+[0m[34m [E-1] [0m  of which in CNF conversion  : 0 spans, ()0.0ms (0.0%)
+[0m[34m [E-1] [0m  of which DPLL               : 1353 spans, ()7.809ms (3.1%)
+[0m[34m [E-1] [0mtime spent in patmat          : 1363 spans, ()255.178ms
+[0m[34m [E-1] [0m#typechecked identifiers      : 83921
+[0m[34m [E-1] [0m#created scopes               : 94172
+[0m[34m [E-1] [0m#created tree nodes           : 994250
+[0m[34m [E-1] [0m#all lubs/glbs                : 7763
+[0m[34m [E-1] [0mtime spent in scope lookup    : 1629970 spans, ()124.143ms
+[0m[34m [E-1] [0m  of which in implicit        : 17405 (4.1%)
+[0m[34m [E-1] [0m  of which in failed          : 843 (0.2%)
+[0m[34m [E-1] [0m  of which multiple overloaded: 7000 (1.7%)
+[0m[34m [E-1] [0m  of which not found          : 257325 (61.2%)
+[0m[34m [E-1] [0m#findMember ops               : 420208
+[0m[34m [E-1] [0m  of which in implicit        : 32807 (7.6%)
+[0m[34m [E-1] [0m  of which in failed          : 2567 (0.6%)
+[0m[34m [E-1] [0m#subtype ops                  : 429042
+[0m[34m [E-1] [0m#unique types                 : 69650
+[0m[34m [E-1] [0m#typechecked applications     : 29099
+[0m[34m [E-1] [0m  of which for typerefs       : 15515 (79.9%)
+[0m[34m [E-1] [0m  of which for compound types : 3741 (19.3%)
+[0m[34m [E-1] [0mavg base type seq length      : 7.1
+[0m[34m [E-1] [0m#base type seqs               : 19420
+[0m[34m [E-1] [0m#class symbols                : 14929
+[0m[34m [E-1] [0m  of which in implicits       : 487423 (58.0%)
+[0m[34m [E-1] [0m  of which in failed          : 29850 (3.6%)
+[0m[34m [E-1] [0m#raw type creations           : 840737
+[0m[34m [E-1] [0m#toplevel lubs/glbs           : 743
+[0m[34m [E-1] [0m  instantiated mismatches     : 12 (2.2%)
+[0m[34m [E-1] [0mimplicits instantiated for pruning: 547
+[0m[34m [E-1] [0m#sametype ops                 : 170191
+[0m[34m [E-1] [0m#symbols                      : 193205
+[0m[34m [E-1] [0m#typechecked selections       : 36905
+[0m[34m [E-1] [0m#type symbols                 : 56358
+[0m[34m [E-1] [0mtime spent in scope population: 77417 spans, ()12.116ms
+[0m[34m [E-1] [0m*** Cumulative statistics at phase patmat
+[0m[34m [E-1] [0m  #implicit oftype hits       : 304 (5.3%)
+[0m[34m [E-1] [0m  #implicit inscope hits      : 926 (16.1%)
+[0m[34m [E-1] [0m  #implicit improves cached   : 755 (13.1%)
+[0m[34m [E-1] [0m  #implicit improves tests    : 1269 (22.0%)
+[0m[34m [E-1] [0m  #found                      : 1264 (21.9%)
+[0m[34m [E-1] [0m  #typed                      : 1274 (22.1%)
+[0m[34m [E-1] [0m  #matching                   : 1285 (22.3%)
+[0m[34m [E-1] [0m  #plausibly compatible       : 1285 (22.3%)
+[0m[34m [E-1] [0m#implicit searches            : 5762
+[0m[34m [E-1] [0m#typechecked identifiers      : 78672
+[0m[34m [E-1] [0m#created scopes               : 87714
+[0m[34m [E-1] [0m#created tree nodes           : 876070
+[0m[34m [E-1] [0m#all lubs/glbs                : 7754
+[0m[34m [E-1] [0m#macro expansions             : 81
+[0m[34m [E-1] [0mimplicit cache hits           : 3896 (81.8%)
+[0m[34m [E-1] [0mimplicit cache accesses       : 4760
+[0m[34m [E-1] [0mtime spent in scope lookup    : 1604729 spans, ()122.233ms
+[0m[34m [E-1] [0m  of which in implicit        : 17405 (4.2%)
+[0m[34m [E-1] [0m  of which in failed          : 843 (0.2%)
+[0m[34m [E-1] [0m  of which multiple overloaded: 6146 (1.5%)
+[0m[34m [E-1] [0m  of which not found          : 255197 (61.4%)
+[0m[34m [E-1] [0m#findMember ops               : 415898
+[0m[34m [E-1] [0m  of which in implicit        : 32807 (9.2%)
+[0m[34m [E-1] [0m  of which in failed          : 2567 (0.7%)
+[0m[34m [E-1] [0m#subtype ops                  : 356775
+[0m[34m [E-1] [0m#unique types                 : 63602
+[0m[34m [E-1] [0m#typechecked applications     : 23508
+[0m[34m [E-1] [0m  of which for typerefs       : 15398 (80.0%)
+[0m[34m [E-1] [0m  of which for compound types : 3694 (19.2%)
+[0m[34m [E-1] [0mavg base type seq length      : 6.9
+[0m[34m [E-1] [0m#base type seqs               : 19256
+[0m[34m [E-1] [0m#class symbols                : 13795
+[0m[34m [E-1] [0m  of which in implicits       : 487423 (60.0%)
+[0m[34m [E-1] [0m  of which in failed          : 29850 (3.7%)
+[0m[34m [E-1] [0m#raw type creations           : 812473
+[0m[34m [E-1] [0m#toplevel lubs/glbs           : 734
+[0m[34m [E-1] [0m  instantiated mismatches     : 12 (2.2%)
+[0m[34m [E-1] [0mimplicits instantiated for pruning: 547
+[0m[34m [E-1] [0m#sametype ops                 : 137671
+[0m[34m [E-1] [0m#symbols                      : 178475
+[0m[34m [E-1] [0m#typechecked selections       : 33042
+[0m[34m [E-1] [0m#type symbols                 : 54992
+[0m[34m [E-1] [0mtime spent in scope population: 71028 spans, ()10.768ms
+[0m[34m [E-1] [0mtime spent in macroExpand     : 81 spans, ()19.911ms (0.6%)
+[0m[34m [E-1] [0m  matchesPT                   : 5705 spans, ()37.386ms (1.1%)
+[0m[34m [E-1] [0m  assembling parts            : 864 spans, ()51.421ms (1.5%)
+[0m[34m [E-1] [0m  failed of type              : 4532 spans, ()49.8ms (1.4%)
+[0m[34m [E-1] [0m  successful of type          : 304 spans, ()141.033ms (4.1%)
+[0m[34m [E-1] [0m  failed in scope             : 4836 spans, ()195.497ms (5.7%)
+[0m[34m [E-1] [0m  successful in scope         : 926 spans, ()136.825ms (4.0%)
+[0m[34m [E-1] [0mtime spent in implicits       : 5762 spans, ()537.173ms (15.5%)
+[0m[34m [E-1] [0mtime spent ref scanning       : 11 spans, ()0.117ms (0.0%)
+[0m[34m [E-1] [0m  failed op=                  : 118 spans, ()37.82ms (1.1%)
+[0m[34m [E-1] [0m  failed apply                : 7 spans, ()1.193ms (0.0%)
+[0m[34m [E-1] [0mtime spent in failed          : 330 spans, ()43.149ms (1.2%)
+[0m[34m [E-1] [0mtime classfilereading         : 675 spans, ()131.823ms (3.8%)
+[0m[34m [E-1] [0mtime spent in baseClasses     : 3188 spans, ()38.502ms (1.1%) aggregate, 20.12ms (0.6%) specific
+[0m[34m [E-1] [0mtime spent in baseTypeSeq     : 19092 spans, ()312.277ms (9.0%) aggregate, 140.603ms (4.1%) specific
+[0m[34m [E-1] [0mtime spent in asSeenFrom      : 313872 spans, ()253.135ms (7.3%) aggregate, 191.377ms (5.5%) specific
+[0m[34m [E-1] [0mtime spent in findmembers     : 0 spans, ()0.0ms (0.0%) aggregate, 0.0ms (0.0%) specific
+[0m[34m [E-1] [0mtime spent in findmember      : 415898 spans, ()466.427ms (13.5%) aggregate, 358.148ms (10.4%) specific
+[0m[34m [E-1] [0mtime spent in <:<             : 356775 spans, ()196.755ms (5.7%) aggregate, 165.847ms (4.8%) specific
+[0m[34m [E-1] [0mtime spent in lubs            : 734 spans, ()62.542ms (1.8%) aggregate, 11.88ms (0.3%) specific
+[0m[34m [E-1] [0mtime spent typechecking       : 1 spans, ()3458.316ms
+[0m[34m [E-1] [0m*** Cumulative statistics at phase typer
+[0m[34m [E-1] [0m#created tree nodes           : 153974
+[0m[34m [E-1] [0m*** Cumulative statistics at phase parser
+Compiled akka-actor (8157ms)
+Compiling akka-actor-typed (70 Scala sources)
+Compiling akka-stream (170 Scala sources and 3 Java sources)
+Compiling akka-testkit (16 Scala sources)
+[0m[34m [E-1] [0m  xsbt-analyzer               : 1 spans, ()0.828ms (0.1%)
+[0m[34m [E-1] [0m  jvm                         : 1 spans, ()76.418ms (6.2%)
+[0m[34m [E-1] [0m  delambdafy                  : 1 spans, ()8.557ms (0.7%)
+[0m[34m [E-1] [0m  cleanup                     : 1 spans, ()3.692ms (0.3%)
+[0m[34m [E-1] [0m  mixin                       : 1 spans, ()13.603ms (1.1%)
+[0m[34m [E-1] [0m  flatten                     : 1 spans, ()5.385ms (0.4%)
+[0m[34m [E-1] [0m  constructors                : 1 spans, ()5.41ms (0.4%)
+[0m[34m [E-1] [0m  lambdalift                  : 1 spans, ()13.238ms (1.1%)
+[0m[34m [E-1] [0m  posterasure                 : 1 spans, ()6.19ms (0.5%)
+[0m[34m [E-1] [0m  erasure                     : 1 spans, ()60.946ms (4.9%)
+[0m[34m [E-1] [0m  explicitouter               : 1 spans, ()10.721ms (0.9%)
+[0m[34m [E-1] [0m  specialize                  : 1 spans, ()47.97ms (3.9%)
+[0m[34m [E-1] [0m  tailcalls                   : 1 spans, ()10.497ms (0.8%)
+[0m[34m [E-1] [0m  fields                      : 1 spans, ()11.92ms (1.0%)
+[0m[34m [E-1] [0m  uncurry                     : 1 spans, ()46.715ms (3.8%)
+[0m[34m [E-1] [0m  refchecks                   : 1 spans, ()81.579ms (6.6%)
+[0m[34m [E-1] [0m  xsbt-dependency             : 1 spans, ()49.531ms (4.0%)
+[0m[34m [E-1] [0m  xsbt-api                    : 1 spans, ()41.64ms (3.4%)
+[0m[34m [E-1] [0m  picklergen                  : 1 spans, ()0.004ms (0.0%)
+[0m[34m [E-1] [0m  pickler                     : 1 spans, ()4.596ms (0.4%)
+[0m[34m [E-1] [0m  extmethods                  : 1 spans, ()2.237ms (0.2%)
+[0m[34m [E-1] [0m  superaccessors              : 1 spans, ()5.795ms (0.5%)
+[0m[34m [E-1] [0m  patmat                      : 1 spans, ()54.009ms (4.4%)
+[0m[34m [E-1] [0m  silencer                    : 1 spans, ()61.384ms (5.0%)
+[0m[34m [E-1] [0m  typer                       : 1 spans, ()544.734ms (44.1%)
+[0m[34m [E-1] [0m  packageobjects              : 1 spans, ()1.876ms (0.2%)
+[0m[34m [E-1] [0m  namer                       : 1 spans, ()16.016ms (1.3%)
+[0m[34m [E-1] [0m  parser                      : 1 spans, ()25.224ms (2.0%)
+[0m[34m [E-1] [0m#total compile time           : 1 spans, ()1236.273ms
+[0m[34m [E-1] [0m*** Cumulative timers for phases
+[0m[34m [E-1] [0m#typechecked identifiers      : 10475
+[0m[34m [E-1] [0m#created scopes               : 21036
+[0m[34m [E-1] [0m#created tree nodes           : 102878
+[0m[34m [E-1] [0m#all lubs/glbs                : 779
+[0m[34m [E-1] [0mclassfile writing             : 111 spans, ()4.212ms (5.5%)
+[0m[34m [E-1] [0mintra-method optimizations    : 107 spans, ()8.129ms (10.6%)
+[0m[34m [E-1] [0mcode generation               : 16 spans, ()44.543ms (58.3%)
+[0m[34m [E-1] [0mbcode initialization          : 1 spans, ()0.599ms (0.8%)
+[0m[34m [E-1] [0mtime in backend               : 1 spans, ()76.413ms
+[0m[34m [E-1] [0mtime spent in scope lookup    : 225913 spans, ()24.818ms
+[0m[34m [E-1] [0m  of which in implicit        : 4404 (7.5%)
+[0m[34m [E-1] [0m  of which in failed          : 294 (0.5%)
+[0m[34m [E-1] [0m  of which multiple overloaded: 798 (1.4%)
+[0m[34m [E-1] [0m  of which not found          : 25071 (42.8%)
+[0m[34m [E-1] [0m#findMember ops               : 58597
+[0m[34m [E-1] [0m  of which in implicit        : 7039 (9.9%)
+[0m[34m [E-1] [0m  of which in failed          : 2218 (3.1%)
+[0m[34m [E-1] [0m#subtype ops                  : 71139
+[0m[34m [E-1] [0m#unique types                 : 28654
+[0m[34m [E-1] [0m#typechecked applications     : 6581
+[0m[34m [E-1] [0m  of which for typerefs       : 5722 (65.9%)
+[0m[34m [E-1] [0m  of which for compound types : 2960 (34.1%)
+[0m[34m [E-1] [0mavg base type seq length      : 6.1
+[0m[34m [E-1] [0m#base type seqs               : 8685
+[0m[34m [E-1] [0m#class symbols                : 11398
+[0m[34m [E-1] [0m  of which in implicits       : 60678 (44.5%)
+[0m[34m [E-1] [0m  of which in failed          : 10715 (7.9%)
+[0m[34m [E-1] [0m#raw type creations           : 136287
+[0m[34m [E-1] [0m#toplevel lubs/glbs           : 76
+[0m[34m [E-1] [0m  instantiated mismatches     : 4 (5.4%)
+[0m[34m [E-1] [0mimplicits instantiated for pruning: 74
+[0m[34m [E-1] [0m#sametype ops                 : 45195
+[0m[34m [E-1] [0m#symbols                      : 73830
+[0m[34m [E-1] [0m#typechecked selections       : 7759
+[0m[34m [E-1] [0m#type symbols                 : 17949
+[0m[34m [E-1] [0mtime spent in scope population: 11404 spans, ()1.251ms
+[0m[34m [E-1] [0m*** Cumulative statistics at phase jvm
+[0m[34m [E-1] [0m#typechecked identifiers      : 10370
+[0m[34m [E-1] [0m#created scopes               : 20532
+[0m[34m [E-1] [0m#created tree nodes           : 99724
+[0m[34m [E-1] [0m#all lubs/glbs                : 779
+[0m[34m [E-1] [0mtime spent in scope lookup    : 216862 spans, ()23.915ms
+[0m[34m [E-1] [0m  of which in implicit        : 4404 (8.2%)
+[0m[34m [E-1] [0m  of which in failed          : 294 (0.5%)
+[0m[34m [E-1] [0m  of which multiple overloaded: 691 (1.3%)
+[0m[34m [E-1] [0m  of which not found          : 24950 (46.3%)
+[0m[34m [E-1] [0m#findMember ops               : 53868
+[0m[34m [E-1] [0m  of which in implicit        : 7039 (10.0%)
+[0m[34m [E-1] [0m  of which in failed          : 2218 (3.1%)
+[0m[34m [E-1] [0m#subtype ops                  : 70591
+[0m[34m [E-1] [0m#unique types                 : 28007
+[0m[34m [E-1] [0m#typechecked applications     : 6445
+[0m[34m [E-1] [0m  of which for typerefs       : 5448 (67.8%)
+[0m[34m [E-1] [0m  of which for compound types : 2586 (32.2%)
+[0m[34m [E-1] [0mavg base type seq length      : 6.1
+[0m[34m [E-1] [0m#base type seqs               : 8037
+[0m[34m [E-1] [0m#class symbols                : 11182
+[0m[34m [E-1] [0m  of which in implicits       : 60678 (45.6%)
+[0m[34m [E-1] [0m  of which in failed          : 10715 (8.1%)
+[0m[34m [E-1] [0m#raw type creations           : 133033
+[0m[34m [E-1] [0m#toplevel lubs/glbs           : 76
+[0m[34m [E-1] [0m  instantiated mismatches     : 4 (5.4%)
+[0m[34m [E-1] [0mimplicits instantiated for pruning: 74
+[0m[34m [E-1] [0m#sametype ops                 : 44821
+[0m[34m [E-1] [0m#symbols                      : 70640
+[0m[34m [E-1] [0m#typechecked selections       : 7728
+[0m[34m [E-1] [0m#type symbols                 : 17515
+[0m[34m [E-1] [0mtime spent in scope population: 11390 spans, ()1.243ms
+[0m[34m [E-1] [0m*** Cumulative statistics at phase cleanup
+[0m[34m [E-1] [0m#typechecked identifiers      : 10082
+[0m[34m [E-1] [0m#created scopes               : 19688
+[0m[34m [E-1] [0m#created tree nodes           : 90776
+[0m[34m [E-1] [0m#all lubs/glbs                : 771
+[0m[34m [E-1] [0mtime spent in scope lookup    : 209453 spans, ()23.321ms
+[0m[34m [E-1] [0m  of which in implicit        : 4404 (8.3%)
+[0m[34m [E-1] [0m  of which in failed          : 294 (0.6%)
+[0m[34m [E-1] [0m  of which multiple overloaded: 624 (1.2%)
+[0m[34m [E-1] [0m  of which not found          : 24897 (47.0%)
+[0m[34m [E-1] [0m#findMember ops               : 52940
+[0m[34m [E-1] [0m  of which in implicit        : 7039 (10.3%)
+[0m[34m [E-1] [0m  of which in failed          : 2218 (3.2%)
+[0m[34m [E-1] [0m#subtype ops                  : 68465
+[0m[34m [E-1] [0m#unique types                 : 27672
+[0m[34m [E-1] [0m#typechecked applications     : 6278
+[0m[34m [E-1] [0m  of which for typerefs       : 5200 (70.1%)
+[0m[34m [E-1] [0m  of which for compound types : 2219 (29.9%)
+[0m[34m [E-1] [0mavg base type seq length      : 6.2
+[0m[34m [E-1] [0m#base type seqs               : 7422
+[0m[34m [E-1] [0m#class symbols                : 11172
+[0m[34m [E-1] [0m  of which in implicits       : 60678 (47.3%)
+[0m[34m [E-1] [0m  of which in failed          : 10715 (8.4%)
+[0m[34m [E-1] [0m#raw type creations           : 128299
+[0m[34m [E-1] [0m#toplevel lubs/glbs           : 68
+[0m[34m [E-1] [0m  instantiated mismatches     : 4 (5.4%)
+[0m[34m [E-1] [0mimplicits instantiated for pruning: 74
+[0m[34m [E-1] [0m#sametype ops                 : 44178
+[0m[34m [E-1] [0m#symbols                      : 67000
+[0m[34m [E-1] [0m#typechecked selections       : 7452
+[0m[34m [E-1] [0m#type symbols                 : 17430
+[0m[34m [E-1] [0mtime spent in scope population: 11022 spans, ()1.225ms
+[0m[34m [E-1] [0m*** Cumulative statistics at phase erasure
+[0m[34m [E-1] [0m  of which in unreachability  : 76 spans, ()16.102ms (51.4%)
+[0m[34m [E-1] [0m  of which in exhaustivity    : 12 spans, ()1.694ms (5.4%)
+[0m[34m [E-1] [0m  of which variable equality  : 164 spans, ()4.091ms (13.1%)
+[0m[34m [E-1] [0m  of which in CNF conversion  : 0 spans, ()0.0ms (0.0%)
+[0m[34m [E-1] [0m  of which DPLL               : 88 spans, ()0.594ms (1.9%)
+[0m[34m [E-1] [0mtime spent in patmat          : 87 spans, ()31.338ms
+[0m[34m [E-1] [0m#typechecked identifiers      : 7070
+[0m[34m [E-1] [0m#created scopes               : 10430
+[0m[34m [E-1] [0m#created tree nodes           : 71063
+[0m[34m [E-1] [0m#all lubs/glbs                : 745
+[0m[34m [E-1] [0mtime spent in scope lookup    : 177491 spans, ()20.462ms
+[0m[34m [E-1] [0m  of which in implicit        : 4404 (9.0%)
+[0m[34m [E-1] [0m  of which in failed          : 294 (0.6%)
+[0m[34m [E-1] [0m  of which multiple overloaded: 608 (1.2%)
+[0m[34m [E-1] [0m  of which not found          : 24684 (50.4%)
+[0m[34m [E-1] [0m#findMember ops               : 48956
+[0m[34m [E-1] [0m  of which in implicit        : 7039 (18.8%)
+[0m[34m [E-1] [0m  of which in failed          : 2218 (5.9%)
+[0m[34m [E-1] [0m#subtype ops                  : 37455
+[0m[34m [E-1] [0m#unique types                 : 21674
+[0m[34m [E-1] [0m#typechecked applications     : 2444
+[0m[34m [E-1] [0m  of which for typerefs       : 3737 (82.8%)
+[0m[34m [E-1] [0m  of which for compound types : 773 (17.1%)
+[0m[34m [E-1] [0mavg base type seq length      : 6.3
+[0m[34m [E-1] [0m#base type seqs               : 4513
+[0m[34m [E-1] [0m#class symbols                : 9839
+[0m[34m [E-1] [0m  of which in implicits       : 60678 (60.5%)
+[0m[34m [E-1] [0m  of which in failed          : 10715 (10.7%)
+[0m[34m [E-1] [0m#raw type creations           : 100322
+[0m[34m [E-1] [0m#toplevel lubs/glbs           : 50
+[0m[34m [E-1] [0m  instantiated mismatches     : 4 (5.4%)
+[0m[34m [E-1] [0mimplicits instantiated for pruning: 74
+[0m[34m [E-1] [0m#sametype ops                 : 25768
+[0m[34m [E-1] [0m#symbols                      : 52967
+[0m[34m [E-1] [0m#typechecked selections       : 2998
+[0m[34m [E-1] [0m#type symbols                 : 14738
+[0m[34m [E-1] [0mtime spent in scope population: 5673 spans, ()0.511ms
+[0m[34m [E-1] [0m*** Cumulative statistics at phase patmat
+[0m[34m [E-1] [0m  #implicit oftype hits       : 17 (3.6%)
+[0m[34m [E-1] [0m  #implicit inscope hits      : 203 (42.8%)
+[0m[34m [E-1] [0m  #implicit improves cached   : 57 (12.0%)
+[0m[34m [E-1] [0m  #implicit improves tests    : 130 (27.4%)
+[0m[34m [E-1] [0m  #found                      : 226 (47.7%)
+[0m[34m [E-1] [0m  #typed                      : 226 (47.7%)
+[0m[34m [E-1] [0m  #matching                   : 226 (47.7%)
+[0m[34m [E-1] [0m  #plausibly compatible       : 226 (47.7%)
+[0m[34m [E-1] [0m#implicit searches            : 474
+[0m[34m [E-1] [0m#typechecked identifiers      : 6766
+[0m[34m [E-1] [0m#created scopes               : 10003
+[0m[34m [E-1] [0m#created tree nodes           : 63841
+[0m[34m [E-1] [0m#all lubs/glbs                : 745
+[0m[34m [E-1] [0m#macro expansions             : 6
+[0m[34m [E-1] [0mimplicit cache hits           : 154 (58.1%)
+[0m[34m [E-1] [0mimplicit cache accesses       : 265
+[0m[34m [E-1] [0mtime spent in scope lookup    : 176820 spans, ()20.351ms
+[0m[34m [E-1] [0m  of which in implicit        : 4404 (9.0%)
+[0m[34m [E-1] [0m  of which in failed          : 294 (0.6%)
+[0m[34m [E-1] [0m  of which multiple overloaded: 579 (1.2%)
+[0m[34m [E-1] [0m  of which not found          : 24657 (50.5%)
+[0m[34m [E-1] [0m#findMember ops               : 48834
+[0m[34m [E-1] [0m  of which in implicit        : 7039 (21.6%)
+[0m[34m [E-1] [0m  of which in failed          : 2218 (6.8%)
+[0m[34m [E-1] [0m#subtype ops                  : 32533
+[0m[34m [E-1] [0m#unique types                 : 21344
+[0m[34m [E-1] [0m#typechecked applications     : 2135
+[0m[34m [E-1] [0m  of which for typerefs       : 3720 (83.0%)
+[0m[34m [E-1] [0m  of which for compound types : 761 (17.0%)
+[0m[34m [E-1] [0mavg base type seq length      : 6.3
+[0m[34m [E-1] [0m#base type seqs               : 4484
+[0m[34m [E-1] [0m#class symbols                : 9792
+[0m[34m [E-1] [0m  of which in implicits       : 60678 (61.9%)
+[0m[34m [E-1] [0m  of which in failed          : 10715 (10.9%)
+[0m[34m [E-1] [0m#raw type creations           : 98021
+[0m[34m [E-1] [0m#toplevel lubs/glbs           : 50
+[0m[34m [E-1] [0m  instantiated mismatches     : 4 (5.4%)
+[0m[34m [E-1] [0mimplicits instantiated for pruning: 74
+[0m[34m [E-1] [0m#sametype ops                 : 22305
+[0m[34m [E-1] [0m#symbols                      : 52101
+[0m[34m [E-1] [0m#typechecked selections       : 2871
+[0m[34m [E-1] [0m#type symbols                 : 14675
+[0m[34m [E-1] [0mtime spent in scope population: 5273 spans, ()0.425ms
+[0m[34m [E-1] [0mtime spent in macroExpand     : 6 spans, ()1.253ms (0.2%)
+[0m[34m [E-1] [0m  matchesPT                   : 689 spans, ()2.896ms (0.5%)
+[0m[34m [E-1] [0m  assembling parts            : 111 spans, ()22.312ms (4.1%)
+[0m[34m [E-1] [0m  failed of type              : 254 spans, ()14.967ms (2.7%)
+[0m[34m [E-1] [0m  successful of type          : 17 spans, ()22.163ms (4.1%)
+[0m[34m [E-1] [0m  failed in scope             : 271 spans, ()15.496ms (2.8%)
+[0m[34m [E-1] [0m  successful in scope         : 203 spans, ()75.54ms (13.9%)
+[0m[34m [E-1] [0mtime spent in implicits       : 474 spans, ()129.813ms (23.8%)
+[0m[34m [E-1] [0mtime spent ref scanning       : 0 spans, ()0.0ms (0.0%)
+[0m[34m [E-1] [0m  failed op=                  : 7 spans, ()14.261ms (2.6%)
+[0m[34m [E-1] [0m  failed apply                : 0 spans, ()0.0ms (0.0%)
+[0m[34m [E-1] [0mtime spent in failed          : 10 spans, ()14.171ms (2.6%)
+[0m[34m [E-1] [0mtime classfilereading         : 494 spans, ()93.018ms (17.1%)
+[0m[34m [E-1] [0mtime spent in baseClasses     : 792 spans, ()19.121ms (3.5%) aggregate, 11.005ms (2.0%) specific
+[0m[34m [E-1] [0mtime spent in baseTypeSeq     : 4481 spans, ()130.604ms (24.0%) aggregate, 44.542ms (8.2%) specific
+[0m[34m [E-1] [0mtime spent in asSeenFrom      : 36414 spans, ()43.517ms (8.0%) aggregate, 33.133ms (6.1%) specific
+[0m[34m [E-1] [0mtime spent in findmembers     : 0 spans, ()0.0ms (0.0%) aggregate, 0.0ms (0.0%) specific
+[0m[34m [E-1] [0mtime spent in findmember      : 48834 spans, ()58.763ms (10.8%) aggregate, 48.821ms (9.0%) specific
+[0m[34m [E-1] [0mtime spent in <:<             : 32533 spans, ()38.298ms (7.0%) aggregate, 20.604ms (3.8%) specific
+[0m[34m [E-1] [0mtime spent in lubs            : 50 spans, ()1.184ms (0.2%) aggregate, 0.498ms (0.1%) specific
+[0m[34m [E-1] [0mtime spent typechecking       : 1 spans, ()544.722ms
+[0m[34m [E-1] [0m*** Cumulative statistics at phase typer
+[0m[34m [E-1] [0m#created tree nodes           : 13333
+[0m[34m [E-1] [0m*** Cumulative statistics at phase parser
+Compiled akka-testkit (1303ms)
+[0m[34m [E-1] [0m  xsbt-analyzer               : 1 spans, ()1.934ms (0.1%)
+[0m[34m [E-1] [0m  jvm                         : 1 spans, ()155.402ms (8.0%)
+[0m[34m [E-1] [0m  delambdafy                  : 1 spans, ()12.747ms (0.7%)
+[0m[34m [E-1] [0m  cleanup                     : 1 spans, ()7.26ms (0.4%)
+[0m[34m [E-1] [0m  mixin                       : 1 spans, ()20.058ms (1.0%)
+[0m[34m [E-1] [0m  flatten                     : 1 spans, ()11.477ms (0.6%)
+[0m[34m [E-1] [0m  constructors                : 1 spans, ()11.072ms (0.6%)
+[0m[34m [E-1] [0m  lambdalift                  : 1 spans, ()22.593ms (1.2%)
+[0m[34m [E-1] [0m  posterasure                 : 1 spans, ()14.979ms (0.8%)
+[0m[34m [E-1] [0m  erasure                     : 1 spans, ()132.713ms (6.9%)
+[0m[34m [E-1] [0m  explicitouter               : 1 spans, ()20.951ms (1.1%)
+[0m[34m [E-1] [0m  specialize                  : 1 spans, ()74.258ms (3.8%)
+[0m[34m [E-1] [0m  tailcalls                   : 1 spans, ()12.781ms (0.7%)
+[0m[34m [E-1] [0m  fields                      : 1 spans, ()14.594ms (0.8%)
+[0m[34m [E-1] [0m  uncurry                     : 1 spans, ()36.645ms (1.9%)
+[0m[34m [E-1] [0m  refchecks                   : 1 spans, ()159.006ms (8.2%)
+[0m[34m [E-1] [0m  xsbt-dependency             : 1 spans, ()99.41ms (5.1%)
+[0m[34m [E-1] [0m  xsbt-api                    : 1 spans, ()175.069ms (9.1%)
+[0m[34m [E-1] [0m  picklergen                  : 1 spans, ()0.004ms (0.0%)
+[0m[34m [E-1] [0m  pickler                     : 1 spans, ()16.396ms (0.8%)
+[0m[34m [E-1] [0m  extmethods                  : 1 spans, ()9.673ms (0.5%)
+[0m[34m [E-1] [0m  superaccessors              : 1 spans, ()30.682ms (1.6%)
+[0m[34m [E-1] [0m  patmat                      : 1 spans, ()80.664ms (4.2%)
+[0m[34m [E-1] [0m  silencer                    : 1 spans, ()48.744ms (2.5%)
+[0m[34m [E-1] [0m  typer                       : 1 spans, ()664.1ms (34.4%)
+[0m[34m [E-1] [0m  packageobjects              : 1 spans, ()0.841ms (0.0%)
+[0m[34m [E-1] [0m  namer                       : 1 spans, ()18.009ms (0.9%)
+[0m[34m [E-1] [0m  parser                      : 1 spans, ()57.633ms (3.0%)
+[0m[34m [E-1] [0m#total compile time           : 1 spans, ()1931.085ms
+[0m[34m [E-1] [0m*** Cumulative timers for phases
+[0m[34m [E-1] [0m#typechecked identifiers      : 25740
+[0m[34m [E-1] [0m#created scopes               : 41042
+[0m[34m [E-1] [0m#created tree nodes           : 269492
+[0m[34m [E-1] [0m#all lubs/glbs                : 1284
+[0m[34m [E-1] [0mclassfile writing             : 369 spans, ()11.959ms (7.7%)
+[0m[34m [E-1] [0mintra-method optimizations    : 348 spans, ()16.132ms (10.4%)
+[0m[34m [E-1] [0mcode generation               : 70 spans, ()88.782ms (57.1%)
+[0m[34m [E-1] [0mbcode initialization          : 1 spans, ()0.606ms (0.4%)
+[0m[34m [E-1] [0mtime in backend               : 1 spans, ()155.396ms
+[0m[34m [E-1] [0mtime spent in scope lookup    : 418685 spans, ()35.397ms
+[0m[34m [E-1] [0m  of which in implicit        : 4071 (4.0%)
+[0m[34m [E-1] [0m  of which in failed          : 211 (0.2%)
+[0m[34m [E-1] [0m  of which multiple overloaded: 1017 (1.0%)
+[0m[34m [E-1] [0m  of which not found          : 52808 (51.3%)
+[0m[34m [E-1] [0m#findMember ops               : 102957
+[0m[34m [E-1] [0m  of which in implicit        : 5028 (3.3%)
+[0m[34m [E-1] [0m  of which in failed          : 1158 (0.8%)
+[0m[34m [E-1] [0m#subtype ops                  : 151340
+[0m[34m [E-1] [0m#unique types                 : 46564
+[0m[34m [E-1] [0m#typechecked applications     : 13842
+[0m[34m [E-1] [0m  of which for typerefs       : 8386 (63.5%)
+[0m[34m [E-1] [0m  of which for compound types : 4798 (36.3%)
+[0m[34m [E-1] [0mavg base type seq length      : 5.7
+[0m[34m [E-1] [0m#base type seqs               : 13215
+[0m[34m [E-1] [0m#class symbols                : 12131
+[0m[34m [E-1] [0m  of which in implicits       : 46411 (22.9%)
+[0m[34m [E-1] [0m  of which in failed          : 8020 (4.0%)
+[0m[34m [E-1] [0m#raw type creations           : 202767
+[0m[34m [E-1] [0m#toplevel lubs/glbs           : 211
+[0m[34m [E-1] [0m  instantiated mismatches     : 1 (2.8%)
+[0m[34m [E-1] [0mimplicits instantiated for pruning: 36
+[0m[34m [E-1] [0m#sametype ops                 : 84721
+[0m[34m [E-1] [0m#symbols                      : 106055
+[0m[34m [E-1] [0m#typechecked selections       : 17770
+[0m[34m [E-1] [0m#type symbols                 : 23010
+[0m[34m [E-1] [0mtime spent in scope population: 27412 spans, ()2.633ms
+[0m[34m [E-1] [0m*** Cumulative statistics at phase jvm
+[0m[34m [E-1] [0m#typechecked identifiers      : 25641
+[0m[34m [E-1] [0m#created scopes               : 40442
+[0m[34m [E-1] [0m#created tree nodes           : 265880
+[0m[34m [E-1] [0m#all lubs/glbs                : 1284
+[0m[34m [E-1] [0mtime spent in scope lookup    : 404968 spans, ()34.054ms
+[0m[34m [E-1] [0m  of which in implicit        : 4071 (4.2%)
+[0m[34m [E-1] [0m  of which in failed          : 211 (0.2%)
+[0m[34m [E-1] [0m  of which multiple overloaded: 910 (0.9%)
+[0m[34m [E-1] [0m  of which not found          : 52557 (53.7%)
+[0m[34m [E-1] [0m#findMember ops               : 97945
+[0m[34m [E-1] [0m  of which in implicit        : 5028 (3.3%)
+[0m[34m [E-1] [0m  of which in failed          : 1158 (0.8%)
+[0m[34m [E-1] [0m#subtype ops                  : 150499
+[0m[34m [E-1] [0m#unique types                 : 45883
+[0m[34m [E-1] [0m#typechecked applications     : 13722
+[0m[34m [E-1] [0m  of which for typerefs       : 7800 (65.1%)
+[0m[34m [E-1] [0m  of which for compound types : 4152 (34.7%)
+[0m[34m [E-1] [0mavg base type seq length      : 5.7
+[0m[34m [E-1] [0m#base type seqs               : 11982
+[0m[34m [E-1] [0m#class symbols                : 11915
+[0m[34m [E-1] [0m  of which in implicits       : 46411 (23.7%)
+[0m[34m [E-1] [0m  of which in failed          : 8020 (4.1%)
+[0m[34m [E-1] [0m#raw type creations           : 196171
+[0m[34m [E-1] [0m#toplevel lubs/glbs           : 211
+[0m[34m [E-1] [0m  instantiated mismatches     : 1 (2.8%)
+[0m[34m [E-1] [0mimplicits instantiated for pruning: 36
+[0m[34m [E-1] [0m#sametype ops                 : 84048
+[0m[34m [E-1] [0m#symbols                      : 102857
+[0m[34m [E-1] [0m#typechecked selections       : 17749
+[0m[34m [E-1] [0m#type symbols                 : 22569
+[0m[34m [E-1] [0mtime spent in scope population: 27394 spans, ()2.624ms
+[0m[34m [E-1] [0m*** Cumulative statistics at phase cleanup
+[0m[34m [E-1] [0m#typechecked identifiers      : 25266
+[0m[34m [E-1] [0m#created scopes               : 39303
+[0m[34m [E-1] [0m#created tree nodes           : 244462
+[0m[34m [E-1] [0m#all lubs/glbs                : 1266
+[0m[34m [E-1] [0mtime spent in scope lookup    : 394025 spans, ()33.121ms
+[0m[34m [E-1] [0m  of which in implicit        : 4071 (4.2%)
+[0m[34m [E-1] [0m  of which in failed          : 211 (0.2%)
+[0m[34m [E-1] [0m  of which multiple overloaded: 860 (0.9%)
+[0m[34m [E-1] [0m  of which not found          : 51931 (53.6%)
+[0m[34m [E-1] [0m#findMember ops               : 96946
+[0m[34m [E-1] [0m  of which in implicit        : 5028 (3.4%)
+[0m[34m [E-1] [0m  of which in failed          : 1158 (0.8%)
+[0m[34m [E-1] [0m#subtype ops                  : 145812
+[0m[34m [E-1] [0m#unique types                 : 44956
+[0m[34m [E-1] [0m#typechecked applications     : 13489
+[0m[34m [E-1] [0m  of which for typerefs       : 7441 (67.8%)
+[0m[34m [E-1] [0m  of which for compound types : 3498 (31.9%)
+[0m[34m [E-1] [0mavg base type seq length      : 5.7
+[0m[34m [E-1] [0m#base type seqs               : 10969
+[0m[34m [E-1] [0m#class symbols                : 11906
+[0m[34m [E-1] [0m  of which in implicits       : 46411 (24.7%)
+[0m[34m [E-1] [0m  of which in failed          : 8020 (4.3%)
+[0m[34m [E-1] [0m#raw type creations           : 187649
+[0m[34m [E-1] [0m#toplevel lubs/glbs           : 193
+[0m[34m [E-1] [0m  instantiated mismatches     : 1 (2.8%)
+[0m[34m [E-1] [0mimplicits instantiated for pruning: 36
+[0m[34m [E-1] [0m#sametype ops                 : 83597
+[0m[34m [E-1] [0m#symbols                      : 97820
+[0m[34m [E-1] [0m#typechecked selections       : 17248
+[0m[34m [E-1] [0m#type symbols                 : 22264
+[0m[34m [E-1] [0mtime spent in scope population: 27051 spans, ()2.597ms
+[0m[34m [E-1] [0m*** Cumulative statistics at phase erasure
+[0m[34m [E-1] [0m  of which in unreachability  : 217 spans, ()20.525ms (40.7%)
+[0m[34m [E-1] [0m  of which in exhaustivity    : 32 spans, ()4.072ms (8.1%)
+[0m[34m [E-1] [0m  of which variable equality  : 466 spans, ()6.875ms (13.6%)
+[0m[34m [E-1] [0m  of which in CNF conversion  : 0 spans, ()0.0ms (0.0%)
+[0m[34m [E-1] [0m  of which DPLL               : 240 spans, ()1.065ms (2.1%)
+[0m[34m [E-1] [0mtime spent in patmat          : 254 spans, ()50.456ms
+[0m[34m [E-1] [0m#typechecked identifiers      : 18556
+[0m[34m [E-1] [0m#created scopes               : 21009
+[0m[34m [E-1] [0m#created tree nodes           : 192991
+[0m[34m [E-1] [0m#all lubs/glbs                : 1217
+[0m[34m [E-1] [0mtime spent in scope lookup    : 322881 spans, ()27.453ms
+[0m[34m [E-1] [0m  of which in implicit        : 4071 (4.5%)
+[0m[34m [E-1] [0m  of which in failed          : 211 (0.2%)
+[0m[34m [E-1] [0m  of which multiple overloaded: 753 (0.8%)
+[0m[34m [E-1] [0m  of which not found          : 51032 (56.7%)
+[0m[34m [E-1] [0m#findMember ops               : 89984
+[0m[34m [E-1] [0m  of which in implicit        : 5028 (7.3%)
+[0m[34m [E-1] [0m  of which in failed          : 1158 (1.7%)
+[0m[34m [E-1] [0m#subtype ops                  : 68864
+[0m[34m [E-1] [0m#unique types                 : 35934
+[0m[34m [E-1] [0m#typechecked applications     : 4477
+[0m[34m [E-1] [0m  of which for typerefs       : 4715 (80.7%)
+[0m[34m [E-1] [0m  of which for compound types : 1103 (18.9%)
+[0m[34m [E-1] [0mavg base type seq length      : 6.3
+[0m[34m [E-1] [0m#base type seqs               : 5845
+[0m[34m [E-1] [0m#class symbols                : 10385
+[0m[34m [E-1] [0m  of which in implicits       : 46411 (36.3%)
+[0m[34m [E-1] [0m  of which in failed          : 8020 (6.3%)
+[0m[34m [E-1] [0m#raw type creations           : 127792
+[0m[34m [E-1] [0m#toplevel lubs/glbs           : 149
+[0m[34m [E-1] [0m  instantiated mismatches     : 1 (2.8%)
+[0m[34m [E-1] [0mimplicits instantiated for pruning: 36
+[0m[34m [E-1] [0m#sametype ops                 : 38158
+[0m[34m [E-1] [0m#symbols                      : 65637
+[0m[34m [E-1] [0m#typechecked selections       : 6712
+[0m[34m [E-1] [0m#type symbols                 : 18200
+[0m[34m [E-1] [0mtime spent in scope population: 14958 spans, ()1.345ms
+[0m[34m [E-1] [0m*** Cumulative statistics at phase patmat
+[0m[34m [E-1] [0m  #implicit oftype hits       : 47 (12.2%)
+[0m[34m [E-1] [0m  #implicit inscope hits      : 79 (20.5%)
+[0m[34m [E-1] [0m  #implicit improves cached   : 26 (6.7%)
+[0m[34m [E-1] [0m  #implicit improves tests    : 64 (16.6%)
+[0m[34m [E-1] [0m  #found                      : 122 (31.6%)
+[0m[34m [E-1] [0m  #typed                      : 124 (32.1%)
+[0m[34m [E-1] [0m  #matching                   : 128 (33.2%)
+[0m[34m [E-1] [0m  #plausibly compatible       : 128 (33.2%)
+[0m[34m [E-1] [0m#implicit searches            : 386
+[0m[34m [E-1] [0m#typechecked identifiers      : 17561
+[0m[34m [E-1] [0m#created scopes               : 19661
+[0m[34m [E-1] [0m#created tree nodes           : 173474
+[0m[34m [E-1] [0m#all lubs/glbs                : 1205
+[0m[34m [E-1] [0m#macro expansions             : 25
+[0m[34m [E-1] [0mimplicit cache hits           : 170 (57.8%)
+[0m[34m [E-1] [0mimplicit cache accesses       : 294
+[0m[34m [E-1] [0mtime spent in scope lookup    : 314140 spans, ()26.648ms
+[0m[34m [E-1] [0m  of which in implicit        : 4071 (4.6%)
+[0m[34m [E-1] [0m  of which in failed          : 211 (0.2%)
+[0m[34m [E-1] [0m  of which multiple overloaded: 656 (0.7%)
+[0m[34m [E-1] [0m  of which not found          : 50936 (57.1%)
+[0m[34m [E-1] [0m#findMember ops               : 89265
+[0m[34m [E-1] [0m  of which in implicit        : 5028 (9.0%)
+[0m[34m [E-1] [0m  of which in failed          : 1158 (2.1%)
+[0m[34m [E-1] [0m#subtype ops                  : 55830
+[0m[34m [E-1] [0m#unique types                 : 34650
+[0m[34m [E-1] [0m#typechecked applications     : 3483
+[0m[34m [E-1] [0m  of which for typerefs       : 4597 (80.9%)
+[0m[34m [E-1] [0m  of which for compound types : 1061 (18.7%)
+[0m[34m [E-1] [0mavg base type seq length      : 6.0
+[0m[34m [E-1] [0m#base type seqs               : 5685
+[0m[34m [E-1] [0m#class symbols                : 10203
+[0m[34m [E-1] [0m  of which in implicits       : 46411 (38.6%)
+[0m[34m [E-1] [0m  of which in failed          : 8020 (6.7%)
+[0m[34m [E-1] [0m#raw type creations           : 120361
+[0m[34m [E-1] [0m#toplevel lubs/glbs           : 137
+[0m[34m [E-1] [0m  instantiated mismatches     : 1 (2.8%)
+[0m[34m [E-1] [0mimplicits instantiated for pruning: 36
+[0m[34m [E-1] [0m#sametype ops                 : 32684
+[0m[34m [E-1] [0m#symbols                      : 62908
+[0m[34m [E-1] [0m#typechecked selections       : 6035
+[0m[34m [E-1] [0m#type symbols                 : 17898
+[0m[34m [E-1] [0mtime spent in scope population: 13739 spans, ()1.076ms
+[0m[34m [E-1] [0mtime spent in macroExpand     : 25 spans, ()10.792ms (1.6%)
+[0m[34m [E-1] [0m  matchesPT                   : 488 spans, ()2.721ms (0.4%)
+[0m[34m [E-1] [0m  assembling parts            : 124 spans, ()14.488ms (2.2%)
+[0m[34m [E-1] [0m  failed of type              : 260 spans, ()11.883ms (1.8%)
+[0m[34m [E-1] [0m  successful of type          : 47 spans, ()20.717ms (3.1%)
+[0m[34m [E-1] [0m  failed in scope             : 307 spans, ()15.623ms (2.4%)
+[0m[34m [E-1] [0m  successful in scope         : 79 spans, ()32.409ms (4.9%)
+[0m[34m [E-1] [0mtime spent in implicits       : 386 spans, ()81.826ms (12.3%)
+[0m[34m [E-1] [0mtime spent ref scanning       : 0 spans, ()0.0ms (0.0%)
+[0m[34m [E-1] [0m  failed op=                  : 12 spans, ()10.067ms (1.5%)
+[0m[34m [E-1] [0m  failed apply                : 3 spans, ()0.579ms (0.1%)
+[0m[34m [E-1] [0mtime spent in failed          : 38 spans, ()11.057ms (1.7%)
+[0m[34m [E-1] [0mtime classfilereading         : 466 spans, ()78.19ms (11.8%)
+[0m[34m [E-1] [0mtime spent in baseClasses     : 1012 spans, ()26.712ms (4.0%) aggregate, 17.053ms (2.6%) specific
+[0m[34m [E-1] [0mtime spent in baseTypeSeq     : 5658 spans, ()107.407ms (16.2%) aggregate, 37.54ms (5.7%) specific
+[0m[34m [E-1] [0mtime spent in asSeenFrom      : 66093 spans, ()49.061ms (7.4%) aggregate, 37.185ms (5.6%) specific
+[0m[34m [E-1] [0mtime spent in findmembers     : 0 spans, ()0.0ms (0.0%) aggregate, 0.0ms (0.0%) specific
+[0m[34m [E-1] [0mtime spent in findmember      : 89265 spans, ()66.502ms (10.0%) aggregate, 57.303ms (8.6%) specific
+[0m[34m [E-1] [0mtime spent in <:<             : 55830 spans, ()43.522ms (6.6%) aggregate, 37.14ms (5.6%) specific
+[0m[34m [E-1] [0mtime spent in lubs            : 137 spans, ()1.566ms (0.2%) aggregate, 0.971ms (0.1%) specific
+[0m[34m [E-1] [0mtime spent typechecking       : 1 spans, ()664.096ms
+[0m[34m [E-1] [0m*** Cumulative statistics at phase typer
+[0m[34m [E-1] [0m#created tree nodes           : 34428
+[0m[34m [E-1] [0m*** Cumulative statistics at phase parser
+Compiled akka-actor-typed (2144ms)
+Compiling akka-actor-testkit-typed (30 Scala sources)
+[0m[34m [E-1] [0m  xsbt-analyzer               : 1 spans, ()0.633ms (0.1%)
+[0m[34m [E-1] [0m  jvm                         : 1 spans, ()64.514ms (6.3%)
+[0m[34m [E-1] [0m  delambdafy                  : 1 spans, ()6.207ms (0.6%)
+[0m[34m [E-1] [0m  cleanup                     : 1 spans, ()1.951ms (0.2%)
+[0m[34m [E-1] [0m  mixin                       : 1 spans, ()244.041ms (24.0%)
+[0m[34m [E-1] [0m  flatten                     : 1 spans, ()4.848ms (0.5%)
+[0m[34m [E-1] [0m  constructors                : 1 spans, ()4.568ms (0.4%)
+[0m[34m [E-1] [0m  lambdalift                  : 1 spans, ()8.272ms (0.8%)
+[0m[34m [E-1] [0m  posterasure                 : 1 spans, ()5.359ms (0.5%)
+[0m[34m [E-1] [0m  erasure                     : 1 spans, ()54.418ms (5.3%)
+[0m[34m [E-1] [0m  explicitouter               : 1 spans, ()8.513ms (0.8%)
+[0m[34m [E-1] [0m  specialize                  : 1 spans, ()48.397ms (4.8%)
+[0m[34m [E-1] [0m  tailcalls                   : 1 spans, ()5.209ms (0.5%)
+[0m[34m [E-1] [0m  fields                      : 1 spans, ()9.182ms (0.9%)
+[0m[34m [E-1] [0m  uncurry                     : 1 spans, ()14.1ms (1.4%)
+[0m[34m [E-1] [0m  refchecks                   : 1 spans, ()38.836ms (3.8%)
+[0m[34m [E-1] [0m  xsbt-dependency             : 1 spans, ()26.28ms (2.6%)
+[0m[34m [E-1] [0m  xsbt-api                    : 1 spans, ()64.135ms (6.3%)
+[0m[34m [E-1] [0m  picklergen                  : 1 spans, ()0.004ms (0.0%)
+[0m[34m [E-1] [0m  pickler                     : 1 spans, ()5.002ms (0.5%)
+[0m[34m [E-1] [0m  extmethods                  : 1 spans, ()1.273ms (0.1%)
+[0m[34m [E-1] [0m  superaccessors              : 1 spans, ()7.956ms (0.8%)
+[0m[34m [E-1] [0m  patmat                      : 1 spans, ()21.467ms (2.1%)
+[0m[34m [E-1] [0m  silencer                    : 1 spans, ()15.757ms (1.5%)
+[0m[34m [E-1] [0m  typer                       : 1 spans, ()327.023ms (32.1%)
+[0m[34m [E-1] [0m  packageobjects              : 1 spans, ()0.468ms (0.0%)
+[0m[34m [E-1] [0m  namer                       : 1 spans, ()11.757ms (1.2%)
+[0m[34m [E-1] [0m  parser                      : 1 spans, ()12.57ms (1.2%)
+[0m[34m [E-1] [0m#total compile time           : 1 spans, ()1017.41ms
+[0m[34m [E-1] [0m*** Cumulative timers for phases
+[0m[34m [E-1] [0m#typechecked identifiers      : 9265
+[0m[34m [E-1] [0m#created scopes               : 20165
+[0m[34m [E-1] [0m#created tree nodes           : 94830
+[0m[34m [E-1] [0m#all lubs/glbs                : 453
+[0m[34m [E-1] [0mclassfile writing             : 110 spans, ()3.933ms (6.1%)
+[0m[34m [E-1] [0mintra-method optimizations    : 103 spans, ()6.484ms (10.1%)
+[0m[34m [E-1] [0mcode generation               : 30 spans, ()37.578ms (58.3%)
+[0m[34m [E-1] [0mbcode initialization          : 1 spans, ()0.566ms (0.9%)
+[0m[34m [E-1] [0mtime in backend               : 1 spans, ()64.509ms
+[0m[34m [E-1] [0mtime spent in scope lookup    : 225151 spans, ()18.799ms
+[0m[34m [E-1] [0m  of which in implicit        : 5533 (10.1%)
+[0m[34m [E-1] [0m  of which in failed          : 85 (0.2%)
+[0m[34m [E-1] [0m  of which multiple overloaded: 838 (1.5%)
+[0m[34m [E-1] [0m  of which not found          : 22202 (40.6%)
+[0m[34m [E-1] [0m#findMember ops               : 54632
+[0m[34m [E-1] [0m  of which in implicit        : 4678 (7.8%)
+[0m[34m [E-1] [0m  of which in failed          : 1192 (2.0%)
+[0m[34m [E-1] [0m#subtype ops                  : 59816
+[0m[34m [E-1] [0m#unique types                 : 15974
+[0m[34m [E-1] [0m#typechecked applications     : 5155
+[0m[34m [E-1] [0m  of which for typerefs       : 4847 (64.2%)
+[0m[34m [E-1] [0m  of which for compound types : 2675 (35.5%)
+[0m[34m [E-1] [0mavg base type seq length      : 6.1
+[0m[34m [E-1] [0m#base type seqs               : 7544
+[0m[34m [E-1] [0m#class symbols                : 17980
+[0m[34m [E-1] [0m  of which in implicits       : 54952 (41.9%)
+[0m[34m [E-1] [0m  of which in failed          : 6375 (4.9%)
+[0m[34m [E-1] [0m#raw type creations           : 131053
+[0m[34m [E-1] [0m#toplevel lubs/glbs           : 38
+[0m[34m [E-1] [0m  instantiated mismatches     : 4 (10.5%)
+[0m[34m [E-1] [0mimplicits instantiated for pruning: 38
+[0m[34m [E-1] [0m#sametype ops                 : 77806
+[0m[34m [E-1] [0m#symbols                      : 98712
+[0m[34m [E-1] [0m#typechecked selections       : 8086
+[0m[34m [E-1] [0m#type symbols                 : 26189
+[0m[34m [E-1] [0mtime spent in scope population: 10805 spans, ()1.199ms
+[0m[34m [E-1] [0m*** Cumulative statistics at phase jvm
+[0m[34m [E-1] [0m#typechecked identifiers      : 9222
+[0m[34m [E-1] [0m#created scopes               : 19700
+[0m[34m [E-1] [0m#created tree nodes           : 93597
+[0m[34m [E-1] [0m#all lubs/glbs                : 453
+[0m[34m [E-1] [0mtime spent in scope lookup    : 217102 spans, ()18.049ms
+[0m[34m [E-1] [0m  of which in implicit        : 5533 (11.1%)
+[0m[34m [E-1] [0m  of which in failed          : 85 (0.2%)
+[0m[34m [E-1] [0m  of which multiple overloaded: 731 (1.5%)
+[0m[34m [E-1] [0m  of which not found          : 22039 (44.3%)
+[0m[34m [E-1] [0m#findMember ops               : 49796
+[0m[34m [E-1] [0m  of which in implicit        : 4678 (7.9%)
+[0m[34m [E-1] [0m  of which in failed          : 1192 (2.0%)
+[0m[34m [E-1] [0m#subtype ops                  : 59529
+[0m[34m [E-1] [0m#unique types                 : 24107
+[0m[34m [E-1] [0m#typechecked applications     : 5103
+[0m[34m [E-1] [0m  of which for typerefs       : 4629 (66.0%)
+[0m[34m [E-1] [0m  of which for compound types : 2359 (33.7%)
+[0m[34m [E-1] [0mavg base type seq length      : 6.1
+[0m[34m [E-1] [0m#base type seqs               : 7010
+[0m[34m [E-1] [0m#class symbols                : 17762
+[0m[34m [E-1] [0m  of which in implicits       : 54952 (43.1%)
+[0m[34m [E-1] [0m  of which in failed          : 6375 (5.0%)
+[0m[34m [E-1] [0m#raw type creations           : 127570
+[0m[34m [E-1] [0m#toplevel lubs/glbs           : 38
+[0m[34m [E-1] [0m  instantiated mismatches     : 4 (10.5%)
+[0m[34m [E-1] [0mimplicits instantiated for pruning: 38
+[0m[34m [E-1] [0m#sametype ops                 : 77549
+[0m[34m [E-1] [0m#symbols                      : 95858
+[0m[34m [E-1] [0m#typechecked selections       : 8077
+[0m[34m [E-1] [0m#type symbols                 : 25703
+[0m[34m [E-1] [0mtime spent in scope population: 10792 spans, ()1.189ms
+[0m[34m [E-1] [0m*** Cumulative statistics at phase cleanup
+[0m[34m [E-1] [0m#typechecked identifiers      : 8795
+[0m[34m [E-1] [0m#created scopes               : 18410
+[0m[34m [E-1] [0m#created tree nodes           : 85359
+[0m[34m [E-1] [0m#all lubs/glbs                : 451
+[0m[34m [E-1] [0mtime spent in scope lookup    : 204949 spans, ()17.108ms
+[0m[34m [E-1] [0m  of which in implicit        : 5533 (11.2%)
+[0m[34m [E-1] [0m  of which in failed          : 85 (0.2%)
+[0m[34m [E-1] [0m  of which multiple overloaded: 651 (1.3%)
+[0m[34m [E-1] [0m  of which not found          : 21909 (44.5%)
+[0m[34m [E-1] [0m#findMember ops               : 49222
+[0m[34m [E-1] [0m  of which in implicit        : 4678 (8.2%)
+[0m[34m [E-1] [0m  of which in failed          : 1192 (2.1%)
+[0m[34m [E-1] [0m#subtype ops                  : 57047
+[0m[34m [E-1] [0m#unique types                 : 25149
+[0m[34m [E-1] [0m#typechecked applications     : 4895
+[0m[34m [E-1] [0m  of which for typerefs       : 4385 (68.5%)
+[0m[34m [E-1] [0m  of which for compound types : 1990 (31.1%)
+[0m[34m [E-1] [0mavg base type seq length      : 6.1
+[0m[34m [E-1] [0m#base type seqs               : 6397
+[0m[34m [E-1] [0m#class symbols                : 17715
+[0m[34m [E-1] [0m  of which in implicits       : 54952 (45.2%)
+[0m[34m [E-1] [0m  of which in failed          : 6375 (5.2%)
+[0m[34m [E-1] [0m#raw type creations           : 121569
+[0m[34m [E-1] [0m#toplevel lubs/glbs           : 36
+[0m[34m [E-1] [0m  instantiated mismatches     : 4 (10.5%)
+[0m[34m [E-1] [0mimplicits instantiated for pruning: 38
+[0m[34m [E-1] [0m#sametype ops                 : 76944
+[0m[34m [E-1] [0m#symbols                      : 91686
+[0m[34m [E-1] [0m#typechecked selections       : 7762
+[0m[34m [E-1] [0m#type symbols                 : 25407
+[0m[34m [E-1] [0mtime spent in scope population: 10157 spans, ()1.137ms
+[0m[34m [E-1] [0m*** Cumulative statistics at phase erasure
+[0m[34m [E-1] [0m  of which in unreachability  : 64 spans, ()5.599ms (40.0%)
+[0m[34m [E-1] [0m  of which in exhaustivity    : 13 spans, ()1.776ms (12.7%)
+[0m[34m [E-1] [0m  of which variable equality  : 141 spans, ()2.376ms (17.0%)
+[0m[34m [E-1] [0m  of which in CNF conversion  : 0 spans, ()0.0ms (0.0%)
+[0m[34m [E-1] [0m  of which DPLL               : 81 spans, ()0.307ms (2.2%)
+[0m[34m [E-1] [0mtime spent in patmat          : 76 spans, ()14.007ms
+[0m[34m [E-1] [0m#typechecked identifiers      : 6525
+[0m[34m [E-1] [0m#created scopes               : 10376
+[0m[34m [E-1] [0m#created tree nodes           : 67920
+[0m[34m [E-1] [0m#all lubs/glbs                : 434
+[0m[34m [E-1] [0mtime spent in scope lookup    : 162865 spans, ()13.66ms
+[0m[34m [E-1] [0m  of which in implicit        : 5533 (12.3%)
+[0m[34m [E-1] [0m  of which in failed          : 85 (0.2%)
+[0m[34m [E-1] [0m  of which multiple overloaded: 462 (1.0%)
+[0m[34m [E-1] [0m  of which not found          : 21656 (48.2%)
+[0m[34m [E-1] [0m#findMember ops               : 44956
+[0m[34m [E-1] [0m  of which in implicit        : 4678 (16.4%)
+[0m[34m [E-1] [0m  of which in failed          : 1192 (4.2%)
+[0m[34m [E-1] [0m#subtype ops                  : 28500
+[0m[34m [E-1] [0m#unique types                 : 19730
+[0m[34m [E-1] [0m#typechecked applications     : 1800
+[0m[34m [E-1] [0m  of which for typerefs       : 3110 (81.5%)
+[0m[34m [E-1] [0m  of which for compound types : 692 (18.1%)
+[0m[34m [E-1] [0mavg base type seq length      : 6.4
+[0m[34m [E-1] [0m#base type seqs               : 3818
+[0m[34m [E-1] [0m#class symbols                : 15360
+[0m[34m [E-1] [0m  of which in implicits       : 54952 (60.7%)
+[0m[34m [E-1] [0m  of which in failed          : 6375 (7.0%)
+[0m[34m [E-1] [0m#raw type creations           : 90528
+[0m[34m [E-1] [0m#toplevel lubs/glbs           : 29
+[0m[34m [E-1] [0m  instantiated mismatches     : 4 (10.5%)
+[0m[34m [E-1] [0mimplicits instantiated for pruning: 38
+[0m[34m [E-1] [0m#sametype ops                 : 25401
+[0m[34m [E-1] [0m#symbols                      : 68183
+[0m[34m [E-1] [0m#typechecked selections       : 3177
+[0m[34m [E-1] [0m#type symbols                 : 21190
+[0m[34m [E-1] [0mtime spent in scope population: 5542 spans, ()0.475ms
+[0m[34m [E-1] [0m*** Cumulative statistics at phase patmat
+[0m[34m [E-1] [0m  #implicit oftype hits       : 11 (3.1%)
+[0m[34m [E-1] [0m  #implicit inscope hits      : 124 (34.5%)
+[0m[34m [E-1] [0m  #implicit improves cached   : 14 (3.9%)
+[0m[34m [E-1] [0m  #implicit improves tests    : 49 (13.6%)
+[0m[34m [E-1] [0m  #found                      : 141 (39.3%)
+[0m[34m [E-1] [0m  #typed                      : 141 (39.3%)
+[0m[34m [E-1] [0m  #matching                   : 145 (40.4%)
+[0m[34m [E-1] [0m  #plausibly compatible       : 145 (40.4%)
+[0m[34m [E-1] [0m#implicit searches            : 359
+[0m[34m [E-1] [0m#typechecked identifiers      : 6244
+[0m[34m [E-1] [0m#created scopes               : 10035
+[0m[34m [E-1] [0m#created tree nodes           : 61600
+[0m[34m [E-1] [0m#all lubs/glbs                : 434
+[0m[34m [E-1] [0mimplicit cache hits           : 91 (38.7%)
+[0m[34m [E-1] [0mimplicit cache accesses       : 235
+[0m[34m [E-1] [0mtime spent in scope lookup    : 161486 spans, ()13.54ms
+[0m[34m [E-1] [0m  of which in implicit        : 5533 (12.4%)
+[0m[34m [E-1] [0m  of which in failed          : 85 (0.2%)
+[0m[34m [E-1] [0m  of which multiple overloaded: 433 (1.0%)
+[0m[34m [E-1] [0m  of which not found          : 21442 (48.1%)
+[0m[34m [E-1] [0m#findMember ops               : 44619
+[0m[34m [E-1] [0m  of which in implicit        : 4678 (19.3%)
+[0m[34m [E-1] [0m  of which in failed          : 1192 (4.9%)
+[0m[34m [E-1] [0m#subtype ops                  : 24256
+[0m[34m [E-1] [0m#unique types                 : 19429
+[0m[34m [E-1] [0m#typechecked applications     : 1501
+[0m[34m [E-1] [0m  of which for typerefs       : 3099 (81.4%)
+[0m[34m [E-1] [0m  of which for compound types : 691 (18.2%)
+[0m[34m [E-1] [0mavg base type seq length      : 6.4
+[0m[34m [E-1] [0m#base type seqs               : 3806
+[0m[34m [E-1] [0m#class symbols                : 15311
+[0m[34m [E-1] [0m  of which in implicits       : 54952 (62.4%)
+[0m[34m [E-1] [0m  of which in failed          : 6375 (7.2%)
+[0m[34m [E-1] [0m#raw type creations           : 88035
+[0m[34m [E-1] [0m#toplevel lubs/glbs           : 29
+[0m[34m [E-1] [0m  instantiated mismatches     : 4 (10.5%)
+[0m[34m [E-1] [0mimplicits instantiated for pruning: 38
+[0m[34m [E-1] [0m#sametype ops                 : 23998
+[0m[34m [E-1] [0m#symbols                      : 67384
+[0m[34m [E-1] [0m#typechecked selections       : 2702
+[0m[34m [E-1] [0m#type symbols                 : 21131
+[0m[34m [E-1] [0mtime spent in scope population: 5207 spans, ()0.404ms
+[0m[34m [E-1] [0mtime spent in macroExpand     : 0 spans, ()0.0ms (0.0%)
+[0m[34m [E-1] [0m  matchesPT                   : 426 spans, ()1.725ms (0.5%)
+[0m[34m [E-1] [0m  assembling parts            : 144 spans, ()15.027ms (4.6%)
+[0m[34m [E-1] [0m  failed of type              : 224 spans, ()10.244ms (3.1%)
+[0m[34m [E-1] [0m  successful of type          : 11 spans, ()11.38ms (3.5%)
+[0m[34m [E-1] [0m  failed in scope             : 235 spans, ()19.412ms (5.9%)
+[0m[34m [E-1] [0m  successful in scope         : 124 spans, ()37.46ms (11.5%)
+[0m[34m [E-1] [0mtime spent in implicits       : 359 spans, ()78.335ms (24.0%)
+[0m[34m [E-1] [0mtime spent ref scanning       : 2 spans, ()0.022ms (0.0%)
+[0m[34m [E-1] [0m  failed op=                  : 5 spans, ()6.351ms (1.9%)
+[0m[34m [E-1] [0m  failed apply                : 0 spans, ()0.0ms (0.0%)
+[0m[34m [E-1] [0mtime spent in failed          : 9 spans, ()6.306ms (1.9%)
+[0m[34m [E-1] [0mtime classfilereading         : 521 spans, ()70.678ms (21.6%)
+[0m[34m [E-1] [0mtime spent in baseClasses     : 732 spans, ()30.929ms (9.5%) aggregate, 15.349ms (4.7%) specific
+[0m[34m [E-1] [0mtime spent in baseTypeSeq     : 3790 spans, ()80.584ms (24.6%) aggregate, 27.689ms (8.5%) specific
+[0m[34m [E-1] [0mtime spent in asSeenFrom      : 34563 spans, ()29.12ms (8.9%) aggregate, 22.188ms (6.8%) specific
+[0m[34m [E-1] [0mtime spent in findmembers     : 0 spans, ()0.0ms (0.0%) aggregate, 0.0ms (0.0%) specific
+[0m[34m [E-1] [0mtime spent in findmember      : 44619 spans, ()34.498ms (10.5%) aggregate, 27.442ms (8.4%) specific
+[0m[34m [E-1] [0mtime spent in <:<             : 24256 spans, ()14.97ms (4.6%) aggregate, 10.281ms (3.1%) specific
+[0m[34m [E-1] [0mtime spent in lubs            : 29 spans, ()0.172ms (0.1%) aggregate, 0.153ms (0.0%) specific
+[0m[34m [E-1] [0mtime spent typechecking       : 1 spans, ()327.018ms
+[0m[34m [E-1] [0m*** Cumulative statistics at phase typer
+[0m[34m [E-1] [0m#created tree nodes           : 13303
+[0m[34m [E-1] [0m*** Cumulative statistics at phase parser
+Compiled akka-actor-testkit-typed (1048ms)
+[0m[34m [E-1] [0m  xsbt-analyzer               : 1 spans, ()10.303ms (0.1%)
+[0m[34m [E-1] [0m  jvm                         : 1 spans, ()940.241ms (7.6%)
+[0m[34m [E-1] [0m  delambdafy                  : 1 spans, ()80.968ms (0.7%)
+[0m[34m [E-1] [0m  cleanup                     : 1 spans, ()41.653ms (0.3%)
+[0m[34m [E-1] [0m  mixin                       : 1 spans, ()167.813ms (1.4%)
+[0m[34m [E-1] [0m  flatten                     : 1 spans, ()71.297ms (0.6%)
+[0m[34m [E-1] [0m  constructors                : 1 spans, ()107.259ms (0.9%)
+[0m[34m [E-1] [0m  lambdalift                  : 1 spans, ()153.456ms (1.2%)
+[0m[34m [E-1] [0m  posterasure                 : 1 spans, ()82.458ms (0.7%)
+[0m[34m [E-1] [0m  erasure                     : 1 spans, ()687.916ms (5.6%)
+[0m[34m [E-1] [0m  explicitouter               : 1 spans, ()487.094ms (3.9%)
+[0m[34m [E-1] [0m  specialize                  : 1 spans, ()221.128ms (1.8%)
+[0m[34m [E-1] [0m  tailcalls                   : 1 spans, ()65.75ms (0.5%)
+[0m[34m [E-1] [0m  fields                      : 1 spans, ()77.862ms (0.6%)
+[0m[34m [E-1] [0m  uncurry                     : 1 spans, ()280.666ms (2.3%)
+[0m[34m [E-1] [0m  refchecks                   : 1 spans, ()905.149ms (7.3%)
+[0m[34m [E-1] [0m  xsbt-dependency             : 1 spans, ()301.472ms (2.4%)
+[0m[34m [E-1] [0m  xsbt-api                    : 1 spans, ()587.102ms (4.7%)
+[0m[34m [E-1] [0m  picklergen                  : 1 spans, ()0.004ms (0.0%)
+[0m[34m [E-1] [0m  pickler                     : 1 spans, ()59.819ms (0.5%)
+[0m[34m [E-1] [0m  extmethods                  : 1 spans, ()13.761ms (0.1%)
+[0m[34m [E-1] [0m  superaccessors              : 1 spans, ()107.007ms (0.9%)
+[0m[34m [E-1] [0m  patmat                      : 1 spans, ()262.436ms (2.1%)
+[0m[34m [E-1] [0m  silencer                    : 1 spans, ()355.641ms (2.9%)
+[0m[34m [E-1] [0m  typer                       : 1 spans, ()6025.535ms (48.7%)
+[0m[34m [E-1] [0m  packageobjects              : 1 spans, ()4.258ms (0.0%)
+[0m[34m [E-1] [0m  namer                       : 1 spans, ()12.377ms (0.1%)
+[0m[34m [E-1] [0m  parser                      : 1 spans, ()259.842ms (2.1%)
+[0m[34m [E-1] [0m#total compile time           : 1 spans, ()12377.762ms
+[0m[34m [E-1] [0m*** Cumulative timers for phases
+[0m[34m [E-1] [0m#typechecked identifiers      : 185786
+[0m[34m [E-1] [0m#created scopes               : 267263
+[0m[34m [E-1] [0m#created tree nodes           : 1802031
+[0m[34m [E-1] [0m#all lubs/glbs                : 26316
+[0m[34m [E-1] [0mclassfile writing             : 2350 spans, ()67.369ms (7.2%)
+[0m[34m [E-1] [0mintra-method optimizations    : 2251 spans, ()121.111ms (12.9%)
+[0m[34m [E-1] [0mcode generation               : 170 spans, ()523.185ms (55.6%)
+[0m[34m [E-1] [0mbcode initialization          : 1 spans, ()0.555ms (0.1%)
+[0m[34m [E-1] [0mtime in backend               : 1 spans, ()940.22ms
+[0m[34m [E-1] [0mtime spent in scope lookup    : 3176233 spans, ()234.246ms
+[0m[34m [E-1] [0m  of which in implicit        : 18042 (2.3%)
+[0m[34m [E-1] [0m  of which in failed          : 6171 (0.8%)
+[0m[34m [E-1] [0m  of which multiple overloaded: 9324 (1.2%)
+[0m[34m [E-1] [0m  of which not found          : 524574 (67.0%)
+[0m[34m [E-1] [0m#findMember ops               : 783173
+[0m[34m [E-1] [0m  of which in implicit        : 24853 (1.8%)
+[0m[34m [E-1] [0m  of which in failed          : 4372 (0.3%)
+[0m[34m [E-1] [0m#subtype ops                  : 1395707
+[0m[34m [E-1] [0m#unique types                 : 142903
+[0m[34m [E-1] [0m#typechecked applications     : 120390
+[0m[34m [E-1] [0m  of which for typerefs       : 50791 (67.7%)
+[0m[34m [E-1] [0m  of which for compound types : 23713 (31.6%)
+[0m[34m [E-1] [0mavg base type seq length      : 5.2
+[0m[34m [E-1] [0m#base type seqs               : 75065
+[0m[34m [E-1] [0m#class symbols                : 39681
+[0m[34m [E-1] [0m  of which in implicits       : 1236990 (51.4%)
+[0m[34m [E-1] [0m  of which in failed          : 205845 (8.6%)
+[0m[34m [E-1] [0m#raw type creations           : 2407104
+[0m[34m [E-1] [0m#toplevel lubs/glbs           : 5118
+[0m[34m [E-1] [0m  instantiated mismatches     : 2 (1.0%)
+[0m[34m [E-1] [0m  immediate mismatches        : 2 (1.0%)
+[0m[34m [E-1] [0mimplicits instantiated for pruning: 201
+[0m[34m [E-1] [0m#sametype ops                 : 441093
+[0m[34m [E-1] [0m#symbols                      : 484893
+[0m[34m [E-1] [0m#typechecked selections       : 169816
+[0m[34m [E-1] [0m#type symbols                 : 163104
+[0m[34m [E-1] [0mtime spent in scope population: 194387 spans, ()20.488ms
+[0m[34m [E-1] [0m*** Cumulative statistics at phase jvm
+[0m[34m [E-1] [0m#typechecked identifiers      : 184006
+[0m[34m [E-1] [0m#created scopes               : 263856
+[0m[34m [E-1] [0m#created tree nodes           : 1769767
+[0m[34m [E-1] [0m#all lubs/glbs                : 26316
+[0m[34m [E-1] [0mtime spent in scope lookup    : 3095771 spans, ()226.297ms
+[0m[34m [E-1] [0m  of which in implicit        : 18042 (2.4%)
+[0m[34m [E-1] [0m  of which in failed          : 6171 (0.8%)
+[0m[34m [E-1] [0m  of which multiple overloaded: 9216 (1.2%)
+[0m[34m [E-1] [0m  of which not found          : 521045 (67.9%)
+[0m[34m [E-1] [0m#findMember ops               : 767077
+[0m[34m [E-1] [0m  of which in implicit        : 24853 (1.8%)
+[0m[34m [E-1] [0m  of which in failed          : 4372 (0.3%)
+[0m[34m [E-1] [0m#subtype ops                  : 1387747
+[0m[34m [E-1] [0m#unique types                 : 136202
+[0m[34m [E-1] [0m#typechecked applications     : 118787
+[0m[34m [E-1] [0m  of which for typerefs       : 49327 (68.7%)
+[0m[34m [E-1] [0m  of which for compound types : 21951 (30.6%)
+[0m[34m [E-1] [0mavg base type seq length      : 5.2
+[0m[34m [E-1] [0m#base type seqs               : 71839
+[0m[34m [E-1] [0m#class symbols                : 38594
+[0m[34m [E-1] [0m  of which in implicits       : 1236990 (52.3%)
+[0m[34m [E-1] [0m  of which in failed          : 205845 (8.7%)
+[0m[34m [E-1] [0m#raw type creations           : 2364664
+[0m[34m [E-1] [0m#toplevel lubs/glbs           : 5118
+[0m[34m [E-1] [0m  instantiated mismatches     : 2 (1.0%)
+[0m[34m [E-1] [0m  immediate mismatches        : 2 (1.0%)
+[0m[34m [E-1] [0mimplicits instantiated for pruning: 201
+[0m[34m [E-1] [0m#sametype ops                 : 434278
+[0m[34m [E-1] [0m#symbols                      : 467212
+[0m[34m [E-1] [0m#typechecked selections       : 169040
+[0m[34m [E-1] [0m#type symbols                 : 158272
+[0m[34m [E-1] [0mtime spent in scope population: 193186 spans, ()20.334ms
+[0m[34m [E-1] [0m*** Cumulative statistics at phase cleanup
+[0m[34m [E-1] [0m#typechecked identifiers      : 178202
+[0m[34m [E-1] [0m#created scopes               : 250803
+[0m[34m [E-1] [0m#created tree nodes           : 1616140
+[0m[34m [E-1] [0m#all lubs/glbs                : 25372
+[0m[34m [E-1] [0mtime spent in scope lookup    : 2986143 spans, ()218.128ms
+[0m[34m [E-1] [0m  of which in implicit        : 18042 (2.4%)
+[0m[34m [E-1] [0m  of which in failed          : 6171 (0.8%)
+[0m[34m [E-1] [0m  of which multiple overloaded: 8820 (1.2%)
+[0m[34m [E-1] [0m  of which not found          : 518953 (68.4%)
+[0m[34m [E-1] [0m#findMember ops               : 758284
+[0m[34m [E-1] [0m  of which in implicit        : 24853 (1.9%)
+[0m[34m [E-1] [0m  of which in failed          : 4372 (0.3%)
+[0m[34m [E-1] [0m#subtype ops                  : 1335348
+[0m[34m [E-1] [0m#unique types                 : 115356
+[0m[34m [E-1] [0m#typechecked applications     : 115377
+[0m[34m [E-1] [0m  of which for typerefs       : 48431 (71.7%)
+[0m[34m [E-1] [0m  of which for compound types : 18515 (27.4%)
+[0m[34m [E-1] [0mavg base type seq length      : 5.2
+[0m[34m [E-1] [0m#base type seqs               : 67507
+[0m[34m [E-1] [0m#class symbols                : 36687
+[0m[34m [E-1] [0m  of which in implicits       : 1236990 (56.4%)
+[0m[34m [E-1] [0m  of which in failed          : 205845 (9.4%)
+[0m[34m [E-1] [0m#raw type creations           : 2193869
+[0m[34m [E-1] [0m#toplevel lubs/glbs           : 4174
+[0m[34m [E-1] [0m  instantiated mismatches     : 2 (1.0%)
+[0m[34m [E-1] [0m  immediate mismatches        : 2 (1.0%)
+[0m[34m [E-1] [0mimplicits instantiated for pruning: 201
+[0m[34m [E-1] [0m#sametype ops                 : 415339
+[0m[34m [E-1] [0m#symbols                      : 420806
+[0m[34m [E-1] [0m#typechecked selections       : 160893
+[0m[34m [E-1] [0m#type symbols                 : 146563
+[0m[34m [E-1] [0mtime spent in scope population: 187135 spans, ()20.017ms
+[0m[34m [E-1] [0m*** Cumulative statistics at phase erasure
+[0m[34m [E-1] [0m  of which in unreachability  : 798 spans, ()74.127ms (44.9%)
+[0m[34m [E-1] [0m  of which in exhaustivity    : 196 spans, ()20.214ms (12.2%)
+[0m[34m [E-1] [0m  of which variable equality  : 1792 spans, ()30.764ms (18.6%)
+[0m[34m [E-1] [0m  of which in CNF conversion  : 0 spans, ()0.0ms (0.0%)
+[0m[34m [E-1] [0m  of which DPLL               : 981 spans, ()6.459ms (3.9%)
+[0m[34m [E-1] [0mtime spent in patmat          : 907 spans, ()165.042ms
+[0m[34m [E-1] [0m#typechecked identifiers      : 140467
+[0m[34m [E-1] [0m#created scopes               : 124798
+[0m[34m [E-1] [0m#created tree nodes           : 1215398
+[0m[34m [E-1] [0m#all lubs/glbs                : 23432
+[0m[34m [E-1] [0mtime spent in scope lookup    : 2533602 spans, ()190.253ms
+[0m[34m [E-1] [0m  of which in implicit        : 18042 (2.5%)
+[0m[34m [E-1] [0m  of which in failed          : 6171 (0.9%)
+[0m[34m [E-1] [0m  of which multiple overloaded: 8564 (1.2%)
+[0m[34m [E-1] [0m  of which not found          : 511513 (71.3%)
+[0m[34m [E-1] [0m#findMember ops               : 717346
+[0m[34m [E-1] [0m  of which in implicit        : 24853 (3.6%)
+[0m[34m [E-1] [0m  of which in failed          : 4372 (0.6%)
+[0m[34m [E-1] [0m#subtype ops                  : 682648
+[0m[34m [E-1] [0m#unique types                 : 258026
+[0m[34m [E-1] [0m#typechecked applications     : 40566
+[0m[34m [E-1] [0m  of which for typerefs       : 36450 (84.5%)
+[0m[34m [E-1] [0m  of which for compound types : 6114 (14.2%)
+[0m[34m [E-1] [0mavg base type seq length      : 5.4
+[0m[34m [E-1] [0m#base type seqs               : 43124
+[0m[34m [E-1] [0m#class symbols                : 26594
+[0m[34m [E-1] [0m  of which in implicits       : 1236990 (64.7%)
+[0m[34m [E-1] [0m  of which in failed          : 205845 (10.8%)
+[0m[34m [E-1] [0m#raw type creations           : 1910749
+[0m[34m [E-1] [0m#toplevel lubs/glbs           : 2293
+[0m[34m [E-1] [0m  instantiated mismatches     : 2 (1.0%)
+[0m[34m [E-1] [0m  immediate mismatches        : 2 (1.0%)
+[0m[34m [E-1] [0mimplicits instantiated for pruning: 201
+[0m[34m [E-1] [0m#sametype ops                 : 357420
+[0m[34m [E-1] [0m#symbols                      : 298037
+[0m[34m [E-1] [0m#typechecked selections       : 51485
+[0m[34m [E-1] [0m#type symbols                 : 120188
+[0m[34m [E-1] [0mtime spent in scope population: 94675 spans, ()9.467ms
+[0m[34m [E-1] [0m*** Cumulative statistics at phase patmat
+[0m[34m [E-1] [0m  #implicit oftype hits       : 232 (1.5%)
+[0m[34m [E-1] [0m  #implicit inscope hits      : 702 (4.5%)
+[0m[34m [E-1] [0m  #implicit improves cached   : 270 (1.7%)
+[0m[34m [E-1] [0m  #implicit improves tests    : 592 (3.8%)
+[0m[34m [E-1] [0m  #found                      : 884 (5.7%)
+[0m[34m [E-1] [0m  #typed                      : 884 (5.7%)
+[0m[34m [E-1] [0m  #matching                   : 916 (5.9%)
+[0m[34m [E-1] [0m  #plausibly compatible       : 916 (5.9%)
+[0m[34m [E-1] [0m#implicit searches            : 15619
+[0m[34m [E-1] [0m#typechecked identifiers      : 136657
+[0m[34m [E-1] [0m#created scopes               : 120229
+[0m[34m [E-1] [0m#created tree nodes           : 1132880
+[0m[34m [E-1] [0m#all lubs/glbs                : 23427
+[0m[34m [E-1] [0m#macro expansions             : 97
+[0m[34m [E-1] [0mimplicit cache hits           : 11481 (77.4%)
+[0m[34m [E-1] [0mimplicit cache accesses       : 14826
+[0m[34m [E-1] [0mtime spent in scope lookup    : 2515104 spans, ()188.832ms
+[0m[34m [E-1] [0m  of which in implicit        : 18042 (2.5%)
+[0m[34m [E-1] [0m  of which in failed          : 6171 (0.9%)
+[0m[34m [E-1] [0m  of which multiple overloaded: 8207 (1.1%)
+[0m[34m [E-1] [0m  of which not found          : 510177 (71.4%)
+[0m[34m [E-1] [0m#findMember ops               : 714246
+[0m[34m [E-1] [0m  of which in implicit        : 24853 (3.9%)
+[0m[34m [E-1] [0m  of which in failed          : 4372 (0.7%)
+[0m[34m [E-1] [0m#subtype ops                  : 630608
+[0m[34m [E-1] [0m#unique types                 : 254180
+[0m[34m [E-1] [0m#typechecked applications     : 36522
+[0m[34m [E-1] [0m  of which for typerefs       : 36351 (84.5%)
+[0m[34m [E-1] [0m  of which for compound types : 6097 (14.2%)
+[0m[34m [E-1] [0mavg base type seq length      : 5.4
+[0m[34m [E-1] [0m#base type seqs               : 43008
+[0m[34m [E-1] [0m#class symbols                : 26128
+[0m[34m [E-1] [0m  of which in implicits       : 1236990 (65.5%)
+[0m[34m [E-1] [0m  of which in failed          : 205845 (10.9%)
+[0m[34m [E-1] [0m#raw type creations           : 1887841
+[0m[34m [E-1] [0m#toplevel lubs/glbs           : 2288
+[0m[34m [E-1] [0m  instantiated mismatches     : 2 (1.0%)
+[0m[34m [E-1] [0m  immediate mismatches        : 2 (1.0%)
+[0m[34m [E-1] [0mimplicits instantiated for pruning: 201
+[0m[34m [E-1] [0m#sametype ops                 : 328114
+[0m[34m [E-1] [0m#symbols                      : 288422
+[0m[34m [E-1] [0m#typechecked selections       : 48332
+[0m[34m [E-1] [0m#type symbols                 : 119575
+[0m[34m [E-1] [0mtime spent in scope population: 90176 spans, ()8.527ms
+[0m[34m [E-1] [0mtime spent in macroExpand     : 97 spans, ()22.896ms (0.4%)
+[0m[34m [E-1] [0m  matchesPT                   : 3680 spans, ()13.466ms (0.2%)
+[0m[34m [E-1] [0m  assembling parts            : 3345 spans, ()42.719ms (0.7%)
+[0m[34m [E-1] [0m  failed of type              : 14685 spans, ()61.222ms (1.0%)
+[0m[34m [E-1] [0m  successful of type          : 232 spans, ()76.643ms (1.3%)
+[0m[34m [E-1] [0m  failed in scope             : 14917 spans, ()329.936ms (5.5%)
+[0m[34m [E-1] [0m  successful in scope         : 702 spans, ()121.261ms (2.0%)
+[0m[34m [E-1] [0mtime spent in implicits       : 15619 spans, ()603.503ms (10.0%)
+[0m[34m [E-1] [0mtime spent ref scanning       : 18 spans, ()0.166ms (0.0%)
+[0m[34m [E-1] [0m  failed op=                  : 1243 spans, ()158.421ms (2.6%)
+[0m[34m [E-1] [0m  failed apply                : 0 spans, ()0.0ms (0.0%)
+[0m[34m [E-1] [0mtime spent in failed          : 1359 spans, ()144.329ms (2.4%)
+[0m[34m [E-1] [0mtime classfilereading         : 762 spans, ()123.296ms (2.0%)
+[0m[34m [E-1] [0mtime spent in baseClasses     : 5496 spans, ()35.694ms (0.6%) aggregate, 18.983ms (0.3%) specific
+[0m[34m [E-1] [0mtime spent in baseTypeSeq     : 42448 spans, ()228.222ms (3.8%) aggregate, 126.167ms (2.1%) specific
+[0m[34m [E-1] [0mtime spent in asSeenFrom      : 479869 spans, ()252.226ms (4.2%) aggregate, 192.529ms (3.2%) specific
+[0m[34m [E-1] [0mtime spent in findmembers     : 0 spans, ()0.0ms (0.0%) aggregate, 0.0ms (0.0%) specific
+[0m[34m [E-1] [0mtime spent in findmember      : 714246 spans, ()524.51ms (8.7%) aggregate, 467.562ms (7.8%) specific
+[0m[34m [E-1] [0mtime spent in <:<             : 630608 spans, ()1977.314ms (32.8%) aggregate, 924.762ms (15.3%) specific
+[0m[34m [E-1] [0mtime spent in lubs            : 2288 spans, ()354.276ms (5.9%) aggregate, 349.707ms (5.8%) specific
+[0m[34m [E-1] [0mtime spent typechecking       : 1 spans, ()6025.531ms
+[0m[34m [E-1] [0m*** Cumulative statistics at phase typer
+[0m[34m [E-1] [0m#created tree nodes           : 303383
+[0m[34m [E-1] [0m*** Cumulative statistics at phase parser
+Compiled akka-stream (12631ms)
+Compiling akka-stream-testkit (8 Scala sources)
+[0m[34m [E-1] [0m  xsbt-analyzer               : 1 spans, ()0.354ms (0.1%)
+[0m[34m [E-1] [0m  jvm                         : 1 spans, ()34.125ms (7.0%)
+[0m[34m [E-1] [0m  delambdafy                  : 1 spans, ()2.964ms (0.6%)
+[0m[34m [E-1] [0m  cleanup                     : 1 spans, ()1.204ms (0.2%)
+[0m[34m [E-1] [0m  mixin                       : 1 spans, ()3.419ms (0.7%)
+[0m[34m [E-1] [0m  flatten                     : 1 spans, ()2.069ms (0.4%)
+[0m[34m [E-1] [0m  constructors                : 1 spans, ()2.236ms (0.5%)
+[0m[34m [E-1] [0m  lambdalift                  : 1 spans, ()4.359ms (0.9%)
+[0m[34m [E-1] [0m  posterasure                 : 1 spans, ()2.279ms (0.5%)
+[0m[34m [E-1] [0m  erasure                     : 1 spans, ()25.134ms (5.1%)
+[0m[34m [E-1] [0m  explicitouter               : 1 spans, ()4.94ms (1.0%)
+[0m[34m [E-1] [0m  specialize                  : 1 spans, ()57.762ms (11.8%)
+[0m[34m [E-1] [0m  tailcalls                   : 1 spans, ()2.435ms (0.5%)
+[0m[34m [E-1] [0m  fields                      : 1 spans, ()2.216ms (0.5%)
+[0m[34m [E-1] [0m  uncurry                     : 1 spans, ()8.083ms (1.6%)
+[0m[34m [E-1] [0m  refchecks                   : 1 spans, ()14.038ms (2.9%)
+[0m[34m [E-1] [0m  xsbt-dependency             : 1 spans, ()12.87ms (2.6%)
+[0m[34m [E-1] [0m  xsbt-api                    : 1 spans, ()18.91ms (3.9%)
+[0m[34m [E-1] [0m  picklergen                  : 1 spans, ()0.003ms (0.0%)
+[0m[34m [E-1] [0m  pickler                     : 1 spans, ()1.803ms (0.4%)
+[0m[34m [E-1] [0m  extmethods                  : 1 spans, ()0.373ms (0.1%)
+[0m[34m [E-1] [0m  superaccessors              : 1 spans, ()2.477ms (0.5%)
+[0m[34m [E-1] [0m  patmat                      : 1 spans, ()13.15ms (2.7%)
+[0m[34m [E-1] [0m  silencer                    : 1 spans, ()9.291ms (1.9%)
+[0m[34m [E-1] [0m  typer                       : 1 spans, ()222.672ms (45.4%)
+[0m[34m [E-1] [0m  packageobjects              : 1 spans, ()8.475ms (1.7%)
+[0m[34m [E-1] [0m  namer                       : 1 spans, ()17.823ms (3.6%)
+[0m[34m [E-1] [0m  parser                      : 1 spans, ()10.7ms (2.2%)
+[0m[34m [E-1] [0m#total compile time           : 1 spans, ()490.617ms
+[0m[34m [E-1] [0m*** Cumulative timers for phases
+[0m[34m [E-1] [0m#typechecked identifiers      : 4075
+[0m[34m [E-1] [0m#created scopes               : 11266
+[0m[34m [E-1] [0m#created tree nodes           : 46147
+[0m[34m [E-1] [0m#all lubs/glbs                : 236
+[0m[34m [E-1] [0mclassfile writing             : 76 spans, ()2.287ms (6.7%)
+[0m[34m [E-1] [0mintra-method optimizations    : 66 spans, ()3.01ms (8.8%)
+[0m[34m [E-1] [0mcode generation               : 8 spans, ()19.917ms (58.4%)
+[0m[34m [E-1] [0mbcode initialization          : 1 spans, ()0.565ms (1.7%)
+[0m[34m [E-1] [0mtime in backend               : 1 spans, ()34.121ms
+[0m[34m [E-1] [0mtime spent in scope lookup    : 114748 spans, ()10.366ms
+[0m[34m [E-1] [0m  of which in implicit        : 3349 (10.8%)
+[0m[34m [E-1] [0m  of which in failed          : 64 (0.2%)
+[0m[34m [E-1] [0m  of which multiple overloaded: 289 (0.9%)
+[0m[34m [E-1] [0m  of which not found          : 11549 (37.1%)
+[0m[34m [E-1] [0m#findMember ops               : 31106
+[0m[34m [E-1] [0m  of which in implicit        : 2253 (7.0%)
+[0m[34m [E-1] [0m  of which in failed          : 6 (0.0%)
+[0m[34m [E-1] [0m#subtype ops                  : 32247
+[0m[34m [E-1] [0m#unique types                 : 15136
+[0m[34m [E-1] [0m#typechecked applications     : 2753
+[0m[34m [E-1] [0m  of which for typerefs       : 2897 (62.3%)
+[0m[34m [E-1] [0m  of which for compound types : 1746 (37.6%)
+[0m[34m [E-1] [0mavg base type seq length      : 6.4
+[0m[34m [E-1] [0m#base type seqs               : 4647
+[0m[34m [E-1] [0m#class symbols                : 12478
+[0m[34m [E-1] [0m  of which in implicits       : 24807 (36.4%)
+[0m[34m [E-1] [0m  of which in failed          : 711 (1.0%)
+[0m[34m [E-1] [0m#raw type creations           : 68222
+[0m[34m [E-1] [0m#toplevel lubs/glbs           : 37
+[0m[34m [E-1] [0m  instantiated mismatches     : 1 (3.8%)
+[0m[34m [E-1] [0mimplicits instantiated for pruning: 26
+[0m[34m [E-1] [0m#sametype ops                 : 28276
+[0m[34m [E-1] [0m#symbols                      : 59589
+[0m[34m [E-1] [0m#typechecked selections       : 3200
+[0m[34m [E-1] [0m#type symbols                 : 17367
+[0m[34m [E-1] [0mtime spent in scope population: 5041 spans, ()0.528ms
+[0m[34m [E-1] [0m*** Cumulative statistics at phase jvm
+[0m[34m [E-1] [0m#typechecked identifiers      : 4047
+[0m[34m [E-1] [0m#created scopes               : 10879
+[0m[34m [E-1] [0m#created tree nodes           : 45330
+[0m[34m [E-1] [0m#all lubs/glbs                : 236
+[0m[34m [E-1] [0mtime spent in scope lookup    : 108446 spans, ()9.754ms
+[0m[34m [E-1] [0m  of which in implicit        : 3349 (12.6%)
+[0m[34m [E-1] [0m  of which in failed          : 64 (0.2%)
+[0m[34m [E-1] [0m  of which multiple overloaded: 182 (0.7%)
+[0m[34m [E-1] [0m  of which not found          : 11395 (42.9%)
+[0m[34m [E-1] [0m#findMember ops               : 26551
+[0m[34m [E-1] [0m  of which in implicit        : 2253 (7.0%)
+[0m[34m [E-1] [0m  of which in failed          : 6 (0.0%)
+[0m[34m [E-1] [0m#subtype ops                  : 32131
+[0m[34m [E-1] [0m#unique types                 : 14526
+[0m[34m [E-1] [0m#typechecked applications     : 2722
+[0m[34m [E-1] [0m  of which for typerefs       : 2719 (64.5%)
+[0m[34m [E-1] [0m  of which for compound types : 1492 (35.4%)
+[0m[34m [E-1] [0mavg base type seq length      : 6.2
+[0m[34m [E-1] [0m#base type seqs               : 4215
+[0m[34m [E-1] [0m#class symbols                : 12260
+[0m[34m [E-1] [0m  of which in implicits       : 24807 (37.9%)
+[0m[34m [E-1] [0m  of which in failed          : 711 (1.1%)
+[0m[34m [E-1] [0m#raw type creations           : 65525
+[0m[34m [E-1] [0m#toplevel lubs/glbs           : 37
+[0m[34m [E-1] [0m  instantiated mismatches     : 1 (3.8%)
+[0m[34m [E-1] [0mimplicits instantiated for pruning: 26
+[0m[34m [E-1] [0m#sametype ops                 : 28150
+[0m[34m [E-1] [0m#symbols                      : 57180
+[0m[34m [E-1] [0m#typechecked selections       : 3197
+[0m[34m [E-1] [0m#type symbols                 : 16939
+[0m[34m [E-1] [0mtime spent in scope population: 5034 spans, ()0.516ms
+[0m[34m [E-1] [0m*** Cumulative statistics at phase cleanup
+[0m[34m [E-1] [0m#typechecked identifiers      : 4005
+[0m[34m [E-1] [0m#created scopes               : 10751
+[0m[34m [E-1] [0m#created tree nodes           : 41949
+[0m[34m [E-1] [0m#all lubs/glbs                : 231
+[0m[34m [E-1] [0mtime spent in scope lookup    : 106060 spans, ()9.584ms
+[0m[34m [E-1] [0m  of which in implicit        : 3349 (12.7%)
+[0m[34m [E-1] [0m  of which in failed          : 64 (0.2%)
+[0m[34m [E-1] [0m  of which multiple overloaded: 171 (0.6%)
+[0m[34m [E-1] [0m  of which not found          : 11359 (43.1%)
+[0m[34m [E-1] [0m#findMember ops               : 26364
+[0m[34m [E-1] [0m  of which in implicit        : 2253 (7.1%)
+[0m[34m [E-1] [0m  of which in failed          : 6 (0.0%)
+[0m[34m [E-1] [0m#subtype ops                  : 31772
+[0m[34m [E-1] [0m#unique types                 : 14380
+[0m[34m [E-1] [0m#typechecked applications     : 2717
+[0m[34m [E-1] [0m  of which for typerefs       : 2667 (65.8%)
+[0m[34m [E-1] [0m  of which for compound types : 1380 (34.1%)
+[0m[34m [E-1] [0mavg base type seq length      : 6.3
+[0m[34m [E-1] [0m#base type seqs               : 4051
+[0m[34m [E-1] [0m#class symbols                : 12260
+[0m[34m [E-1] [0m  of which in implicits       : 24807 (39.7%)
+[0m[34m [E-1] [0m  of which in failed          : 711 (1.1%)
+[0m[34m [E-1] [0m#raw type creations           : 62475
+[0m[34m [E-1] [0m#toplevel lubs/glbs           : 32
+[0m[34m [E-1] [0m  instantiated mismatches     : 1 (3.8%)
+[0m[34m [E-1] [0mimplicits instantiated for pruning: 26
+[0m[34m [E-1] [0m#sametype ops                 : 28037
+[0m[34m [E-1] [0m#symbols                      : 55957
+[0m[34m [E-1] [0m#typechecked selections       : 3145
+[0m[34m [E-1] [0m#type symbols                 : 16923
+[0m[34m [E-1] [0mtime spent in scope population: 5034 spans, ()0.516ms
+[0m[34m [E-1] [0m*** Cumulative statistics at phase erasure
+[0m[34m [E-1] [0m  of which in unreachability  : 51 spans, ()3.596ms (46.3%)
+[0m[34m [E-1] [0m  of which in exhaustivity    : 2 spans, ()0.163ms (2.1%)
+[0m[34m [E-1] [0m  of which variable equality  : 104 spans, ()1.184ms (15.2%)
+[0m[34m [E-1] [0m  of which in CNF conversion  : 0 spans, ()0.0ms (0.0%)
+[0m[34m [E-1] [0m  of which DPLL               : 39 spans, ()0.181ms (2.3%)
+[0m[34m [E-1] [0mtime spent in patmat          : 57 spans, ()7.772ms
+[0m[34m [E-1] [0m#typechecked identifiers      : 2704
+[0m[34m [E-1] [0m#created scopes               : 5269
+[0m[34m [E-1] [0m#created tree nodes           : 32723
+[0m[34m [E-1] [0m#all lubs/glbs                : 222
+[0m[34m [E-1] [0mtime spent in scope lookup    : 80935 spans, ()7.464ms
+[0m[34m [E-1] [0m  of which in implicit        : 3349 (15.0%)
+[0m[34m [E-1] [0m  of which in failed          : 64 (0.3%)
+[0m[34m [E-1] [0m  of which multiple overloaded: 168 (0.8%)
+[0m[34m [E-1] [0m  of which not found          : 11133 (50.0%)
+[0m[34m [E-1] [0m#findMember ops               : 22269
+[0m[34m [E-1] [0m  of which in implicit        : 2253 (13.6%)
+[0m[34m [E-1] [0m  of which in failed          : 6 (0.0%)
+[0m[34m [E-1] [0m#subtype ops                  : 16510
+[0m[34m [E-1] [0m#unique types                 : 9468
+[0m[34m [E-1] [0m#typechecked applications     : 1105
+[0m[34m [E-1] [0m  of which for typerefs       : 1470 (75.3%)
+[0m[34m [E-1] [0m  of which for compound types : 477 (24.4%)
+[0m[34m [E-1] [0mavg base type seq length      : 6.3
+[0m[34m [E-1] [0m#base type seqs               : 1951
+[0m[34m [E-1] [0m#class symbols                : 11004
+[0m[34m [E-1] [0m  of which in implicits       : 24807 (61.1%)
+[0m[34m [E-1] [0m  of which in failed          : 711 (1.8%)
+[0m[34m [E-1] [0m#raw type creations           : 40577
+[0m[34m [E-1] [0m#toplevel lubs/glbs           : 25
+[0m[34m [E-1] [0m  instantiated mismatches     : 1 (3.8%)
+[0m[34m [E-1] [0mimplicits instantiated for pruning: 26
+[0m[34m [E-1] [0m#sametype ops                 : 15346
+[0m[34m [E-1] [0m#symbols                      : 44365
+[0m[34m [E-1] [0m#typechecked selections       : 1330
+[0m[34m [E-1] [0m#type symbols                 : 14163
+[0m[34m [E-1] [0mtime spent in scope population: 2458 spans, ()0.168ms
+[0m[34m [E-1] [0m*** Cumulative statistics at phase patmat
+[0m[34m [E-1] [0m  #implicit oftype hits       : 30 (16.7%)
+[0m[34m [E-1] [0m  #implicit inscope hits      : 28 (15.6%)
+[0m[34m [E-1] [0m  #implicit improves cached   : 19 (10.6%)
+[0m[34m [E-1] [0m  #implicit improves tests    : 29 (16.1%)
+[0m[34m [E-1] [0m  #found                      : 53 (29.4%)
+[0m[34m [E-1] [0m  #typed                      : 53 (29.4%)
+[0m[34m [E-1] [0m  #matching                   : 53 (29.4%)
+[0m[34m [E-1] [0m  #plausibly compatible       : 53 (29.4%)
+[0m[34m [E-1] [0m#implicit searches            : 180
+[0m[34m [E-1] [0m#typechecked identifiers      : 2481
+[0m[34m [E-1] [0m#created scopes               : 4964
+[0m[34m [E-1] [0m#created tree nodes           : 28105
+[0m[34m [E-1] [0m#all lubs/glbs                : 222
+[0m[34m [E-1] [0m#macro expansions             : 7
+[0m[34m [E-1] [0mimplicit cache hits           : 74 (51.0%)
+[0m[34m [E-1] [0mimplicit cache accesses       : 145
+[0m[34m [E-1] [0mtime spent in scope lookup    : 80144 spans, ()7.385ms
+[0m[34m [E-1] [0m  of which in implicit        : 3349 (15.2%)
+[0m[34m [E-1] [0m  of which in failed          : 64 (0.3%)
+[0m[34m [E-1] [0m  of which multiple overloaded: 153 (0.7%)
+[0m[34m [E-1] [0m  of which not found          : 11066 (50.1%)
+[0m[34m [E-1] [0m#findMember ops               : 22089
+[0m[34m [E-1] [0m  of which in implicit        : 2253 (16.5%)
+[0m[34m [E-1] [0m  of which in failed          : 6 (0.0%)
+[0m[34m [E-1] [0m#subtype ops                  : 13643
+[0m[34m [E-1] [0m#unique types                 : 9260
+[0m[34m [E-1] [0m#typechecked applications     : 881
+[0m[34m [E-1] [0m  of which for typerefs       : 1466 (75.4%)
+[0m[34m [E-1] [0m  of which for compound types : 475 (24.4%)
+[0m[34m [E-1] [0mavg base type seq length      : 6.3
+[0m[34m [E-1] [0m#base type seqs               : 1945
+[0m[34m [E-1] [0m#class symbols                : 10982
+[0m[34m [E-1] [0m  of which in implicits       : 24807 (63.0%)
+[0m[34m [E-1] [0m  of which in failed          : 711 (1.8%)
+[0m[34m [E-1] [0m#raw type creations           : 39399
+[0m[34m [E-1] [0m#toplevel lubs/glbs           : 25
+[0m[34m [E-1] [0m  instantiated mismatches     : 1 (3.8%)
+[0m[34m [E-1] [0mimplicits instantiated for pruning: 26
+[0m[34m [E-1] [0m#sametype ops                 : 14357
+[0m[34m [E-1] [0m#symbols                      : 43768
+[0m[34m [E-1] [0m#typechecked selections       : 1195
+[0m[34m [E-1] [0m#type symbols                 : 14138
+[0m[34m [E-1] [0mtime spent in scope population: 2170 spans, ()0.11ms
+[0m[34m [E-1] [0mtime spent in macroExpand     : 7 spans, ()4.192ms (1.9%)
+[0m[34m [E-1] [0m  matchesPT                   : 240 spans, ()0.646ms (0.3%)
+[0m[34m [E-1] [0m  assembling parts            : 71 spans, ()8.022ms (3.6%)
+[0m[34m [E-1] [0m  failed of type              : 122 spans, ()9.754ms (4.4%)
+[0m[34m [E-1] [0m  successful of type          : 30 spans, ()6.527ms (2.9%)
+[0m[34m [E-1] [0m  failed in scope             : 152 spans, ()10.697ms (4.8%)
+[0m[34m [E-1] [0m  successful in scope         : 28 spans, ()10.443ms (4.7%)
+[0m[34m [E-1] [0mtime spent in implicits       : 180 spans, ()37.658ms (16.9%)
+[0m[34m [E-1] [0mtime spent ref scanning       : 0 spans, ()0.0ms (0.0%)
+[0m[34m [E-1] [0m  failed op=                  : 3 spans, ()1.332ms (0.6%)
+[0m[34m [E-1] [0m  failed apply                : 0 spans, ()0.0ms (0.0%)
+[0m[34m [E-1] [0mtime spent in failed          : 3 spans, ()1.286ms (0.6%)
+[0m[34m [E-1] [0mtime classfilereading         : 320 spans, ()40.403ms (18.1%)
+[0m[34m [E-1] [0mtime spent in baseClasses     : 442 spans, ()7.481ms (3.4%) aggregate, 4.094ms (1.8%) specific
+[0m[34m [E-1] [0mtime spent in baseTypeSeq     : 1941 spans, ()76.723ms (34.5%) aggregate, 20.013ms (9.0%) specific
+[0m[34m [E-1] [0mtime spent in asSeenFrom      : 14724 spans, ()12.409ms (5.6%) aggregate, 10.091ms (4.5%) specific
+[0m[34m [E-1] [0mtime spent in findmembers     : 0 spans, ()0.0ms (0.0%) aggregate, 0.0ms (0.0%) specific
+[0m[34m [E-1] [0mtime spent in findmember      : 22089 spans, ()15.776ms (7.1%) aggregate, 12.458ms (5.6%) specific
+[0m[34m [E-1] [0mtime spent in <:<             : 13643 spans, ()8.992ms (4.0%) aggregate, 5.692ms (2.6%) specific
+[0m[34m [E-1] [0mtime spent in lubs            : 25 spans, ()0.451ms (0.2%) aggregate, 0.231ms (0.1%) specific
+[0m[34m [E-1] [0mtime spent typechecking       : 1 spans, ()222.667ms
+[0m[34m [E-1] [0m*** Cumulative statistics at phase typer
+[0m[34m [E-1] [0m#created tree nodes           : 4714
+[0m[34m [E-1] [0m*** Cumulative statistics at phase parser
+Compiled akka-stream-testkit (515ms)
+Compiling akka-stream-typed (9 Scala sources)
+[0m[34m [E-1] [0m  xsbt-analyzer               : 1 spans, ()0.155ms (0.1%)
+[0m[34m [E-1] [0m  jvm                         : 1 spans, ()13.886ms (7.8%)
+[0m[34m [E-1] [0m  delambdafy                  : 1 spans, ()0.685ms (0.4%)
+[0m[34m [E-1] [0m  cleanup                     : 1 spans, ()0.176ms (0.1%)
+[0m[34m [E-1] [0m  mixin                       : 1 spans, ()1.141ms (0.6%)
+[0m[34m [E-1] [0m  flatten                     : 1 spans, ()0.493ms (0.3%)
+[0m[34m [E-1] [0m  constructors                : 1 spans, ()0.322ms (0.2%)
+[0m[34m [E-1] [0m  lambdalift                  : 1 spans, ()0.984ms (0.6%)
+[0m[34m [E-1] [0m  posterasure                 : 1 spans, ()0.393ms (0.2%)
+[0m[34m [E-1] [0m  erasure                     : 1 spans, ()6.031ms (3.4%)
+[0m[34m [E-1] [0m  explicitouter               : 1 spans, ()0.869ms (0.5%)
+[0m[34m [E-1] [0m  specialize                  : 1 spans, ()26.953ms (15.1%)
+[0m[34m [E-1] [0m  tailcalls                   : 1 spans, ()0.528ms (0.3%)
+[0m[34m [E-1] [0m  fields                      : 1 spans, ()0.293ms (0.2%)
+[0m[34m [E-1] [0m  uncurry                     : 1 spans, ()1.877ms (1.0%)
+[0m[34m [E-1] [0m  refchecks                   : 1 spans, ()3.39ms (1.9%)
+[0m[34m [E-1] [0m  xsbt-dependency             : 1 spans, ()2.871ms (1.6%)
+[0m[34m [E-1] [0m  xsbt-api                    : 1 spans, ()4.047ms (2.3%)
+[0m[34m [E-1] [0m  picklergen                  : 1 spans, ()0.004ms (0.0%)
+[0m[34m [E-1] [0m  pickler                     : 1 spans, ()0.551ms (0.3%)
+[0m[34m [E-1] [0m  extmethods                  : 1 spans, ()0.198ms (0.1%)
+[0m[34m [E-1] [0m  superaccessors              : 1 spans, ()0.445ms (0.2%)
+[0m[34m [E-1] [0m  patmat                      : 1 spans, ()1.253ms (0.7%)
+[0m[34m [E-1] [0m  silencer                    : 1 spans, ()1.985ms (1.1%)
+[0m[34m [E-1] [0m  typer                       : 1 spans, ()95.332ms (53.3%)
+[0m[34m [E-1] [0m  packageobjects              : 1 spans, ()0.28ms (0.2%)
+[0m[34m [E-1] [0m  namer                       : 1 spans, ()8.857ms (5.0%)
+[0m[34m [E-1] [0m  parser                      : 1 spans, ()1.212ms (0.7%)
+[0m[34m [E-1] [0m#total compile time           : 1 spans, ()178.831ms
+[0m[34m [E-1] [0m*** Cumulative timers for phases
+[0m[34m [E-1] [0m#typechecked identifiers      : 915
+[0m[34m [E-1] [0m#created scopes               : 2831
+[0m[34m [E-1] [0m#created tree nodes           : 8820
+[0m[34m [E-1] [0m#all lubs/glbs                : 28
+[0m[34m [E-1] [0mclassfile writing             : 23 spans, ()0.916ms (6.6%)
+[0m[34m [E-1] [0mintra-method optimizations    : 14 spans, ()0.428ms (3.1%)
+[0m[34m [E-1] [0mcode generation               : 9 spans, ()8.282ms (59.7%)
+[0m[34m [E-1] [0mbcode initialization          : 1 spans, ()0.925ms (6.7%)
+[0m[34m [E-1] [0mtime in backend               : 1 spans, ()13.882ms
+[0m[34m [E-1] [0mtime spent in scope lookup    : 41880 spans, ()3.949ms
+[0m[34m [E-1] [0m  of which in implicit        : 1734 (13.7%)
+[0m[34m [E-1] [0m  of which multiple overloaded: 153 (1.2%)
+[0m[34m [E-1] [0m  of which not found          : 2607 (20.5%)
+[0m[34m [E-1] [0m#findMember ops               : 12697
+[0m[34m [E-1] [0m  of which in implicit        : 349 (5.8%)
+[0m[34m [E-1] [0m#subtype ops                  : 6044
+[0m[34m [E-1] [0m#unique types                 : 4999
+[0m[34m [E-1] [0m#typechecked applications     : 349
+[0m[34m [E-1] [0m  of which for typerefs       : 642 (51.4%)
+[0m[34m [E-1] [0m  of which for compound types : 605 (48.5%)
+[0m[34m [E-1] [0mavg base type seq length      : 4.3
+[0m[34m [E-1] [0m#base type seqs               : 1248
+[0m[34m [E-1] [0m#class symbols                : 9955
+[0m[34m [E-1] [0m  of which in implicits       : 5125 (30.8%)
+[0m[34m [E-1] [0m#raw type creations           : 16636
+[0m[34m [E-1] [0mimplicits instantiated for pruning: 1
+[0m[34m [E-1] [0m#sametype ops                 : 328
+[0m[34m [E-1] [0m#symbols                      : 39622
+[0m[34m [E-1] [0m#typechecked selections       : 715
+[0m[34m [E-1] [0m#type symbols                 : 12786
+[0m[34m [E-1] [0mtime spent in scope population: 929 spans, ()0.149ms
+[0m[34m [E-1] [0m*** Cumulative statistics at phase jvm
+[0m[34m [E-1] [0m#typechecked identifiers      : 902
+[0m[34m [E-1] [0m#created scopes               : 2619
+[0m[34m [E-1] [0m#created tree nodes           : 8543
+[0m[34m [E-1] [0m#all lubs/glbs                : 28
+[0m[34m [E-1] [0mtime spent in scope lookup    : 37154 spans, ()3.53ms
+[0m[34m [E-1] [0m  of which in implicit        : 1734 (19.5%)
+[0m[34m [E-1] [0m  of which multiple overloaded: 46 (0.5%)
+[0m[34m [E-1] [0m  of which not found          : 2501 (28.2%)
+[0m[34m [E-1] [0m#findMember ops               : 8881
+[0m[34m [E-1] [0m  of which in implicit        : 349 (5.8%)
+[0m[34m [E-1] [0m#subtype ops                  : 6004
+[0m[34m [E-1] [0m#unique types                 : 4409
+[0m[34m [E-1] [0m#typechecked applications     : 336
+[0m[34m [E-1] [0m  of which for typerefs       : 606 (52.6%)
+[0m[34m [E-1] [0m  of which for compound types : 545 (47.3%)
+[0m[34m [E-1] [0mavg base type seq length      : 4.4
+[0m[34m [E-1] [0m#base type seqs               : 1152
+[0m[34m [E-1] [0m#class symbols                : 9899
+[0m[34m [E-1] [0m  of which in implicits       : 5125 (34.1%)
+[0m[34m [E-1] [0m#raw type creations           : 15032
+[0m[34m [E-1] [0mimplicits instantiated for pruning: 1
+[0m[34m [E-1] [0m#sametype ops                 : 224
+[0m[34m [E-1] [0m#symbols                      : 37761
+[0m[34m [E-1] [0m#typechecked selections       : 715
+[0m[34m [E-1] [0m#type symbols                 : 12498
+[0m[34m [E-1] [0mtime spent in scope population: 923 spans, ()0.147ms
+[0m[34m [E-1] [0m*** Cumulative statistics at phase cleanup
+[0m[34m [E-1] [0m#typechecked identifiers      : 898
+[0m[34m [E-1] [0m#created scopes               : 2568
+[0m[34m [E-1] [0m#created tree nodes           : 7575
+[0m[34m [E-1] [0m#all lubs/glbs                : 28
+[0m[34m [E-1] [0mtime spent in scope lookup    : 36666 spans, ()3.493ms
+[0m[34m [E-1] [0m  of which in implicit        : 1734 (19.6%)
+[0m[34m [E-1] [0m  of which multiple overloaded: 44 (0.5%)
+[0m[34m [E-1] [0m  of which not found          : 2485 (28.1%)
+[0m[34m [E-1] [0m#findMember ops               : 8851
+[0m[34m [E-1] [0m  of which in implicit        : 349 (5.8%)
+[0m[34m [E-1] [0m#subtype ops                  : 5971
+[0m[34m [E-1] [0m#unique types                 : 4350
+[0m[34m [E-1] [0m#typechecked applications     : 336
+[0m[34m [E-1] [0m  of which for typerefs       : 595 (53.4%)
+[0m[34m [E-1] [0m  of which for compound types : 518 (46.5%)
+[0m[34m [E-1] [0mavg base type seq length      : 4.4
+[0m[34m [E-1] [0m#base type seqs               : 1114
+[0m[34m [E-1] [0m#class symbols                : 9892
+[0m[34m [E-1] [0m  of which in implicits       : 5125 (34.9%)
+[0m[34m [E-1] [0m#raw type creations           : 14666
+[0m[34m [E-1] [0mimplicits instantiated for pruning: 1
+[0m[34m [E-1] [0m#sametype ops                 : 210
+[0m[34m [E-1] [0m#symbols                      : 37459
+[0m[34m [E-1] [0m#typechecked selections       : 711
+[0m[34m [E-1] [0m#type symbols                 : 12479
+[0m[34m [E-1] [0mtime spent in scope population: 923 spans, ()0.147ms
+[0m[34m [E-1] [0m*** Cumulative statistics at phase erasure
+[0m[34m [E-1] [0m  of which in unreachability  : 4 spans, ()0.25ms (32.3%)
+[0m[34m [E-1] [0m  of which in exhaustivity    : 0 spans, ()0.0ms (0.0%)
+[0m[34m [E-1] [0m  of which variable equality  : 8 spans, ()0.061ms (7.9%)
+[0m[34m [E-1] [0m  of which in CNF conversion  : 0 spans, ()0.0ms (0.0%)
+[0m[34m [E-1] [0m  of which DPLL               : 2 spans, ()0.01ms (1.4%)
+[0m[34m [E-1] [0mtime spent in patmat          : 4 spans, ()0.777ms
+[0m[34m [E-1] [0m#typechecked identifiers      : 645
+[0m[34m [E-1] [0m#created scopes               : 1304
+[0m[34m [E-1] [0m#created tree nodes           : 5750
+[0m[34m [E-1] [0m#all lubs/glbs                : 28
+[0m[34m [E-1] [0mtime spent in scope lookup    : 28284 spans, ()2.72ms
+[0m[34m [E-1] [0m  of which in implicit        : 1734 (28.1%)
+[0m[34m [E-1] [0m  of which multiple overloaded: 41 (0.7%)
+[0m[34m [E-1] [0m  of which not found          : 2335 (37.9%)
+[0m[34m [E-1] [0m#findMember ops               : 6163
+[0m[34m [E-1] [0m  of which in implicit        : 349 (15.2%)
+[0m[34m [E-1] [0m#subtype ops                  : 2301
+[0m[34m [E-1] [0m#unique types                 : 2718
+[0m[34m [E-1] [0m#typechecked applications     : 148
+[0m[34m [E-1] [0m  of which for typerefs       : 227 (56.8%)
+[0m[34m [E-1] [0m  of which for compound types : 172 (43.0%)
+[0m[34m [E-1] [0mavg base type seq length      : 4.0
+[0m[34m [E-1] [0m#base type seqs               : 400
+[0m[34m [E-1] [0m#class symbols                : 8683
+[0m[34m [E-1] [0m  of which in implicits       : 5125 (56.1%)
+[0m[34m [E-1] [0m#raw type creations           : 9128
+[0m[34m [E-1] [0mimplicits instantiated for pruning: 1
+[0m[34m [E-1] [0m#sametype ops                 : 112
+[0m[34m [E-1] [0m#symbols                      : 31284
+[0m[34m [E-1] [0m#typechecked selections       : 347
+[0m[34m [E-1] [0m#type symbols                 : 10646
+[0m[34m [E-1] [0mtime spent in scope population: 440 spans, ()0.038ms
+[0m[34m [E-1] [0m*** Cumulative statistics at phase patmat
+[0m[34m [E-1] [0m  #implicit oftype hits       : 2 (5.3%)
+[0m[34m [E-1] [0m  #implicit inscope hits      : 12 (31.6%)
+[0m[34m [E-1] [0m  #implicit improves cached   : 4 (10.5%)
+[0m[34m [E-1] [0m  #implicit improves tests    : 8 (21.1%)
+[0m[34m [E-1] [0m  #found                      : 17 (44.7%)
+[0m[34m [E-1] [0m  #typed                      : 17 (44.7%)
+[0m[34m [E-1] [0m  #matching                   : 17 (44.7%)
+[0m[34m [E-1] [0m  #plausibly compatible       : 17 (44.7%)
+[0m[34m [E-1] [0m#implicit searches            : 38
+[0m[34m [E-1] [0m#typechecked identifiers      : 629
+[0m[34m [E-1] [0m#created scopes               : 1284
+[0m[34m [E-1] [0m#created tree nodes           : 5418
+[0m[34m [E-1] [0m#all lubs/glbs                : 28
+[0m[34m [E-1] [0mimplicit cache hits           : 11 (42.3%)
+[0m[34m [E-1] [0mimplicit cache accesses       : 26
+[0m[34m [E-1] [0mtime spent in scope lookup    : 28053 spans, ()2.704ms
+[0m[34m [E-1] [0m  of which in implicit        : 1734 (28.3%)
+[0m[34m [E-1] [0m  of which multiple overloaded: 41 (0.7%)
+[0m[34m [E-1] [0m  of which not found          : 2326 (37.9%)
+[0m[34m [E-1] [0m#findMember ops               : 6130
+[0m[34m [E-1] [0m  of which in implicit        : 349 (16.4%)
+[0m[34m [E-1] [0m#subtype ops                  : 2123
+[0m[34m [E-1] [0m#unique types                 : 2693
+[0m[34m [E-1] [0m#typechecked applications     : 132
+[0m[34m [E-1] [0m  of which for typerefs       : 227 (57.0%)
+[0m[34m [E-1] [0m  of which for compound types : 170 (42.7%)
+[0m[34m [E-1] [0mavg base type seq length      : 4.0
+[0m[34m [E-1] [0m#base type seqs               : 398
+[0m[34m [E-1] [0m#class symbols                : 8603
+[0m[34m [E-1] [0m  of which in implicits       : 5125 (56.7%)
+[0m[34m [E-1] [0m#raw type creations           : 9042
+[0m[34m [E-1] [0mimplicits instantiated for pruning: 1
+[0m[34m [E-1] [0m#sametype ops                 : 76
+[0m[34m [E-1] [0m#symbols                      : 31101
+[0m[34m [E-1] [0m#typechecked selections       : 347
+[0m[34m [E-1] [0m#type symbols                 : 10566
+[0m[34m [E-1] [0mtime spent in scope population: 428 spans, ()0.035ms
+[0m[34m [E-1] [0mtime spent in macroExpand     : 0 spans, ()0.0ms (0.0%)
+[0m[34m [E-1] [0m  matchesPT                   : 36 spans, ()0.291ms (0.3%)
+[0m[34m [E-1] [0m  assembling parts            : 15 spans, ()0.692ms (0.7%)
+[0m[34m [E-1] [0m  failed of type              : 24 spans, ()0.692ms (0.7%)
+[0m[34m [E-1] [0m  successful of type          : 2 spans, ()1.762ms (1.8%)
+[0m[34m [E-1] [0m  failed in scope             : 26 spans, ()9.195ms (9.6%)
+[0m[34m [E-1] [0m  successful in scope         : 12 spans, ()2.92ms (3.1%)
+[0m[34m [E-1] [0mtime spent in implicits       : 38 spans, ()14.649ms (15.4%)
+[0m[34m [E-1] [0mtime spent ref scanning       : 0 spans, ()0.0ms (0.0%)
+[0m[34m [E-1] [0m  failed op=                  : 0 spans, ()0.0ms (0.0%)
+[0m[34m [E-1] [0m  failed apply                : 0 spans, ()0.0ms (0.0%)
+[0m[34m [E-1] [0mtime spent in failed          : 0 spans, ()0.0ms (0.0%)
+[0m[34m [E-1] [0mtime classfilereading         : 152 spans, ()17.723ms (18.6%)
+[0m[34m [E-1] [0mtime spent in baseClasses     : 177 spans, ()2.746ms (2.9%) aggregate, 1.723ms (1.8%) specific
+[0m[34m [E-1] [0mtime spent in baseTypeSeq     : 397 spans, ()9.349ms (9.8%) aggregate, 3.803ms (4.0%) specific
+[0m[34m [E-1] [0mtime spent in asSeenFrom      : 2136 spans, ()7.273ms (7.6%) aggregate, 6.576ms (6.9%) specific
+[0m[34m [E-1] [0mtime spent in findmembers     : 0 spans, ()0.0ms (0.0%) aggregate, 0.0ms (0.0%) specific
+[0m[34m [E-1] [0mtime spent in findmember      : 6130 spans, ()2.845ms (3.0%) aggregate, 2.728ms (2.9%) specific
+[0m[34m [E-1] [0mtime spent in <:<             : 2123 spans, ()2.895ms (3.0%) aggregate, 1.734ms (1.8%) specific
+[0m[34m [E-1] [0mtime spent in lubs            : 0 spans, ()0.0ms (0.0%) aggregate, 0.0ms (0.0%) specific
+[0m[34m [E-1] [0mtime spent typechecking       : 1 spans, ()95.328ms
+[0m[34m [E-1] [0m*** Cumulative statistics at phase typer
+[0m[34m [E-1] [0m#created tree nodes           : 1548
+[0m[34m [E-1] [0m*** Cumulative statistics at phase parser
+Compiled akka-stream-typed (195ms)

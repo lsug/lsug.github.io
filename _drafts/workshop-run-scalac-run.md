@@ -32,7 +32,7 @@ If you have any problems, please ask on the Gitter channel.  We'll be very happy
 - [GraalVM](https://www.graalvm.org/downloads/) - either the Community or Enterprise edition
 - [clone my fork of the Akka repository](https://github.com/zainab-ali/akka)
 - [clone the Bloop GitHub repository](https://github.com/scalacenter/bloop)
-- [clone the Scalac Profiling repository](https://github.com/scalacenter/scalac-profiling)
+- [clone @jvican's fork of the Flamegraph repository](https://github.com/jvican/FlameGraph)
 
 Start the bloop server beforehand, as this will download more dependencies.
 
@@ -101,16 +101,12 @@ bloop$
 bloop$ git submodule update --init
 ```
 
-#### Scalac-profiling repository
+#### Flamegraph repository
 
-
-Clone scalac-profiling and update its submodules
+Clone @jvican's fork of the `Flamegraph` repository.
 
 ```console
-lsug$ git clone https://github.com/scalacenter/scalac-profiling.git --single-branch --depth=1
-lsug$ cd scalac-profiling
-scalac-profiling$
-scalac-profiling$ git submodule update --init
+lsug$ git clone https://github.com/jvican/FlameGraph.git --branch topic/scala-compilation --single-branch --depth=1
 ```
 
 ### MacOS Setup
@@ -177,9 +173,9 @@ You can download the CE version from Github or the EE version from OTN - n.b. Th
 
 See the bloop repository instructions for ArchLinux.
 
-#### Scalac-Profiling repository
+#### Flamegraph repository
 
-See the scalac-profiling repository instructions for ArchLinux.
+See the Flamegraph repository instructions for ArchLinux.
 
 # Workshop contents
 
@@ -268,11 +264,32 @@ Bloop outputs build traces.  These can be viewed with [Zipkin](https://zipkin.io
 
    ```console
    akka$ bloop compile akka-stream-typed
+
+   Compiling akka-protobuf (45 Java sources)
+   Compiling akka-actor (187 Scala sources and 27 Java sources)
+   Compiled akka-protobuf (5373ms)
+   Compiled akka-actor (35374ms)
+   Compiling akka-testkit (16 Scala sources)
+   Compiling akka-stream (170 Scala sources and 3 Java sources)
+   Compiling akka-actor-typed (70 Scala sources)
+   Compiled akka-testkit (4103ms)
+   Compiled akka-actor-typed (6756ms)
+   Compiling akka-actor-testkit-typed (30 Scala sources)
+   Compiled akka-actor-testkit-typed (2604ms)
+   Compiled akka-stream (24142ms)
+   Compiling akka-stream-testkit (8 Scala sources)
+   Compiled akka-stream-testkit (829ms)
+   Compiling akka-stream-typed (9 Scala sources)
+   Compiled akka-stream-typed (300ms)
    ```
 
    Bloop should detect Zipkin automatically and emit traces to it.
 
    You should be able to see Zipkin traces at [http://localhost:9411/zipkin/](http://localhost:9411/zipkin/)
+
+   The output is stored in `results/compile-zipkin-trace.html`
+   The trace should look something like this
+   ![Zipkin Trace](/assets/img/zipkin-trace.png){:class="img-responsive"}
 
 Let's compile `akka-stream-typed` a few more times.
 
@@ -283,6 +300,8 @@ Let's compile `akka-stream-typed` a few more times.
    ```
 
 Take a look at the Zipkin traces.  Bloop uses the same JVM instance each time it compiles the project.  Notice that the compilation times get shorter and shorter as the JVM warms up.
+
+![Zipkin warmup](/assets/img/zipkin-traces.png)
 
 ### Examining a trace
 
@@ -300,6 +319,10 @@ The `dot` tool is installed with [Graphviz](https://www.graphviz.org/download/).
 
 Open the `akka/build-graph.svg` file using your browser.
 
+As you'd expect with Akka, it's fairly hefty:
+
+![Build graph](/assets/img/build-graph.svg){:class="img-responsive"}
+
 ## Build pipelining
 
 Projects only depend on the typer phase of their dependency projects.  It's possible to start compilation of a project after its dependency projects have finished the typer phase, but before they've finished compiling completely.  This is termed *build pipelining*.  Bloop supports this with the `--pipeline` option.  Run `bloop compile` with the `--pipeline` option.
@@ -307,9 +330,32 @@ Projects only depend on the typer phase of their dependency projects.  It's poss
 ```console
 akka$ bloop clean
 akka$ bloop compile --pipeline akka-stream-typed
+
+Compiling akka-protobuf (45 Java sources)
+Compiling akka-actor (187 Scala sources and 27 Java sources)
+Compiled akka-protobuf (1062ms)
+Compiling akka-testkit (16 Scala sources)
+Compiling akka-actor-typed (70 Scala sources)
+Compiling akka-stream (170 Scala sources and 3 Java sources)
+Compiling akka-actor-testkit-typed (30 Scala sources)
+Compiled akka-testkit (1262ms)
+Compiled akka-actor-testkit-typed (996ms)
+Compiled akka-actor-typed (2191ms)
+Compiled akka-actor (7992ms)
+Compiling akka-stream-testkit (8 Scala sources)
+Compiling akka-stream-typed (9 Scala sources)
+Compiled akka-stream-typed (209ms)
+Compiled akka-stream-testkit (456ms)
+Compiled akka-stream (12499ms)
 ```
 
+The order of compilation is slightly different.  This is easier to see in the Zipkin trace.
+
 Sort the Zipkin traces by newest first to see the trace with pipelining.  You should notice that some `scalac` spans start before the previous ones have finished.
+
+The output is stored in `compile-pipeline-zipkin-trace.html`
+
+![Pipeline Zipkin Trace](/assets/img/pipeline-zipkin-trace.png){:class="img-responsive"}
 
 # Benchmarking
 
@@ -370,14 +416,40 @@ Bloop contains a benchmarking suite based on JMH.
    ```
 
    This runs 7 warm up iterations and 5 main iterations.  Once completed, you should be given a score for each iteration.
+
+   ```
+   [info] Benchmark                                  (extraArgs)  (noIncremental)  (pidFile)  (project)      (projectName)    Mode  Cnt      Score      Error  Units
+   [info] HotBloopBenchmark.compile                                         false                 start  akka-stream-typed  sample    5  22971.364 ± 1803.340  ms/op
+   [info] HotBloopBenchmark.compile:compile·p0.00                           false                 start  akka-stream-typed  sample       22246.588             ms/op
+   [info] HotBloopBenchmark.compile:compile·p0.50                           false                 start  akka-stream-typed  sample       22917.677             ms/op
+   [info] HotBloopBenchmark.compile:compile·p0.90                           false                 start  akka-stream-typed  sample       23387.439             ms/op
+   [info] HotBloopBenchmark.compile:compile·p0.95                           false                 start  akka-stream-typed  sample       23387.439             ms/op
+   [info] HotBloopBenchmark.compile:compile·p0.99                           false                 start  akka-stream-typed  sample       23387.439             ms/op
+   [info] HotBloopBenchmark.compile:compile·p0.999                          false                 start  akka-stream-typed  sample       23387.439             ms/op
+   [info] HotBloopBenchmark.compile:compile·p0.9999                         false                 start  akka-stream-typed  sample       23387.439             ms/op
+   [info] HotBloopBenchmark.compile:compile·p1.00                           false                 start  akka-stream-typed  sample       23387.439             ms/op
+   ```
+
    Make a note of your scores.
 
 6. Bloop contains a `HotPipelinedBloopBenchmark` class for benchmarking pipelining
 
    ```console
    bloop> benchmarks/jmh:run .*HotPipelinedBloopBenchmark.* -wi 7 -i 5 -f1 -t1 -p project=start -p projectName=akka-stream-typed
+   ...
+   [info] Benchmark                                           (extraArgs)  (noIncremental)  (pidFile)  (project)      (projectName)    Mode  Cnt      Score      Error  Units
+   [info] HotPipelinedBloopBenchmark.compile                                         false                 start  akka-stream-typed  sample    5  17924.778 ± 2631.178  ms/op
+   [info] HotPipelinedBloopBenchmark.compile:compile·p0.00                           false                 start  akka-stream-typed  sample       17179.869             ms/op
+   [info] HotPipelinedBloopBenchmark.compile:compile·p0.50                           false                 start  akka-stream-typed  sample       17750.295             ms/op
+   [info] HotPipelinedBloopBenchmark.compile:compile·p0.90                           false                 start  akka-stream-typed  sample       18824.036             ms/op
+   [info] HotPipelinedBloopBenchmark.compile:compile·p0.95                           false                 start  akka-stream-typed  sample       18824.036             ms/op
+   [info] HotPipelinedBloopBenchmark.compile:compile·p0.99                           false                 start  akka-stream-typed  sample       18824.036             ms/op
+   [info] HotPipelinedBloopBenchmark.compile:compile·p0.999                          false                 start  akka-stream-typed  sample       18824.036             ms/op
+   [info] HotPipelinedBloopBenchmark.compile:compile·p0.9999                         false                 start  akka-stream-typed  sample       18824.036             ms/op
+   [info] HotPipelinedBloopBenchmark.compile:compile·p1.00                           false                 start  akka-stream-typed  sample       18824.036             ms/op
    ```
-   Do you notice a decrease in score?
+
+   Notice that the score has decreased.
 
 # Upgrades
 
@@ -400,8 +472,20 @@ The akka `workshop-scala-2.13` branch contains a Scala 2.13 upgrade.
    ```
 
 3. Run the benchmarks for the Scala 2.13
+
    ```console
    bloop> benchmarks/jmh:run .*HotPipelinedBloopBenchmark.* -wi 7 -i 5 -f1 -t1 -p project=scala213 -p projectName=akka-stream-typed
+   ...
+   [info] Benchmark                                           (extraArgs)  (noIncremental)  (pidFile)  (project)      (projectName)    Mode  Cnt      Score      Error  Units
+   [info] HotPipelinedBloopBenchmark.compile                                         false                 start  akka-stream-typed  sample    5  14582.756 ± 2016.403  ms/op
+   [info] HotPipelinedBloopBenchmark.compile:compile·p0.00                           false                 start  akka-stream-typed  sample       14243.856             ms/op
+   [info] HotPipelinedBloopBenchmark.compile:compile·p0.50                           false                 start  akka-stream-typed  sample       14310.965             ms/op
+   [info] HotPipelinedBloopBenchmark.compile:compile·p0.90                           false                 start  akka-stream-typed  sample       15485.370             ms/op
+   [info] HotPipelinedBloopBenchmark.compile:compile·p0.95                           false                 start  akka-stream-typed  sample       15485.370             ms/op
+   [info] HotPipelinedBloopBenchmark.compile:compile·p0.99                           false                 start  akka-stream-typed  sample       15485.370             ms/op
+   [info] HotPipelinedBloopBenchmark.compile:compile·p0.999                          false                 start  akka-stream-typed  sample       15485.370             ms/op
+   [info] HotPipelinedBloopBenchmark.compile:compile·p0.9999                         false                 start  akka-stream-typed  sample       15485.370             ms/op
+   [info] HotPipelinedBloopBenchmark.compile:compile·p1.00                           false                 start  akka-stream-typed  sample       15485.370             ms/op
    ```
 
    Do you see a decrease in score?
@@ -432,6 +516,7 @@ The scala compiler runs best on the Java 8 Graal VM.
    ```
 
 4. Enter the sbt shell and run the benchmarks once again
+
    ```console
    $ sbt
    bloop> benchmarks/jmh:run .*HotPipelinedBloopBenchmark.* -wi 7 -i 5 -f1 -t1 -p project=scala213 -p projectName=akka-stream-typed
@@ -505,7 +590,7 @@ We will now look into profiling `scalac` for the `akka-stream-typed` project.
    akka$ bloop compile --pipeline akka-stream-typed &> statistics.txt
    ```
 
-Examine the contents of `statistics.txt`.  You should be able to see each of the different compiler phases.
+Examine the contents of [statistics.txt]({{ site.url }}/assets/txt/compile-statistics.txt).  You should be able to see each of the different compiler phases.
 
 ```
 ...
@@ -556,27 +641,7 @@ We will use the [scalac-profiling](https://github.com/scalacenter/scalac-profili
     addCompilerPlugin("ch.epfl.scala" %% "scalac-profiling" % "1.0.0"),
    ```
 
-2. Find the root of your akka repository
-
-  ```console
-  akka$ pwd
-  /home/zainab/lsug/akka
-  ```
-
-3. In `akka/project/AkkaBuild.scala` add the following options to the `DefaultScalacOptions`.  Replace `/home/zainab/lsug/akka` with the root of your akka repository.
-
-   ```scala
-   final val DefaultScalacOptions = Seq("-encoding", "UTF-8", "-feature", "-unchecked", "-Xlog-reflective-calls") ++
-     Seq(
-       "-Ystatistics",
-       "-Ycache-plugin-class-loader:last-modified",
-       "-P:scalac-profiling:no-profiledb",
-       "-P:scalac-profiling:show-profiles",
-       "-P:scalac-profiling:sourceroot:/home/zainab/lsug/akka"
-     )
-   ```
-
-4.  In the sbt shell, clean and compile `akka-stream-typed`
+2.  In the sbt shell, clean and compile `akka-stream-typed`
 
     ```console
     akka> reload
@@ -587,7 +652,7 @@ We will use the [scalac-profiling](https://github.com/scalacenter/scalac-profili
 
     This should generate a `.flamegraph` file in `akka/akka-stream-typed/target/classes/META-INF/profiledb/graphs/`.
 
-4. Navigate to `akka/akka-stream-typed/target/classes/META-INF/profiledb/graphs/` and find the name of the flamegraph
+3. Navigate to `akka/akka-stream-typed/target/classes/META-INF/profiledb/graphs/` and find the name of the flamegraph
 
    ```console
    akka$ cd akka-stream-typed/target/classes/META-INF/profiledb/graphs
@@ -597,19 +662,12 @@ We will use the [scalac-profiling](https://github.com/scalacenter/scalac-profili
    /home/zainab/lsug/akka/akka-stream-typed/target/classes/META-INF/profiledb/graphs/implicit-searches-1563721527947.flamegraph
    ```
 
-4.  We now need to process the `.flamegraph` file into a flamegraph.  Clone the `scalac-profiling` repository.
+4.  We now need to process the `.flamegraph` file into a flamegraph.  Clone @jvican's fork of the `Flamegraph` repository.
 
     ```console
-    lsug$ git clone https://github.com/scalacenter/scalac-profiling.git --single-branch --depth=1
-    lsug$ cd scalac-profiling
-    scalac-profiling$
-    scalac-profiling$ git submodule update --init
-    ```
-
-    Navigate into the `Flamegraph` directory
-
-    ```console
-    scalac-profiling$ cd Flamegraph
+    lsug$ git clone https://github.com/jvican/FlameGraph.git --branch topic/scala-compilation --single-branch --depth=1
+    lsug$ cd Flamegraph
+    Flamegraph$
     ```
 
 4. Generate a flamegraph using the `flamegraph.pl` script.
@@ -626,6 +684,8 @@ We will use the [scalac-profiling](https://github.com/scalacenter/scalac-profili
 
 5. Open the `akka-stream-typed.svg` file in your browser.
 
+   ![Scalac Profiling Flamegraph](/assets/img/scalac-profiling-flamegraph.svg){:class="img-responsive"}
+
 More information on this graph can be found in the [Scala blog post on scalac profiling](https://www.scala-lang.org/blog/2018/06/04/scalac-profiling.html).
 
 Notice that there's a large red chunk labelled `Unit => akka.actor.typed.ActorRef`.  This means that many implicit searches for `ActorRef` result in failures.
@@ -638,14 +698,7 @@ To figure out why these implicit searches are failing, add the `-Xlog-implicits`
 
    ```scala
    final val DefaultScalacOptions = Seq("-encoding", "UTF-8", "-feature", "-unchecked", "-Xlog-reflective-calls") ++
-     Seq(
-       "-Ystatistics",
-       "-Xlog-implicits",
-       "-Ycache-plugin-class-loader:last-modified",
-       "-P:scalac-profiling:no-profiledb",
-       "-P:scalac-profiling:show-profiles",
-       "-P:scalac-profiling:sourceroot:/home/zainab/lsug/akka"
-     )
+     Seq("-Ystatistics", "-Xlog-implicits")
    ```
 
 2. Reload and check that the `-Xlog-implicits` option has been added
@@ -691,7 +744,7 @@ To figure out why these implicit searches are failing, add the `-Xlog-implicits`
    akka$ bloop compile --pipeline akka-stream-typed &> implicits.txt
    ```
 
-Open the `implicits.txt` file. You'll notice the following messages
+Open the [implicits.txt]({{ site.url }}/assets/txt/compile-log-implicits.txt) file. You'll notice the following messages
 
 ```
  akka-actor/src/main/scala/akka/actor/dsl/Inbox.scala:126:62
@@ -700,7 +753,10 @@ Open the `implicits.txt` file. You'll notice the following messages
       L126:             case Some(q) ⇒ { clientsByTimeout -= q; q.client ! msg }
 ```
 
-This is a rather cryptic message.  Let's decompose it
+This is a rather cryptic message.
+
+Let's decompose it.
+
 
 ```
  akka-actor/src/main/scala/akka/actor/dsl/Inbox.scala:126:62
