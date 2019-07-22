@@ -189,7 +189,7 @@ For this workshop, we'll be using [akka](https://github.com/akka/akka).  The akk
    akka$
    ```
 
-# Profiling
+# The build graph
 
 ## Bloop
 
@@ -530,7 +530,7 @@ scalac will be faster if it has less code to compile.  You can
  - use [Scalafix](https://github.com/scalacenter/scalafix) to delete unused imports and local variables
  - keep an eye on [ScalaClean](https://github.com/rorygraves/ScalaClean), a project for detecting dead code
 
-# Profiling
+# Examining Scalac Phases
 
 We will now look into profiling `scalac` for the `akka-stream-typed` project.
 
@@ -690,7 +690,7 @@ More information on this graph can be found in the [Scala blog post on scalac pr
 
 Notice that there's a large red chunk labelled `Unit => akka.actor.typed.ActorRef`.  This means that many implicit searches for `ActorRef` result in failures.
 
-## Xlog-implicits
+## -Xlog-implicits
 
 To figure out why these implicit searches are failing, add the `-Xlog-implicits` compiler option.
 
@@ -801,3 +801,12 @@ The `akka-stream-typed` project doesn't use any implicit induction, so we won't 
  - Upgrade Scala
  - Use Graal
  - Profile your typer
+
+# Credits
+
+The following people have heled make this workshop happen.  Thank you for all your help!
+
+- [Alessandro Buggin](https://github.com/Bhudjo)
+- [Rory Graves](https://github.com/rorygraves)
+- [Laurens Hellinger](https://github.com/Gommorach)
+- [Yilin Wei](https://github.com/yilinwei)
