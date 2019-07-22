@@ -18,9 +18,9 @@ categories: jekyll update
 
 This workshop involves an unwieldy amount of tools.
 
-Please come with the following tools installed, as we won't have time to set these up within the workshop.
+You will make your life much, much easier if you install these tools before the workshop.  Rory Graves has kindly put together some [setup instructions](https://docs.google.com/document/d/1-Tq3wpqHgH8XIIM2noolVZWs2ENSOZhccS-TkFSdNIs/edit#).  There are also setup instructions for [ArchLinux](#archlinux-setup) and [MacOS](#macos-setup) below.
 
-You will make your life much, much easier if you install these tools before the workshop.  Rory Graves has kindly put together some [setup instructions](https://docs.google.com/document/d/1-Tq3wpqHgH8XIIM2noolVZWs2ENSOZhccS-TkFSdNIs/edit#).  If you have any problems, please ask on the Gitter channel.  We'll be very happy to help.
+If you have any problems, please ask on the Gitter channel.  We'll be very happy to help.
 
 - [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 - [Java 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
