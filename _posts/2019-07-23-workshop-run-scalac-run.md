@@ -287,9 +287,7 @@ Bloop outputs build traces.  These can be viewed with [Zipkin](https://zipkin.io
 
    You should be able to see Zipkin traces at [http://localhost:9411/zipkin/](http://localhost:9411/zipkin/)
 
-   The output is stored in `results/compile-zipkin-trace.html`
-   The trace should look something like this
-   ![Zipkin Trace](/assets/img/zipkin-trace.png){:class="img-responsive"}
+   [![Zipkin Trace]({{"/assets/img/zipkin-trace.png" | relative_url }}){:class="img-responsive"}]({{"/assets/img/zipkin-trace.png" | relative_url}}){:target="_blank"}
 
 Let's compile `akka-stream-typed` a few more times.
 
@@ -301,7 +299,7 @@ Let's compile `akka-stream-typed` a few more times.
 
 Take a look at the Zipkin traces.  Bloop uses the same JVM instance each time it compiles the project.  Notice that the compilation times get shorter and shorter as the JVM warms up.
 
-![Zipkin warmup](/assets/img/zipkin-traces.png)
+   [![Zipkin warmup]({{"/assets/img/zipkin-traces.png" | relative_url }}){:class="img-responsive"}]({{"/assets/img/zipkin-traces.png" | relative_url}}){:target="_blank"}
 
 ### Examining a trace
 
@@ -321,7 +319,7 @@ Open the `akka/build-graph.svg` file using your browser.
 
 As you'd expect with Akka, it's fairly hefty:
 
-![Build graph](/assets/img/build-graph.svg){:class="img-responsive"}
+[![Build graph]({{"/assets/img/build-graph.svg" | relative_url }}){:class="img-responsive"}]({{"/assets/img/build-graph.svg" | relative_url}}){:target="_blank"}
 
 ## Build pipelining
 
@@ -353,9 +351,7 @@ The order of compilation is slightly different.  This is easier to see in the Zi
 
 Sort the Zipkin traces by newest first to see the trace with pipelining.  You should notice that some `scalac` spans start before the previous ones have finished.
 
-The output is stored in `compile-pipeline-zipkin-trace.html`
-
-![Pipeline Zipkin Trace](/assets/img/pipeline-zipkin-trace.png){:class="img-responsive"}
+[![Pipeline Zipkin Trace]({{"/assets/img/pipeline-zipkin-trace.png" | relative_url }}){:class="img-responsive"}]({{"/assets/img/pipeline-zipkin-trace.png" | relative_url}}){:target="_blank"}
 
 # Benchmarking
 
@@ -477,15 +473,15 @@ The akka `workshop-scala-2.13` branch contains a Scala 2.13 upgrade.
    bloop> benchmarks/jmh:run .*HotPipelinedBloopBenchmark.* -wi 7 -i 5 -f1 -t1 -p project=scala213 -p projectName=akka-stream-typed
    ...
    [info] Benchmark                                           (extraArgs)  (noIncremental)  (pidFile)  (project)      (projectName)    Mode  Cnt      Score      Error  Units
-   [info] HotPipelinedBloopBenchmark.compile                                         false                 start  akka-stream-typed  sample    5  14582.756 ± 2016.403  ms/op
-   [info] HotPipelinedBloopBenchmark.compile:compile·p0.00                           false                 start  akka-stream-typed  sample       14243.856             ms/op
-   [info] HotPipelinedBloopBenchmark.compile:compile·p0.50                           false                 start  akka-stream-typed  sample       14310.965             ms/op
-   [info] HotPipelinedBloopBenchmark.compile:compile·p0.90                           false                 start  akka-stream-typed  sample       15485.370             ms/op
-   [info] HotPipelinedBloopBenchmark.compile:compile·p0.95                           false                 start  akka-stream-typed  sample       15485.370             ms/op
-   [info] HotPipelinedBloopBenchmark.compile:compile·p0.99                           false                 start  akka-stream-typed  sample       15485.370             ms/op
-   [info] HotPipelinedBloopBenchmark.compile:compile·p0.999                          false                 start  akka-stream-typed  sample       15485.370             ms/op
-   [info] HotPipelinedBloopBenchmark.compile:compile·p0.9999                         false                 start  akka-stream-typed  sample       15485.370             ms/op
-   [info] HotPipelinedBloopBenchmark.compile:compile·p1.00                           false                 start  akka-stream-typed  sample       15485.370             ms/op
+   [info] HotPipelinedBloopBenchmark.compile                                         false              scala213  akka-stream-typed  sample    5  14515.647 ± 1234.578  ms/op
+   [info] HotPipelinedBloopBenchmark.compile:compile·p0.00                           false              scala213  akka-stream-typed  sample       14076.084             ms/op
+   [info] HotPipelinedBloopBenchmark.compile:compile·p0.50                           false              scala213  akka-stream-typed  sample       14545.846             ms/op
+   [info] HotPipelinedBloopBenchmark.compile:compile·p0.90                           false              scala213  akka-stream-typed  sample       14965.277             ms/op
+   [info] HotPipelinedBloopBenchmark.compile:compile·p0.95                           false              scala213  akka-stream-typed  sample       14965.277             ms/op
+   [info] HotPipelinedBloopBenchmark.compile:compile·p0.99                           false              scala213  akka-stream-typed  sample       14965.277             ms/op
+   [info] HotPipelinedBloopBenchmark.compile:compile·p0.999                          false              scala213  akka-stream-typed  sample       14965.277             ms/op
+   [info] HotPipelinedBloopBenchmark.compile:compile·p0.9999                         false              scala213  akka-stream-typed  sample       14965.277             ms/op
+   [info] HotPipelinedBloopBenchmark.compile:compile·p1.00                           false              scala213  akka-stream-typed  sample       14965.277             ms/op
    ```
 
    Do you see a decrease in score?
@@ -520,9 +516,18 @@ The scala compiler runs best on the Java 8 Graal VM.
    ```console
    $ sbt
    bloop> benchmarks/jmh:run .*HotPipelinedBloopBenchmark.* -wi 7 -i 5 -f1 -t1 -p project=scala213 -p projectName=akka-stream-typed
-   ```
 
-   Do you see a decrease in score?
+   [info] Benchmark                                           (extraArgs)  (noIncremental)  (pidFile)  (project)      (projectName)    Mode  Cnt      Score      Error  Units
+   [info] HotPipelinedBloopBenchmark.compile                                         false              scala213  akka-stream-typed  sample    5  12774.172 ± 2259.538  ms/op
+   [info] HotPipelinedBloopBenchmark.compile:compile·p0.00                           false              scala213  akka-stream-typed  sample       12348.031             ms/op
+   [info] HotPipelinedBloopBenchmark.compile:compile·p0.50                           false              scala213  akka-stream-typed  sample       12566.135             ms/op
+   [info] HotPipelinedBloopBenchmark.compile:compile·p0.90                           false              scala213  akka-stream-typed  sample       13790.872             ms/op
+   [info] HotPipelinedBloopBenchmark.compile:compile·p0.95                           false              scala213  akka-stream-typed  sample       13790.872             ms/op
+   [info] HotPipelinedBloopBenchmark.compile:compile·p0.99                           false              scala213  akka-stream-typed  sample       13790.872             ms/op
+   [info] HotPipelinedBloopBenchmark.compile:compile·p0.999                          false              scala213  akka-stream-typed  sample       13790.872             ms/op
+   [info] HotPipelinedBloopBenchmark.compile:compile·p0.9999                         false              scala213  akka-stream-typed  sample       13790.872             ms/op
+   [info] HotPipelinedBloopBenchmark.compile:compile·p1.00                           false              scala213  akka-stream-typed  sample       13790.872             ms/op
+   ```
 
 # Compile less code
 
@@ -590,7 +595,7 @@ We will now look into profiling `scalac` for the `akka-stream-typed` project.
    akka$ bloop compile --pipeline akka-stream-typed &> statistics.txt
    ```
 
-Examine the contents of [statistics.txt]({{ site.url }}/assets/txt/compile-statistics.txt).  You should be able to see each of the different compiler phases.
+Examine the contents of [statistics.txt]({{ "/assets/txt/compile-statistics.txt" | relative_url }}).  You should be able to see each of the different compiler phases.
 
 ```
 ...
@@ -684,7 +689,7 @@ We will use the [scalac-profiling](https://github.com/scalacenter/scalac-profili
 
 5. Open the `akka-stream-typed.svg` file in your browser.
 
-   ![Scalac Profiling Flamegraph](/assets/img/scalac-profiling-flamegraph.svg){:class="img-responsive"}
+   [![Scalac Profiling Flamegraph]({{"/assets/img/scalac-profiling-flamegraph.svg" | relative_url }}){:class="img-responsive"}]({{"/assets/img/scalac-profiling-flamegraph.svg" | relative_url}}){:target="_blank"}
 
 More information on this graph can be found in the [Scala blog post on scalac profiling](https://www.scala-lang.org/blog/2018/06/04/scalac-profiling.html).
 
@@ -744,7 +749,7 @@ To figure out why these implicit searches are failing, add the `-Xlog-implicits`
    akka$ bloop compile --pipeline akka-stream-typed &> implicits.txt
    ```
 
-Open the [implicits.txt]({{ site.url }}/assets/txt/compile-log-implicits.txt) file. You'll notice the following messages
+Open the [implicits.txt]({{ "/assets/txt/compile-log-implicits.txt" | relative_url }}) file. You'll notice the following messages
 
 ```
  akka-actor/src/main/scala/akka/actor/dsl/Inbox.scala:126:62
@@ -802,11 +807,19 @@ The `akka-stream-typed` project doesn't use any implicit induction, so we won't 
  - Use Graal
  - Profile your typer
 
+# Tear down
+
+We made a few changes to our environment that you may want to reverse
+ - If you switched to Graal, switch back to your original JVM
+ - Stop Zipkin (and docker, if you started it)
+ - Shut down the bloop server
+
 # Credits
 
 The following people have heled make this workshop happen.  Thank you for all your help!
 
 - [Alessandro Buggin](https://github.com/Bhudjo)
+- [Jorge Vicente Cantero](https://github.com/jvican)
 - [Rory Graves](https://github.com/rorygraves)
 - [Laurens Hellinger](https://github.com/Gommorach)
 - [Yilin Wei](https://github.com/yilinwei)
