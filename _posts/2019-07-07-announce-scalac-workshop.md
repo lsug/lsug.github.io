@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Zainab Workshop"
+title:  "Announcement: Scalac Workshop"
 date:   2019-07-07 21:08:46 +0100
 categories: workshop scala
 ---
