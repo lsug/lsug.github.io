@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Announcement: 20th August Meetup"
+title:  "Announcement: 21th August Meetup"
 date:   2019-07-30 22:57:06 +0100
 author: Alessandro Buggin
 categories: meetup scala
