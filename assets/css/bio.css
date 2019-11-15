@@ -1,0 +1,19 @@
+.lsug-bio {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.lsug-bio-image {
+    width: 250px;
+    height: auto;
+    margin: 0 20px 0 20px;
+    flex-basis: 1px;
+    flex-grow: 1;
+}
+
+.lsug-bio-description {
+    margin-left: 20px;
+    flex-basis: 1px;
+    flex-grow: 1;
+}
