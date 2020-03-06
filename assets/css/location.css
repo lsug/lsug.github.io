@@ -1,0 +1,21 @@
+.lsug-location-step {
+    display: flex;
+    margin-top: 20px;
+}
+
+.lsug-location-step-description {
+    flex-grow: 2;
+    display: block;
+    width: 200%;
+}
+
+.lsug-location-step-image-container {
+    flex-grow: 1;
+    display: block;
+    width: 100%;
+}
+
+.lsug-location-image {
+    width: 250px;
+    margin: 0 20px 0 20px;
+}
