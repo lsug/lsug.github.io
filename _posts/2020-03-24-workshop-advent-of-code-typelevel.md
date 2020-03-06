@@ -8,16 +8,6 @@ categories: workshop kata scala functional typelevel
 
 Come along to another London Scala Workshop!  This time, we'll be using functional programming, and in particular the [Typelevel libraries](https://typelevel.org/) to solve the first few days of the [Advent of Code](https://adventofcode.com/).
 
-# Agenda
-
-| Time   | Topic                                                               |
-|--------|---------------------------------------------------------------------|
-| 6:30pm | Doors open.  Come along in and get set up                           |
-| 6:45pm | Workshop - first half                                               |
-| 7:30pm | Digest our new knowledge over some dinner                           |
-| 7:45pm | Workshop - second half                                              |
-| 8:30pm | Join us in a nearby pub or restaurant to discuss what we've learned |
-
 # Prerequisites
 
 ## Sign up!
@@ -30,6 +20,19 @@ Come along to another London Scala Workshop!  This time, we'll be using function
 This workshop requires a fair amount of dependencies, so try your best to set up before you arrive.  You can set up by cloning the [GitHub repository](https://github.com/lsug/advent-of-code-typelevel.git) and follow the instructions on the README.
 
 Don't hesitate to reach out to the Gitter channel if you have any problems.
+
+# Agenda
+
+This workshop will run on **Tuesday the 24th March 2020**.
+
+| Time   | Topic                                                               |
+|--------|---------------------------------------------------------------------|
+| 6:30pm | Doors open.  Come along in and get set up                           |
+| 6:45pm | Workshop - first half                                               |
+| 7:30pm | Digest our new knowledge over some dinner                           |
+| 7:45pm | Workshop - second half                                              |
+| 8:30pm | Join us in a nearby pub or restaurant to discuss what we've learned |
+
 
 # Finding us
 
