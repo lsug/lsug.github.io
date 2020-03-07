@@ -15,10 +15,6 @@ Join us and have a crack at the first three advent of code challenges.  Starting
 
 This workshop is a great opportunity to get started with functional programming and boost your FP skills.
 
-# Feeling overwhelmed?
-
-*We're Community Partners with [Meetup Mates](https://meetup-mates.com). If you feel overwhelmed by the idea of coming and networking by yourself, Meetup Mates is a great way to connect with like-minded people to go to meetups with!
-
 # Prerequisites
 
 ## Sign up!
