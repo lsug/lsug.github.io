@@ -1,12 +1,23 @@
 ---
 layout: post
-title:  "Workshop: Advent of Code with the Typelevel Stack"
+title:  "Workshop: Coding with Cats"
 date:   2020-03-06 19:04:06 +0100
 author: Zainab Ali
 categories: workshop kata scala functional typelevel
 ---
 
-Come along to another London Scala Workshop!  This time, we'll be using functional programming, and in particular the [Typelevel libraries](https://typelevel.org/) to solve the first few days of the [Advent of Code](https://adventofcode.com/).
+Come along to another London Scala Workshop at Quantexa!  This month, we'll be hearing from Zainab Ali and Kai Ang on Coding with Cats. We look forward to seeing you!
+
+# Coding with Cats
+
+Christmas is long gone, but it's never too late to celebrate functional programming!  And there's no better way to celebrate than by solving the [Advent of Code](https://adventofcode.com/).
+Join us and have a crack at the first three advent of code challenges.  Starting with pure functions, recursion, collections and error handling, we'll work our way up to using functional libraries such as cats, spire, monocle and fs2.
+
+This workshop is a great opportunity to get started with functional programming and boost your FP skills.
+
+# Feeling overwhelmed?
+
+*We're Community Partners with [Meetup Mates](https://meetup-mates.com). If you feel overwhelmed by the idea of coming and networking by yourself, Meetup Mates is a great way to connect with like-minded people to go to meetups with!
 
 # Prerequisites
 
